@@ -335,7 +335,7 @@ void DisplaySkeleton::Render(RenderMode renderMode_)
 	 GLUquadricObj *center = gluNewQuadric();
 	 gluQuadricDrawStyle(center, (GLenum) GLU_FILL);
 	 gluQuadricNormals(center, (GLenum) GLU_SMOOTH);
-	 gluSphere(center, 0.035, 20, 20);
+	 gluSphere(center, 0.065, 20, 20);
 
 	  glPopMatrix();
 

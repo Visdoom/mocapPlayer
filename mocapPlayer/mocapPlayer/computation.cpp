@@ -111,7 +111,7 @@ void Computation::computeLocalCenterOfMass(){
 void Computation::computeGeneralCenterOfMass() {
 
 
-	double translation[3], rotation[3], rootPos[3];
+	double translation[3], rotation[3];
 
 	double R[4][4],Rx[4][4],Ry[4][4],Rz[4][4];
 
@@ -124,13 +124,12 @@ void Computation::computeGeneralCenterOfMass() {
 		m_pSkeletonList[i]->cm[1] = 0.0;
 		m_pSkeletonList[i]->cm[2] = 0.0;
 
-		if(m_pMotionList[i] != NULL)
+		if(m_pMotionList[i] != NULL || true) // TODO remove
 		{
 
 			if (m_pMassDistributionList[i] != NULL) {
 				m_pSkeletonList[i]->GetTranslation(translation);
 				m_pSkeletonList[i]->GetRotationAngle(rotation);
-				m_pSkeletonList[i]->GetRootPosGlobal(rootPos);
 
 				//creating Rotation matrix for initial rotation of Skeleton
 				rotationX(Rx, rotation[0]);
@@ -145,8 +144,6 @@ void Computation::computeGeneralCenterOfMass() {
 				transform[0][3] += (MOCAP_SCALE*translation [0]);
 				transform[1][3] += (MOCAP_SCALE*translation [1]);
 				transform[2][3] += (MOCAP_SCALE*translation [2]);
-
-				printf("rootPos: %f %f %f\n", rootPos[0], rootPos[1], rootPos[2]);
 
 				traverse(m_pSkeletonList[i]->getRoot(), i);
 
@@ -304,6 +301,10 @@ void Computation::traverse(Bone * ptr, int skelNum){
 		double temp[4][4]; //stores homogeneous transformation
 		double translation[4][4];
 
+		double C[4][4], Cinv[4][4];
+
+		matrix_copy(transform, transformBackUp);
+
 		//create homogeneous transformation to next frame.
 
 		identity(temp);
@@ -313,6 +314,32 @@ void Computation::traverse(Bone * ptr, int skelNum){
 		identity(Ry);
 		identity(Rz);
 
+		// compute C
+		rotationZ(Rz, ptr->axis_z);
+		rotationY(Ry, ptr->axis_y);
+		rotationX(Rx, ptr->axis_x);
+
+		matrix_mult(Rz, Ry, C);
+		matrix_mult(C, Rx, C);
+
+		// compute M
+		if(ptr->dofrx) rotationX(Rx, (ptr->rx));
+		if(ptr->dofry) rotationY(Ry, (ptr->ry));
+		if(ptr->dofrz) rotationZ(Rz, (ptr->rz));
+
+		matrix_mult(Rz, Ry, M);
+		matrix_mult(M, Rx, M);
+
+		if(ptr->doftx) M[0][3] += ptr->tx;
+		if(ptr->dofty) M[1][3] += ptr->ty;
+		if(ptr->dofty) M[2][3] += ptr->tz;
+
+		matrix_mult(transform, C, transform);
+		matrix_mult(transform, M, transform);
+
+		computeCM(ptr, skelNum);
+
+		/*
 		//translation to origin of next bone
 		translation[0][3] = ptr->dir[0]*ptr->length;
 		translation[1][3] = ptr->dir[1]*ptr->length;
@@ -354,8 +381,15 @@ void Computation::traverse(Bone * ptr, int skelNum){
 		matrix_mult(transform, temp, transform); // multiplication of homogeneous transformation
 
 		computeCM(ptr,skelNum);
+		*/
+
+		translation[0][3] += ptr->dir[0]*ptr->length;
+		translation[1][3] += ptr->dir[1]*ptr->length;
+		translation[2][3] += ptr->dir[2]*ptr->length;
 
 		matrix_mult(transform, translation, transform);
+		matrix_transpose(C, Cinv);
+		matrix_mult(transform, Cinv, transform);
 
 		traverse(ptr->child, skelNum);
 
@@ -366,7 +400,7 @@ void Computation::traverse(Bone * ptr, int skelNum){
 
 
 	}
-
+// -1.83174e-014 90 90
 
 }
 
