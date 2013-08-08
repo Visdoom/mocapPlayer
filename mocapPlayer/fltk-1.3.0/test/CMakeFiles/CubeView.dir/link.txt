@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/CubeView.dir/CubeMain.cxx.o CMakeFiles/CubeView.dir/CubeView.cxx.o CMakeFiles/CubeView.dir/CubeViewUI.cxx.o  -o ../bin/examples/CubeView -rdynamic ../lib/libfltk.a ../lib/libfltk_gl.a ../lib/libfltk.a -lpthread -lGLU -lGL -lSM -lICE -lX11 -lXext 

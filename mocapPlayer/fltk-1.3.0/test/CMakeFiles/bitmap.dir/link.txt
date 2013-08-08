@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/bitmap.dir/bitmap.cxx.o  -o ../bin/examples/bitmap -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

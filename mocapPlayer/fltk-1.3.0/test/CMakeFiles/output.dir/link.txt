@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/output.dir/output.cxx.o  -o ../bin/examples/output -rdynamic ../lib/libfltk.a ../lib/libfltk_forms.a ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

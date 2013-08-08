@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/pack.dir/pack.cxx.o  -o ../bin/examples/pack -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

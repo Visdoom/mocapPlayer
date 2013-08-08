@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/minimum.dir/minimum.cxx.o  -o ../bin/examples/minimum -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

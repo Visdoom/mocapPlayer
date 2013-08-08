@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/radio.dir/radio.cxx.o  -o ../bin/examples/radio -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

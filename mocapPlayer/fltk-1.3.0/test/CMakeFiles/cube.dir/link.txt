@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/cube.dir/cube.cxx.o  -o ../bin/examples/cube -rdynamic ../lib/libfltk.a ../lib/libfltk_gl.a -lGLU -lGL -lSM -lICE -lX11 -lXext ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

@@ -1,0 +1,4112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>FLTK-Debug@fltk-1.3.0</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.makeBuilder</name>
+			<triggers>clean,full,incremental,</triggers>
+			<arguments>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.cleanBuildTarget</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableCleanBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.stopOnError</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.command</key>
+					<value>/usr/bin/make</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.inc</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.arguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.useDefaultBuildCmd</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>VERBOSE=1|CMAKE_NO_VERBOSE=1|</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableFullBuild</key>
+					<value>true</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.auto</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
+					<value>false</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.target.clean</key>
+					<value>clean</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.fullBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.build.location</key>
+					<value>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.autoBuildTarget</key>
+					<value>all</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.core.errorOutputParser</key>
+					<value>org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;</value>
+				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.make.core.ScannerConfigBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.ccnature</nature>
+		<nature>org.eclipse.cdt.make.core.makeNature</nature>
+		<nature>org.eclipse.cdt.make.core.ScannerConfigNature</nature>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>[Subprojects]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Subprojects]/FLTKJPEG</name>
+			<type>2</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg</location>
+		</link>
+		<link>
+			<name>[Targets]</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jmemnobs.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jmemnobs.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jaricom.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jaricom.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcomapi.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcomapi.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jutils.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jutils.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jerror.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jerror.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jmemmgr.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jmemmgr.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcapimin.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcapimin.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcapistd.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcapistd.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcarith.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcarith.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jctrans.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jctrans.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcparam.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcparam.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdatadst.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdatadst.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcinit.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcinit.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcmaster.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcmaster.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcmarker.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcmarker.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcmainct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcmainct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcprepct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcprepct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jccoefct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jccoefct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jccolor.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jccolor.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcsample.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcsample.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jchuff.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jchuff.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jcdctmgr.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jcdctmgr.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jfdctfst.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jfdctfst.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jfdctflt.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jfdctflt.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jfdctint.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jfdctint.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdapimin.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdapimin.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdapistd.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdapistd.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdarith.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdarith.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdtrans.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdtrans.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdatasrc.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdatasrc.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdmaster.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdmaster.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdinput.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdinput.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdmarker.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdmarker.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdhuff.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdhuff.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdmainct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdmainct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdcoefct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdcoefct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdpostct.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdpostct.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jddctmgr.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jddctmgr.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jidctfst.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jidctfst.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jidctflt.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jidctflt.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jidctint.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jidctint.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdsample.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdsample.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdcolor.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdcolor.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jquant1.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jquant1.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jquant2.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jquant2.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Source Files/jdmerge.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/jpeg/jdmerge.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_jpeg/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/CodeEditor.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/CodeEditor.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Function_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Function_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Group_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Group_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Menu_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Menu_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Widget_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Widget_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fl_Window_Type.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fl_Window_Type.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/Fluid_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/Fluid_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/about_panel.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/about_panel.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/align_widget.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/align_widget.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/alignment_panel.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/alignment_panel.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/code.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/code.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/factory.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/factory.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/file.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/file.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/fluid.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/fluid.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/function_panel.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/function_panel.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/template_panel.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/template_panel.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/undo.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/undo.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Source Files/widget_panel.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/fluid/widget_panel.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fluid/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Adjuster.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Adjuster.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Bitmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Bitmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Browser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Browser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Browser_.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Browser_.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Browser_load.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Browser_load.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Chart.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Chart.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Check_Browser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Check_Browser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Check_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Check_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Choice.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Choice.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Clock.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Clock.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Color_Chooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Color_Chooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Counter.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Counter.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Device.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Device.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Dial.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Dial.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Double_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Double_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_File_Browser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Browser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_File_Chooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Chooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_File_Chooser2.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Chooser2.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_File_Icon.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Icon.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_File_Input.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Input.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Group.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Group.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Help_View.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Help_View.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Input.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Input.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Input_.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Input_.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Light_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Light_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_Bar.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_Bar.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Sys_Menu_Bar.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Sys_Menu_Bar.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_add.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_add.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Menu_global.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Menu_global.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Multi_Label.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Multi_Label.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Native_File_Chooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Native_File_Chooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Overlay_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Overlay_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Pack.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Pack.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Paged_Device.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Paged_Device.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Pixmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Pixmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Positioner.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Positioner.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Printer.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Printer.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Preferences.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Preferences.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Progress.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Progress.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Repeat_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Repeat_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Return_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Return_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Roller.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Roller.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Round_Button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Round_Button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Scroll.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Scroll.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Scrollbar.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Scrollbar.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Shared_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Shared_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Single_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Single_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Slider.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Slider.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Table.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Table.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Table_Row.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Table_Row.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tabs.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tabs.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Text_Buffer.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Text_Buffer.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Text_Display.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Text_Display.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Text_Editor.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Text_Editor.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tile.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tile.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tiled_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tiled_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tooltip.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tooltip.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tree.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tree.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tree_Item_Array.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tree_Item_Array.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tree_Item.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tree_Item.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Tree_Prefs.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Tree_Prefs.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Valuator.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Valuator.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Value_Input.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Value_Input.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Value_Output.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Value_Output.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Value_Slider.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Value_Slider.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Widget.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Widget.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Window_fullscreen.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Window_fullscreen.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Window_hotspot.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Window_hotspot.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Window_iconize.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Window_iconize.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_Wizard.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Wizard.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_XBM_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_XBM_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_XPM_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_XPM_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_abort.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_abort.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_add_idle.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_add_idle.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_arg.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_arg.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_compose.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_compose.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_display.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_display.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_get_key.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_get_key.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_get_system_colors.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_get_system_colors.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_grab.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_grab.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_lock.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_lock.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_own_colormap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_own_colormap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_visual.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_visual.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/Fl_x.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_x.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_absolute.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_absolute.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_expand.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_expand.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_ext.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_ext.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_isdir.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_isdir.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_list.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_list.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_match.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_match.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/filename_setext.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/filename_setext.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_arc.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_arc.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_arci.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_arci.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_ask.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_ask.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_boxtype.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_boxtype.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_color.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_color.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_cursor.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_cursor.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_curve.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_curve.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_diamond_box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_diamond_box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_dnd.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_dnd.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_draw.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_draw.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_draw_image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_draw_image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_draw_pixmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_draw_pixmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_engraved_label.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_engraved_label.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_file_dir.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_file_dir.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_font.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_font.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_gtk.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_gtk.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_labeltype.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_labeltype.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_line_style.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_line_style.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_open_uri.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_open_uri.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_oval_box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_oval_box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_overlay.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_overlay.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_overlay_visual.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_overlay_visual.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_plastic.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_plastic.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_read_image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_read_image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_rect.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_rect.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_round_box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_round_box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_rounded_box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_rounded_box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_set_font.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_set_font.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_set_fonts.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_set_fonts.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_scroll_area.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_scroll_area.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_shadow_box.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_shadow_box.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_shortcut.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_shortcut.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_show_colormap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_show_colormap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_symbols.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_symbols.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_vertex.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_vertex.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/ps_image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/ps_image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/screen_xywh.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/screen_xywh.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_utf8.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_utf8.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_encoding_latin1.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_encoding_latin1.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_encoding_mac_roman.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_encoding_mac_roman.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/flstring.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/flstring.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/scandir.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/scandir.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/numericsort.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/numericsort.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/vsnprintf.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/vsnprintf.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/is_right2left.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/is_right2left.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/is_spacing.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/is_spacing.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/case.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/case.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/utf8Input.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/utf8Input.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/utf8Utils.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/utf8Utils.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/utf8Wrap.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/utf8Wrap.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/keysym2Ucs.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/xutf8/keysym2Ucs.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_utf.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_utf.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Source Files/fl_call_main.c</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_call_main.c</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_compatability.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_compatability.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_bitmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_bitmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_free.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_free.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_fselect.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_fselect.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_pixmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_pixmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Source Files/forms_timer.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/forms_timer.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_forms/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/Fl_Gl_Choice.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Gl_Choice.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/Fl_Gl_Device_Plugin.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Gl_Device_Plugin.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/Fl_Gl_Overlay.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Gl_Overlay.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/Fl_Gl_Window.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Gl_Window.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/freeglut_geometry.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/freeglut_geometry.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/freeglut_stroke_mono_roman.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/freeglut_stroke_mono_roman.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/freeglut_stroke_roman.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/freeglut_stroke_roman.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/freeglut_teapot.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/freeglut_teapot.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/gl_draw.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/gl_draw.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/gl_start.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/gl_start.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/glut_compatability.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/glut_compatability.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Source Files/glut_font.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/glut_font.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_gl/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/fl_images_core.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/fl_images_core.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_BMP_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_BMP_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_File_Icon2.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_File_Icon2.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_GIF_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_GIF_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_Help_Dialog.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_Help_Dialog.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_JPEG_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_JPEG_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_PNG_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_PNG_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Source Files/Fl_PNM_Image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/src/Fl_PNM_Image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[lib] fltk_images/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Source Files/CubeMain.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/CubeMain.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Source Files/CubeView.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/CubeView.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Source Files/CubeViewUI.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/CubeViewUI.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/CMake Rules/CubeViewUI.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/CubeViewUI.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/CMake Rules/CubeViewUI.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/CubeViewUI.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] CubeView/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/Source Files/adjuster.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/adjuster.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] adjuster/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/Source Files/arc.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/arc.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] arc/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/Source Files/ask.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/ask.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] ask/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/Source Files/bitmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/bitmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] bitmap/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/Source Files/blocks.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/blocks.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] blocks/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/Source Files/boxtype.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/boxtype.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] boxtype/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/Source Files/browser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/browser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] browser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/Source Files/button.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/button.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] button/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/Source Files/buttons.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/buttons.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] buttons/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/Source Files/checkers.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/checkers.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] checkers/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/Source Files/clock.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/clock.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] clock/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/Source Files/colbrowser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/colbrowser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] colbrowser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/Source Files/color_chooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/color_chooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] color_chooser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/Source Files/cube.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/cube.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cube/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/Source Files/cursor.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/cursor.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] cursor/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/Source Files/curve.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/curve.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] curve/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/Source Files/demo.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/demo.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] demo/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/Source Files/device.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/device.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] device/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/Source Files/doublebuffer.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/doublebuffer.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] doublebuffer/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/Source Files/editor.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/editor.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] editor/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/Source Files/fast_slow.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fast_slow.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/CMake Rules/fast_slow.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fast_slow.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/CMake Rules/fast_slow.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fast_slow.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fast_slow/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/Source Files/file_chooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/file_chooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] file_chooser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/Source Files/fonts.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fonts.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fonts/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/Source Files/forms.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/forms.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] forms/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/Source Files/fractals.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fractals.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/Source Files/fracviewer.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fracviewer.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fractals/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/Source Files/fullscreen.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/fullscreen.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] fullscreen/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/Source Files/gl_overlay.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/gl_overlay.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] gl_overlay/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/Source Files/glpuzzle.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/glpuzzle.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] glpuzzle/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/Source Files/hello.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/hello.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] hello/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/Source Files/help.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/help.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] help/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/Source Files/iconize.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/iconize.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] iconize/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/Source Files/image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] image/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/Source Files/inactive.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/inactive.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/CMake Rules/inactive.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/inactive.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/CMake Rules/inactive.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/inactive.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] inactive/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/Source Files/input.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/input.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/Source Files/input_choice.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/input_choice.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] input_choice/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/Source Files/keyboard.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/keyboard.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/Source Files/keyboard_ui.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/keyboard_ui.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/CMake Rules/keyboard_ui.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/keyboard_ui.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/CMake Rules/keyboard_ui.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/keyboard_ui.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] keyboard/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/Source Files/label.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/label.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] label/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/Source Files/line_style.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/line_style.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] line_style/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/Source Files/list_visuals.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/list_visuals.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] list_visuals/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/Source Files/mandelbrot.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/mandelbrot.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/Source Files/mandelbrot_ui.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/mandelbrot_ui.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/CMake Rules/mandelbrot_ui.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/mandelbrot_ui.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/CMake Rules/mandelbrot_ui.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/mandelbrot_ui.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] mandelbrot/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/Source Files/menubar.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/menubar.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] menubar/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/Source Files/message.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/message.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] message/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/Source Files/minimum.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/minimum.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] minimum/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/Source Files/native-filechooser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/native-filechooser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] native-filechooser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/Source Files/navigation.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/navigation.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] navigation/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/Source Files/output.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/output.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] output/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/Source Files/overlay.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/overlay.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] overlay/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/Source Files/pack.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/pack.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pack/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/Source Files/pixmap.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/pixmap.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/Source Files/pixmap_browser.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/pixmap_browser.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] pixmap_browser/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/Source Files/preferences.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/preferences.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/CMake Rules/preferences.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/preferences.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/CMake Rules/preferences.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/preferences.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] preferences/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/Source Files/radio.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/radio.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/CMake Rules/radio.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/radio.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/CMake Rules/radio.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/radio.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] radio/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/Source Files/resize.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/resize.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/CMake Rules/resize.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/resize.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/CMake Rules/resize.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/resize.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resize/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/Source Files/resizebox.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/resizebox.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] resizebox/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/Source Files/rotated_text.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/rotated_text.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] rotated_text/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/Source Files/scroll.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/scroll.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] scroll/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/Source Files/shape.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/shape.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] shape/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/Source Files/subwindow.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/subwindow.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] subwindow/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/Source Files/sudoku.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/sudoku.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] sudoku/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/Source Files/symbols.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/symbols.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] symbols/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/Source Files/table.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/table.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] table/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/Source Files/tabs.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tabs.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/CMake Rules/tabs.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tabs.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/CMake Rules/tabs.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tabs.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tabs/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/Source Files/threads.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/threads.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] threads/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/Source Files/tile.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tile.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tile/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/Source Files/tiled_image.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tiled_image.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tiled_image/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/Source Files/tree.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tree.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/CMake Rules/tree.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tree.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/CMake Rules/tree.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/tree.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] tree/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/Source Files/unittests.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/unittests.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] unittests/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/Source Files/utf8.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/utf8.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] utf8/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/Source Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/Source Files/valuators.cxx</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/valuators.cxx</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/Header Files</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/CMake Rules</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/CMake Rules/valuators.cxx.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/valuators.cxx.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/CMake Rules/valuators.h.rule</name>
+			<type>1</type>
+			<location>/Network/Servers/duerer/Volumes/duerer/laturnus/Downloads/new_acm/mocapPlayer/fltk-1.3.0/test/valuators.h.rule</location>
+		</link>
+		<link>
+			<name>[Targets]/[exe] valuators/Resources</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>

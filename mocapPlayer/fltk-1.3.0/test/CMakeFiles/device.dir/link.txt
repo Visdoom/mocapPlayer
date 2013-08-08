@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/device.dir/device.cxx.o  -o ../bin/examples/device -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

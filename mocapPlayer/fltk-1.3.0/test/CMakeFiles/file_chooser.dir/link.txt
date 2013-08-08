@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/file_chooser.dir/file_chooser.cxx.o  -o ../bin/examples/file_chooser -rdynamic ../lib/libfltk.a ../lib/libfltk_images.a ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext -lpng -lz ../lib/libfltk_jpeg.a 

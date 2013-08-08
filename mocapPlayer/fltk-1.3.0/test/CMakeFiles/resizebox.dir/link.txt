@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/resizebox.dir/resizebox.cxx.o  -o ../bin/examples/resizebox -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

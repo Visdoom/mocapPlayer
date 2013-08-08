@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/valuators.dir/valuators.cxx.o  -o ../bin/examples/valuators -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 
