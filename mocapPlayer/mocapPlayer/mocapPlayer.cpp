@@ -243,7 +243,11 @@ void Redisplay()
   {
     glEnable(GL_LIGHTING);
     glDisable(GL_FOG);
-    displayer.Render(DisplaySkeleton::BONES_AND_LOCAL_FRAMES);
+    if (compute == ON){
+    	displayer.Render(DisplaySkeleton::BONES_AND_LOCAL_FRAMES_AND_GCM);
+    } else {
+        displayer.Render(DisplaySkeleton::BONES_AND_LOCAL_FRAMES);
+    }
   }
 
   glPopMatrix(); // restore current transformation matrix
@@ -565,6 +569,7 @@ void idle(void*)
   {
     if (saveScreenToFile == SAVE_CONTINUOUS)
     {
+    	//TODO change into saving gcm
       saveFileTimeCounter.StartCounter();
       CreateScreenFilename(SAVE_CONTINUOUS, saveScreenToFileContinuousCount, saveScreenToFileContinuousFilename);
       saveScreenshot(640, 480, saveScreenToFileContinuousFilename);
@@ -608,7 +613,6 @@ void idle(void*)
 
     SetSkeletonsToSpecifiedFrame(currentFrameIndex);
 
-    //TODO
     if(compute == ON) {
     	computer.computeGeneralCenterOfMass();
     }
@@ -625,7 +629,7 @@ void idle(void*)
       frame_slider->value((double) currentFrameIndex + 1);
 
       SetSkeletonsToSpecifiedFrame(currentFrameIndex);    
-      //TODO
+
 	if (compute == ON)
 	{
 		computer.computeGeneralCenterOfMass();
@@ -651,7 +655,7 @@ void idle(void*)
       frame_slider->value((double) currentFrameIndex + 1);
 
       SetSkeletonsToSpecifiedFrame(currentFrameIndex);
-      //TODO
+
 	if (compute == ON) {
 		computer.computeGeneralCenterOfMass();
 	}

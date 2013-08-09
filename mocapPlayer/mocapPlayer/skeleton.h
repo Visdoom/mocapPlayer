@@ -31,7 +31,7 @@ struct Bone
 
   double cm[3]; //vector describing the position of center of mass of this bone in its local coordinates
 
-  double axis_x, axis_y, axis_z;// orientation of each bone's local coordinate 
+  double axis_x, axis_y, axis_z;// orientation of each bone's local coordinate in respect to the global coordinate system
   //system as specified in ASF file (axis field)
 
   double aspx, aspy; // aspect ratio of bone shape

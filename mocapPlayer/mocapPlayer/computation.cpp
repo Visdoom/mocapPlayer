@@ -116,40 +116,33 @@ void Computation::computeGeneralCenterOfMass() {
 		m_pSkeletonList[i]->cm[1] = 0.0;
 		m_pSkeletonList[i]->cm[2] = 0.0;
 
-		if(m_pMotionList[i] != NULL || true) // TODO remove
-		{
 
-			if (m_pMassDistributionList[i] != NULL) {
-				m_pSkeletonList[i]->GetTranslation(translation);
-				m_pSkeletonList[i]->GetRotationAngle(rotation);
+		if (m_pMassDistributionList[i] != NULL) {
+			m_pSkeletonList[i]->GetTranslation(translation);
+			m_pSkeletonList[i]->GetRotationAngle(rotation);
 
-				//creating Rotation matrix for initial rotation of Skeleton
-				rotationX(Rx, rotation[0]);
-				rotationY(Ry, rotation[1]);
-				rotationZ(Rz, rotation[2]);
+			//creating Rotation matrix for initial rotation of Skeleton
+			rotationX(Rx, rotation[0]);
+			rotationY(Ry, rotation[1]);
+			rotationZ(Rz, rotation[2]);
 
-				matrix_mult(Rz, Ry, R);
-				matrix_mult(R, Rx, R);
+			matrix_mult(Rz, Ry, R);
+			matrix_mult(R, Rx, R);
 
-				matrix_mult(transform, R, transform);
+			matrix_mult(transform, R, transform);
 
-				transform[0][3] += (MOCAP_SCALE*translation [0]);
-				transform[1][3] += (MOCAP_SCALE*translation [1]);
-				transform[2][3] += (MOCAP_SCALE*translation [2]);
+			transform[0][3] += (MOCAP_SCALE*translation [0]);
+			transform[1][3] += (MOCAP_SCALE*translation [1]);
+			transform[2][3] += (MOCAP_SCALE*translation [2]);
 
-				traverse(m_pSkeletonList[i]->getRoot(), i, transform);
+			traverse(m_pSkeletonList[i]->getRoot(), i, transform);
 
-				m_pSkeletonList[i]->cm[0] /= (totalMass);
-				m_pSkeletonList[i]->cm[1] /= (totalMass);
-				m_pSkeletonList[i]->cm[2] /= (totalMass);
+			m_pSkeletonList[i]->cm[0] /= (totalMass);
+			m_pSkeletonList[i]->cm[1] /= (totalMass);
+			m_pSkeletonList[i]->cm[2] /= (totalMass);
 
 
-				printf("skeleton[%d]->cm: %f, %f, %f\n", i, m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2]);
-			} else {
-				m_pSkeletonList[i]->GetRootPosGlobal(m_pSkeletonList[i]->cm);
-			}
-
-
+			printf("skeleton[%d]->cm: %f, %f, %f\n", i, m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2]);
 
 		} else {
 			printf("Entry of m_pMotionList[%d] is empty.\n", i);

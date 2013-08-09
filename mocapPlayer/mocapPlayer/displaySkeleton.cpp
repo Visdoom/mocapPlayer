@@ -30,7 +30,7 @@ DisplaySkeleton::DisplaySkeleton(void)
 {
   m_SpotJoint = -1;
   numSkeletons = 0;
-  timesOfDrawing =0;
+
   for(int skeletonIndex = 0; skeletonIndex < MAX_SKELS; skeletonIndex++)
   {
     m_pSkeleton[skeletonIndex] = NULL;
@@ -179,7 +179,7 @@ void DisplaySkeleton::DrawBone(Bone *pBone,int skelNum)
 
 
   //Draw the local coordinate system for the selected bone.
-  if((renderMode == BONES_AND_LOCAL_FRAMES) && (pBone->idx == m_SpotJoint))
+  if(((renderMode == BONES_AND_LOCAL_FRAMES) || (renderMode == BONES_AND_LOCAL_FRAMES_AND_GCM)) && (pBone->idx == m_SpotJoint))
   {
     GLint lightingStatus;
     glGetIntegerv(GL_LIGHTING, &lightingStatus);
@@ -314,8 +314,6 @@ void DisplaySkeleton::Render(RenderMode renderMode_)
 {
   // Set render mode
   renderMode = renderMode_;
-
-  timesOfDrawing = 0;
  
   glPushMatrix();
 
@@ -325,19 +323,19 @@ void DisplaySkeleton::Render(RenderMode renderMode_)
   //draw the skeleton starting from the root
   for (int i = 0; i < numSkeletons; i++)
   {
-	//TODO drawing of the center of mass
-	 glPushMatrix();
+	if (renderMode == BONES_AND_LOCAL_FRAMES_AND_GCM) {
+		glPushMatrix();
 
-	 //printf("displaySkeleton:: skeleton->cm: %f, %f, %f\n", m_pSkeleton[i]->cm[0],m_pSkeleton[i]->cm[1],m_pSkeleton[i]->cm[2]);
-	 glTranslatef(m_pSkeleton[i]->cm[0],m_pSkeleton[i]->cm[1], m_pSkeleton[i]->cm[2]);
+		glTranslatef(m_pSkeleton[i]->cm[0],m_pSkeleton[i]->cm[1], m_pSkeleton[i]->cm[2]);
 
-	 glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, (jointColors[2]));
-	 GLUquadricObj *center = gluNewQuadric();
-	 gluQuadricDrawStyle(center, (GLenum) GLU_FILL);
-	 gluQuadricNormals(center, (GLenum) GLU_SMOOTH);
-	 gluSphere(center, 0.065, 20, 20);
+		glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, (jointColors[2]));
+		GLUquadricObj *center = gluNewQuadric();
+		gluQuadricDrawStyle(center, (GLenum) GLU_FILL);
+		gluQuadricNormals(center, (GLenum) GLU_SMOOTH);
+		gluSphere(center, 0.065, 20, 20);
 
-	  glPopMatrix();
+		 glPopMatrix();
+	}
 
     glPushMatrix();
     double translation[3];
@@ -436,7 +434,6 @@ void DisplaySkeleton::Reset(void)
     }
   }
   numSkeletons = 0;
-  timesOfDrawing =0;
 
 }
 

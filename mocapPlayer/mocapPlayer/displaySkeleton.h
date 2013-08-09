@@ -23,7 +23,7 @@ class DisplaySkeleton
 public: 
   enum RenderMode
   {
-    BONES_ONLY, BONES_AND_LOCAL_FRAMES
+    BONES_ONLY, BONES_AND_LOCAL_FRAMES, BONES_AND_LOCAL_FRAMES_AND_GCM
   };
   enum JointColor
   {
@@ -63,7 +63,7 @@ protected:
 
   int m_SpotJoint;		//joint whose local coordinate framework is drawn
   int numSkeletons;
-  int timesOfDrawing;
+
   Skeleton *m_pSkeleton[MAX_SKELS];		//pointer to current skeleton
   Motion *m_pMotion[MAX_SKELS];		//pointer to current motion	
   GLuint m_BoneList[MAX_SKELS];		//display list with bones
