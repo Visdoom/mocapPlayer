@@ -27,7 +27,6 @@ Computation::Computation() {
 
 	}
 
-	identity(transform);
 
 	numOfSkeletons = 0;
 	numOfMassDist = 0;
@@ -51,14 +50,6 @@ Computation::~Computation() {
 	{
 		delete [] m_pMotionList;
 	}
-
-	for(int i = 0; i < 4; i++)
-	{
-		delete [] transform[i];
-
-	}
-	delete [] transform;
-
 
 }
 
@@ -118,6 +109,7 @@ void Computation::computeGeneralCenterOfMass() {
 	for (int i = 0; i < numOfSkeletons && i < MAX_SKELS; i++)
 	{
 		totalMass = 0.0;	//reset total Mass
+		double transform[4][4];
 		identity(transform); // reset transform matrix to identity
 
 		m_pSkeletonList[i]->cm[0] = 0.0;
@@ -145,7 +137,7 @@ void Computation::computeGeneralCenterOfMass() {
 				transform[1][3] += (MOCAP_SCALE*translation [1]);
 				transform[2][3] += (MOCAP_SCALE*translation [2]);
 
-				traverse(m_pSkeletonList[i]->getRoot(), i);
+				traverse(m_pSkeletonList[i]->getRoot(), i, transform);
 
 				m_pSkeletonList[i]->cm[0] /= (totalMass);
 				m_pSkeletonList[i]->cm[1] /= (totalMass);
@@ -252,8 +244,6 @@ void Computation::Reset(void) {
 		}
 	}
 
-	identity(transform);
-
 	numOfSkeletons = 0;
 	numOfMotions = 0;
 	numOfMassDist = 0;
@@ -286,7 +276,7 @@ void Computation::computeOtherMass(Bone * bone, double distribution){
 
 }
 
-void Computation::traverse(Bone * ptr, int skelNum){
+void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4]){
 
 		char name[256] = "";
 
@@ -298,7 +288,6 @@ void Computation::traverse(Bone * ptr, int skelNum){
 
 		double Rx[4][4], Ry[4][4], Rz[4][4], M[4][4]; //store rotation matrices.
 		double transformBackUp[4][4];
-		double temp[4][4]; //stores homogeneous transformation
 		double translation[4][4];
 
 		double C[4][4], Cinv[4][4];
@@ -307,7 +296,6 @@ void Computation::traverse(Bone * ptr, int skelNum){
 
 		//create homogeneous transformation to next frame.
 
-		identity(temp);
 		identity(M);
 		identity(translation);
 		identity(Rx);
@@ -323,90 +311,42 @@ void Computation::traverse(Bone * ptr, int skelNum){
 		matrix_mult(C, Rx, C);
 
 		// compute M
-		if(ptr->dofrx) rotationX(Rx, (ptr->rx));
-		if(ptr->dofry) rotationY(Ry, (ptr->ry));
-		if(ptr->dofrz) rotationZ(Rz, (ptr->rz));
+		rotationX(Rx, (ptr->rx));
+		rotationY(Ry, (ptr->ry));
+		rotationZ(Rz, (ptr->rz));
 
 		matrix_mult(Rz, Ry, M);
 		matrix_mult(M, Rx, M);
 
-		if(ptr->doftx) M[0][3] += ptr->tx;
-		if(ptr->dofty) M[1][3] += ptr->ty;
-		if(ptr->dofty) M[2][3] += ptr->tz;
+		M[0][3] += ptr->tx;
+		M[1][3] += ptr->ty;
+		M[2][3] += ptr->tz;
 
 		matrix_mult(transform, C, transform);
 		matrix_mult(transform, M, transform);
 
-		computeCM(ptr, skelNum);
+		computeCM(ptr, skelNum, transform);
 
-		/*
-		//translation to origin of next bone
 		translation[0][3] = ptr->dir[0]*ptr->length;
 		translation[1][3] = ptr->dir[1]*ptr->length;
 		translation[2][3] = ptr->dir[2]*ptr->length;
-
-		//backup the old transformation for ascending in hierarchy
-		matrix_copy(transform, transformBackUp);
-
-		//
-		matrix_mult(temp, ptr->rot_parent_current, temp);
-
-
-		//current rotational configuration
-
-		if(ptr->dofrx)
-			rotationX(Rx, (ptr->rx));
-
-		if(ptr->dofry)
-			rotationY(Ry, (ptr->ry));
-
-		if(ptr->dofrz)
-			rotationZ(Rz, (ptr->rz));
-
-		if(ptr->doftx)
-			translation[0][3] += ptr->tx;
-
-		if(ptr->dofty)
-			translation[1][3] += ptr->ty;
-
-		if(ptr->dofty)
-			translation[2][3] += ptr->tz;
-
-		//M = Rx*Ry*Rz
-		matrix_mult(Rz, Ry, M);
-		matrix_mult(M, Rx, M);
-
-		matrix_mult(temp, M, temp);
-
-		matrix_mult(transform, temp, transform); // multiplication of homogeneous transformation
-
-		computeCM(ptr,skelNum);
-		*/
-
-		translation[0][3] += ptr->dir[0]*ptr->length;
-		translation[1][3] += ptr->dir[1]*ptr->length;
-		translation[2][3] += ptr->dir[2]*ptr->length;
 
 		matrix_mult(transform, translation, transform);
 		matrix_transpose(C, Cinv);
 		matrix_mult(transform, Cinv, transform);
 
-		traverse(ptr->child, skelNum);
+		traverse(ptr->child, skelNum, transform);
 
-		//reset to old transformation
-		matrix_copy(transformBackUp, transform);
-
-		traverse(ptr->sibling, skelNum);
+		traverse(ptr->sibling, skelNum, transformBackUp);
 
 
 	}
-// -1.83174e-014 90 90
 
 }
 
 
 
-void Computation::computeCM(Bone * ptr, int skelNum){
+void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
 	//TODO computation of gcm of bone
 	double lcm[4], temp[4];

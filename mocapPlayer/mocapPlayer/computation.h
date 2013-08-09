@@ -53,14 +53,14 @@ private:
 	//Computes center of mass like defined in mass distribution.
 	void computeOtherMass(Bone * bone, double distribution);
 	//Traverses the Skeleton recursively (first depth than breadth)
-	void traverse(Bone * ptr, int skelNum);
+	void traverse(Bone * ptr, int skelNum, double transform[4][4]);
 	// computes global cm of Bone ptr
-	void computeCM(Bone * ptr, int skelNum);
+	void computeCM(Bone * ptr, int skelNum, double transform[4][4]);
 
 
 
 	double totalMass;
-	double transform[4][4];
+	//double transform[4][4];
 
 };
 
