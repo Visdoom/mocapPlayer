@@ -271,13 +271,7 @@ void Computation::computeOtherMass(Bone * bone, double distribution){
 
 void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4]){
 
-		char name[256] = "";
-
 	if (ptr != NULL) {
-
-		strcat(name, ptr->name);
-		strcat(name, " transform");
-		matrix_print(name, transform);
 
 		double Rx[4][4], Ry[4][4], Rz[4][4], M[4][4]; //store rotation matrices.
 		double transformBackUp[4][4];
@@ -353,7 +347,7 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
 
 	matrix_v4_mult(transform, temp, lcm);
-	printf("lcm: %f %f %f %f\n", lcm[0], lcm[1], lcm[2], lcm [3]);
+	//printf("lcm: %f %f %f %f\n", lcm[0], lcm[1], lcm[2], lcm [3]);
 
 	if(m_pMassDistributionList[skelNum]->getMass(ptr->name) != NULL) {
 		mass = m_pMassDistributionList[skelNum]->getMass(ptr->name)->mass;

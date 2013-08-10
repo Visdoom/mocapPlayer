@@ -26,6 +26,7 @@ Fl_Button * plusOne_button = (Fl_Button *)0;
 Fl_Button * minusOne_button = (Fl_Button *)0;
 Fl_Button * screenShot_button = (Fl_Button *)0;
 Fl_Light_Button * record_button = (Fl_Light_Button *)0;
+Fl_Light_Button * record_GCM_button = (Fl_Light_Button *)0;
 Fl_Value_Slider * frame_slider = (Fl_Value_Slider *)0;
 Fl_Value_Input * speedUp = (Fl_Value_Input *)0;
 
@@ -83,12 +84,17 @@ Fl_Window * make_window()
       }
 
       { 
-        Fl_Light_Button* o = record_button = new Fl_Light_Button(380, 575, 40, 25, "R");
+        Fl_Light_Button* o = record_button = new Fl_Light_Button(345, 575, 17, 25, "");
         o->callback((Fl_Callback *)record_callback, (void*)(0));
       }
 
+      {
+    	Fl_Light_Button* o = record_GCM_button = new Fl_Light_Button(375, 575, 40, 25, "Rec");
+        o->callback((Fl_Callback *)record_callback, (void*)(0)); //TODO see whether i can overload this
+      }
+
       { 
-        Fl_Button * o = screenShot_button = new Fl_Button(280, 575, 90, 25, "ScreenShot");
+        Fl_Button * o = screenShot_button = new Fl_Button(255, 575, 90, 25, "ScreenShot");
         o->callback((Fl_Callback *)saveScreenToFile_callback);
       }
 

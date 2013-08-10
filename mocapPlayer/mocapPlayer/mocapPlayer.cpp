@@ -11,7 +11,8 @@ Revision 3 - Jernej Barbic and Yili Zhao (USC), Feb, 2012
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>				
+#include <string.h>
+#include <iostream>
 #include <fstream>
 #include <cassert>
 #include <cmath>
@@ -74,6 +75,10 @@ char saveScreenToFileOnceFilename[FILENAME_MAX];
 int saveScreenToFileContinuousCount = 0;
 char saveScreenToFileContinuousFilename[FILENAME_MAX];
 SaveScreenToFileMode saveScreenToFile = SAVE_DISABLED;
+
+SwitchStatus saveGCMToFile = OFF;
+int saveGCMToFileCount = 0;
+char saveGCMToFileFilename[FILENAME_MAX];
 
 SwitchStatus useFog = OFF;
 double fogStart = 4.0;
@@ -450,12 +455,13 @@ void reload_callback(Fl_Button *button, void *)
 
 void play_callback(Fl_Button * button, void *)
 {
+	//while GCM is saved to a file, one can't manipulate the replay.
   if (button == play_button)     { minusOneButton = OFF; plusOneButton = OFF; rewindButton = OFF; playButton = ON;  rewindButton = OFF; }
-  if (button == minusOne_button) { minusOneButton = ON;  plusOneButton = OFF; rewindButton = OFF; playButton = OFF; repeatButton = OFF; }
-  if (button == plusOne_button)  { minusOneButton = OFF; plusOneButton = ON;  rewindButton = OFF; playButton = OFF; repeatButton = OFF; }
-  if (button == pause_button)    { minusOneButton = OFF; plusOneButton = OFF; rewindButton = OFF; playButton = OFF; repeatButton = OFF; } 
-  if (button == repeat_button)   { minusOneButton = OFF; plusOneButton = OFF; rewindButton = OFF; playButton = ON;  repeatButton = ON;  }
-  if (button == rewind_button)   { minusOneButton = OFF; plusOneButton = OFF; rewindButton = ON;  playButton = OFF; repeatButton = OFF; }
+  if (button == minusOne_button && saveGCMToFile == OFF) { minusOneButton = ON;  plusOneButton = OFF; rewindButton = OFF; playButton = OFF; repeatButton = OFF; }
+  if (button == plusOne_button && saveGCMToFile == OFF)  { minusOneButton = OFF; plusOneButton = ON;  rewindButton = OFF; playButton = OFF; repeatButton = OFF; }
+  if (button == pause_button && saveGCMToFile == OFF)    { minusOneButton = OFF; plusOneButton = OFF; rewindButton = OFF; playButton = OFF; repeatButton = OFF; }
+  if (button == repeat_button && saveGCMToFile == OFF)   { minusOneButton = OFF; plusOneButton = OFF; rewindButton = OFF; playButton = ON;  repeatButton = ON;  }
+  if (button == rewind_button && saveGCMToFile == OFF)   { minusOneButton = OFF; plusOneButton = OFF; rewindButton = ON;  playButton = OFF; repeatButton = OFF; }
   
   if ((previousPlayButtonStatus == OFF) && (playButton == ON))
     framesIncrementDoublePrecision = 1.0;  // Just start playing the animation, no time has been measured
@@ -468,10 +474,18 @@ void play_callback(Fl_Button * button, void *)
 //TODO integrate or replace recording gcm trajectory
 void record_callback(Fl_Light_Button * button, void * )
 {
-  if ((SwitchStatus)(record_button->value()) == OFF)
-    saveScreenToFile = SAVE_DISABLED;
-  else
-    saveScreenToFile = SAVE_CONTINUOUS;
+	if (button == record_button) {
+		 if ((SwitchStatus)(record_button->value()) == OFF)
+		    saveScreenToFile = SAVE_DISABLED;
+		  else
+		    saveScreenToFile = SAVE_CONTINUOUS;
+	}
+
+	//TODO right now you can just record screenshots or gcm
+	if (button == record_GCM_button) {
+		saveGCMToFile = (SwitchStatus) record_GCM_button->value();
+	}
+
   glwindow->redraw();
 }
 
@@ -523,6 +537,71 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
 
   pic_free(in);
 }
+
+//TODO make them more unique, including name of Motion and MassDist
+/*
+ * Creates a filename for the output file of the gcm
+ * */
+void createFileName(char * filename, int skelNum)
+{
+	strcpy(filename, "./gcm/gcm_skeleton");
+
+	char s[20];
+	sprintf(s,"%d.txt", skelNum);
+	strcat(filename,s);
+}
+
+/*
+ * Saves the current frame and the current global position of the gcm of the skeleton specified by skelNum
+ * */
+void saveGCMFile(char * filename, int skelNum) {
+
+	std::ofstream GCMfile;
+
+	if (currentFrameIndex == 1) {
+	  	GCMfile.open(filename, std::ios::trunc);
+
+	  	if (GCMfile.is_open()) { //create header for the file
+
+	  		double translation[3], rotation[3];
+	  		computer.GetSkeleton(skelNum)->GetTranslation(translation);
+	  		computer.GetSkeleton(skelNum)->GetRotationAngle(rotation);
+
+	  		GCMfile<< ":metadata" <<std::endl;
+	  		GCMfile << " " << std::endl;
+	  		GCMfile << "Skeleton: " << lastSkeletonFilename[skelNum] << std::endl;
+	  		GCMfile << "Motion: " << lastMotionFilename[skelNum] << std::endl;
+	  		GCMfile << "Mass Distribution: " << lastMassDistributionFilename[skelNum] << std::endl;
+	  		GCMfile << " " << std::endl;
+	  		GCMfile << "Inital skeleton translation: "
+	  				<< translation[0] << " "
+	  				<< translation[1] << " "
+	  				<< translation[2] << std::endl;
+	  		GCMfile << "Initial skeleton rotation: "
+	  				<< rotation[0] << " "
+	  				<< rotation[1] << " "
+	  				<< rotation[2] << std::endl;
+	  		GCMfile << " " << std::endl;
+	  		GCMfile << ":data" << std::endl;
+	  	}
+	  	GCMfile.close();
+	 }
+
+	GCMfile.open(filename, std::ios::app);
+
+	if(GCMfile.is_open()) {
+		GCMfile	<< currentFrameIndex << std::endl;
+		GCMfile	<< "gcm: "
+				<< computer.GetSkeleton(skelNum)->cm[0] << " "
+				<< computer.GetSkeleton(skelNum)->cm[1] << " "
+	    		<< computer.GetSkeleton(skelNum)->cm[2] << std::endl;
+	    } else
+	     	printf("Opening GCM file failed.");
+
+	GCMfile.close();
+}
+
+
 void idle(void*)
 {
   if (previousPlayButtonStatus == ON)  
@@ -569,7 +648,6 @@ void idle(void*)
   {
     if (saveScreenToFile == SAVE_CONTINUOUS)
     {
-    	//TODO change into saving gcm
       saveFileTimeCounter.StartCounter();
       CreateScreenFilename(SAVE_CONTINUOUS, saveScreenToFileContinuousCount, saveScreenToFileContinuousFilename);
       saveScreenshot(640, 480, saveScreenToFileContinuousFilename);
@@ -579,7 +657,7 @@ void idle(void*)
       saveFileTimeCost = saveFileTimeCounter.GetElapsedTime();
     }
 
-    if (saveScreenToFile == SAVE_CONTINUOUS)
+    if (saveScreenToFile == SAVE_CONTINUOUS || saveGCMToFile == ON)
     {
       currentFrameIndexDoublePrecision += 1.0;
     }
@@ -617,6 +695,16 @@ void idle(void*)
     	computer.computeGeneralCenterOfMass();
     }
 
+    if(saveGCMToFile == ON ) {
+
+    	for (int i = 0; i < computer.numOfSkeletons; i++) {
+
+    		char filename[FILENAME_MAX];
+    		createFileName(filename, i);
+    		saveGCMFile(filename, i);
+    	}
+     }
+
     frame_slider->value((double) currentFrameIndex + 1);
   }  // if(playButton == ON)
 
@@ -635,7 +723,7 @@ void idle(void*)
 		computer.computeGeneralCenterOfMass();
 	}
 
-      if (saveScreenToFile == SAVE_CONTINUOUS)
+    if (saveScreenToFile == SAVE_CONTINUOUS)
       {
         CreateScreenFilename(SAVE_CONTINUOUS, saveScreenToFileContinuousCount, saveScreenToFileContinuousFilename);
         saveScreenshot(640, 480, saveScreenToFileContinuousFilename);
@@ -687,8 +775,10 @@ void fslider_callback(Fl_Value_Slider *slider, long val)
   rewindButton = OFF; 
   playButton = OFF; 
   repeatButton = OFF;
+  saveGCMToFile = OFF;
+
   SetSkeletonsToSpecifiedFrame(currentFrameIndex);
-  //TODO
+
   if (compute == ON) {
 	computer.computeGeneralCenterOfMass();
   }

@@ -1,5 +1,5 @@
 :dist 
-  other
+  cylinder
 :massdata
   begin
 	id 1
@@ -100,7 +100,7 @@
   begin
 	id 17
 	name lclavicle
-	mass 1.0
+	mass 0.0
 	dist 1.0
   end
   begin
@@ -178,7 +178,7 @@
   begin
 	id 30
 	name rthumb
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
 :end

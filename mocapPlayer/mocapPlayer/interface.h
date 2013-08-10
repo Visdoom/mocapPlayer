@@ -44,6 +44,8 @@ extern void saveScreenToFile_callback(Fl_Button *, void *);
 extern Fl_Light_Button * record_button;
 extern void record_callback(Fl_Light_Button *, void *);
 
+extern Fl_Light_Button * record_GCM_button;
+
 extern Fl_Value_Slider * frame_slider;
 extern void fslider_callback(Fl_Value_Slider * , long);
 
