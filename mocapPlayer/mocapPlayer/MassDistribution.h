@@ -16,7 +16,28 @@ struct Mass{
 	char segName[256]; // name of the segment the mass is assigned to
 	double mass; // mass of the segment
 	double distribution; //way of mass distribution. 1.0 means equal, other values indicate the relative position of the center of mass.
-	MassDistributionType type;
+	MassDistributionType type; //type of the solid representing the segment
+
+	/*the stadium solid is the most complex solid, to define it you need the four following parameter and the length of the segment.
+	 * The cylinder, cone, point or other can be obtained by setting particular members equal to 0.*/
+
+	/*                                 ___
+	 *    stadium boundary volume:    (___)
+	 *        ___ ___
+	 *     r{ ___|___
+	 *        ___|___
+	 *         t   t
+	 *
+	 *         --> perimeter is 4t + 2pi*r
+	 * */
+
+
+	double r0; // radius of the semi-circle of the lower boundary stadium.
+	double r1; // radius of the semi-circle of the upper boundary stadium.
+	double t0; // half of the distance separating semi-circles of the lower boundary stadium. With type set to cylinder, cone or point it's equal to zero
+	double t1; // half of the distance separating semi-circles of the upper boundary stadium. With type set to cylinder, cone or point it's equal to zero
+
+	double Ixx, Ixy,Ixz,Iyy,Iyz,Izz; //values of the inertia tensor. Either computed after loading in .amd file or predefined in .amd file using type = OTHER.
 };
 
 

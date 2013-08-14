@@ -19,6 +19,12 @@ MassDistribution::MassDistribution(char *amd_filename) {
 	m_pMassList[0].distribution = 0;
 	m_pMassList[0].type = POINT;
 
+	m_pMassList[0].r0 = 0.; m_pMassList[0].t0 = 0.;
+	m_pMassList[0].r1 = 0.; m_pMassList[0].t1 = 0.;
+
+	m_pMassList[0].Ixx = 0.; m_pMassList[0].Ixy = 0.; m_pMassList[0].Ixz = 0.;
+	m_pMassList[0].Iyy = 0.; m_pMassList[0].Iyz = 0.; m_pMassList[0].Izz = 0.;
+
 
 	int code = readAMDfile(amd_filename);
 
@@ -97,9 +103,9 @@ int MassDistribution::readAMDfile(char *amd_filename)
 		return -1;
 
 	char str[2048], keyword[256];
-	MassDistributionType type;
+	MassDistributionType type = POINT;
 
-	//read in mass distribution type
+	//read in type of geometrical solid representing the segment
 	while (1)
 	  {
 	    is.getline(str, 2048);
@@ -126,9 +132,19 @@ int MassDistribution::readAMDfile(char *amd_filename)
 	 bool done = false;
 	 for (int i = 0; (!done) && (i < MAX_BONES_IN_ASF_FILE); i++)
 	 {
+		 //initializing mass distribution object
 		 m_pMassList[i].idx = 0;
 		 m_pMassList[i].mass = 0;
 		 m_pMassList[i].distribution = 0;
+
+		 m_pMassList[i].r0 = 0.; m_pMassList[i].t0 = 0.;
+		 m_pMassList[i].r1 = 0.; m_pMassList[i].t1 = 0.;
+
+		 m_pMassList[i].Ixx = 0.; m_pMassList[i].Ixy = 0.; m_pMassList[i].Ixz = 0.;
+		 m_pMassList[i].Iyy = 0.; m_pMassList[i].Iyz = 0.; m_pMassList[i].Izz = 0.;
+
+
+
 		 NUM_BONES_IN_AMD_FILE++;
 
 		while(1)
