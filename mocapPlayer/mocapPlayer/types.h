@@ -30,7 +30,7 @@ enum ErrorType
 
 enum MassDistributionType
 {
-	POINT, CYLINDER, CONE, STADIUM, OTHER
+	POINT, CYLINDER, TRUNC_CONE, STADIUM, OTHER
 };
 
 

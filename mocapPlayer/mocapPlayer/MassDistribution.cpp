@@ -51,18 +51,15 @@ void MassDistribution::print() {
 
 		for (int i = 0; i < NUM_BONES_IN_AMD_FILE; i++) {
 
-			if (m_pMassList[i].type == POINT)
-			{
-				t = 'p';
-			}
-			if (m_pMassList[i].type == CYLINDER)
-			{
-				t = 'c';
-			}
-			if (m_pMassList[i].type == OTHER)
-			{
-				t = 'o';
-			}
+			if (m_pMassList[i].type == POINT) t = 'p';
+
+			if (m_pMassList[i].type == CYLINDER) t = 'c';
+
+			if (m_pMassList[i].type == OTHER) t = 'o';
+
+			if(m_pMassList[i].type == TRUNC_CONE) t = 't';
+
+			if(m_pMassList[i].type == STADIUM) t = 's';
 
 			 printf("bone %s has type %c \n",m_pMassList[i].segName, t);
 			}
@@ -103,27 +100,6 @@ int MassDistribution::readAMDfile(char *amd_filename)
 		return -1;
 
 	char str[2048], keyword[256];
-	MassDistributionType type = POINT;
-
-	//read in type of geometrical solid representing the segment
-	while (1)
-	  {
-	    is.getline(str, 2048);
-	    removeCR(str);
-	    sscanf(str, "%s", keyword);
-	    if (strcmp(keyword, ":massdata") == 0)
-	      break;
-
-	    if(strcmp(keyword, "point") == 0)
-	      	type = POINT;
-
-	    if(strcmp(keyword, "cylinder") == 0)
-	    	      	type = CYLINDER;
-
-	    if(strcmp(keyword, "other") == 0)
-	    	      	type = OTHER;
-
-	  }
 
 	//read mass distribution data
 	 is.getline(str, 2048);
@@ -165,25 +141,54 @@ int MassDistribution::readAMDfile(char *amd_filename)
 
 
 			 // id of the mass distribution
-			 if(strcmp(keyword, "id") == 0)
-				 m_pMassList[i].idx = NUM_BONES_IN_AMD_FILE;
+			 if(strcmp(keyword, "id") == 0) m_pMassList[i].idx = NUM_BONES_IN_AMD_FILE;
 
 
 			 // name of the assigned segment
-			 if(strcmp(keyword, "name") == 0)
-				 sscanf(str, "%s %s", keyword, m_pMassList[i].segName);
+			 if(strcmp(keyword, "name") == 0)sscanf(str, "%s %s", keyword, m_pMassList[i].segName);
 
 
 			  // mass of the segment
-			 if(strcmp(keyword, "mass") == 0)
-				 sscanf(str, "%s %lf", keyword, &m_pMassList[i].mass);
+			 if(strcmp(keyword, "mass") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].mass);
 
 			 // mass distribution of the segment.
 			 // 1.0 means equally distributed
-			 if(strcmp(keyword, "dist") == 0)
-				 sscanf(str, "%s %lf", keyword, &m_pMassList[i].distribution);
+			 if(strcmp(keyword, "dist") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].distribution);
 
-			 m_pMassList[i].type = type;
+
+			 //type of solid representing the segment
+			 if(strcmp(keyword, "point") == 0) m_pMassList[i].type = POINT;
+
+			 if(strcmp(keyword, "cylinder") == 0) m_pMassList[i].type = CYLINDER;
+
+			 if(strcmp(keyword, "cone") == 0) m_pMassList[i].type = TRUNC_CONE;
+
+			 if(strcmp(keyword, "stadium") == 0) m_pMassList[i].type = STADIUM;
+
+			 if(strcmp(keyword, "other") == 0) m_pMassList[i].type = OTHER;
+
+			 //parameters of solid
+			 if(strcmp(keyword, "r0") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].r0);
+
+			 if(strcmp(keyword, "t0") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].t0);
+
+			 if(strcmp(keyword, "r1") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].r1);
+
+			 if(strcmp(keyword, "t1") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].t1);
+
+
+			 //inertia tensor values
+			 if(strcmp(keyword, "Ixx") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Ixx);
+
+			 if(strcmp(keyword, "Ixy") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Ixy);
+
+        	 if(strcmp(keyword, "Ixz") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Ixz);
+
+			 if(strcmp(keyword, "Iyy") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Iyy);
+
+			 if(strcmp(keyword, "Iyz") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Iyz);
+
+			 if(strcmp(keyword, "Izz") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].Izz);
 
 		 }
 	 }
