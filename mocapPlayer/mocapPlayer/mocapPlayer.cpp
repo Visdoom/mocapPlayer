@@ -419,6 +419,7 @@ void load_callback(Fl_Button *button, void *)
 				computer.LoadMassDistribution(pMassDistribution);
 				computer.computeLocalCenterOfMass();
 				computer.computeGeneralCenterOfMass();
+				computer.computeAngularMomentum();
 				glwindow->redraw();
 
 			}
@@ -471,7 +472,6 @@ void play_callback(Fl_Button * button, void *)
        saveScreenToFile = SAVE_DISABLED;
 }
 
-//TODO integrate or replace recording gcm trajectory
 void record_callback(Fl_Light_Button * button, void * )
 {
 	if (button == record_button) {
@@ -481,7 +481,6 @@ void record_callback(Fl_Light_Button * button, void * )
 		    saveScreenToFile = SAVE_CONTINUOUS;
 	}
 
-	//TODO right now you can just record screenshots or gcm
 	if (button == record_GCM_button) {
 		saveGCMToFile = (SwitchStatus) record_GCM_button->value();
 	}
@@ -538,7 +537,7 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
   pic_free(in);
 }
 
-//TODO make them more unique, including name of Motion and MassDist
+//TODO make them more unique, include date?
 /*
  * Creates a filename for the output file of the gcm
  * */
@@ -635,6 +634,7 @@ void idle(void*)
         if(compute == ON)
         {
         	computer.computeGeneralCenterOfMass();
+        	computer.computeAngularMomentum();
         }
       }
     }
@@ -693,6 +693,7 @@ void idle(void*)
 
     if(compute == ON) {
     	computer.computeGeneralCenterOfMass();
+    	computer.computeAngularMomentum();
     }
 
     if(saveGCMToFile == ON ) {
@@ -721,6 +722,7 @@ void idle(void*)
 	if (compute == ON)
 	{
 		computer.computeGeneralCenterOfMass();
+		computer.computeAngularMomentum();
 	}
 
     if (saveScreenToFile == SAVE_CONTINUOUS)
@@ -746,6 +748,7 @@ void idle(void*)
 
 	if (compute == ON) {
 		computer.computeGeneralCenterOfMass();
+		computer.computeAngularMomentum();
 	}
 
       if (saveScreenToFile == SAVE_CONTINUOUS)

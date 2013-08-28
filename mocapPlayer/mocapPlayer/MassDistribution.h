@@ -32,10 +32,8 @@ struct Mass{
 	 * */
 
 
-	double r0; // radius of the semi-circle of the lower boundary stadium.
-	double r1; // radius of the semi-circle of the upper boundary stadium.
-	double t0; // half of the distance separating semi-circles of the lower boundary stadium. With type set to cylinder, cone or point it's equal to zero
-	double t1; // half of the distance separating semi-circles of the upper boundary stadium. With type set to cylinder, cone or point it's equal to zero
+	double r0; // radius of the semi-circle of the boundary stadium.
+	double t0; // half of the distance separating semi-circles of the boundary stadium. With type set to cylinder or point it's equal to zero
 
 	double Ixx, Ixy,Ixz,Iyy,Iyz,Izz; //values of the inertia tensor. Either computed after loading in .amd file or predefined in .amd file using type = OTHER.
 };

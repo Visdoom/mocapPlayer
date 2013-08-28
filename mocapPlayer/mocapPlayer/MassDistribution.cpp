@@ -20,7 +20,6 @@ MassDistribution::MassDistribution(char *amd_filename) {
 	m_pMassList[0].type = POINT;
 
 	m_pMassList[0].r0 = 0.; m_pMassList[0].t0 = 0.;
-	m_pMassList[0].r1 = 0.; m_pMassList[0].t1 = 0.;
 
 	m_pMassList[0].Ixx = 0.; m_pMassList[0].Ixy = 0.; m_pMassList[0].Ixz = 0.;
 	m_pMassList[0].Iyy = 0.; m_pMassList[0].Iyz = 0.; m_pMassList[0].Izz = 0.;
@@ -56,8 +55,6 @@ void MassDistribution::print() {
 			if (m_pMassList[i].type == CYLINDER) t = 'c';
 
 			if (m_pMassList[i].type == OTHER) t = 'o';
-
-			if(m_pMassList[i].type == TRUNC_CONE) t = 't';
 
 			if(m_pMassList[i].type == STADIUM) t = 's';
 
@@ -114,7 +111,6 @@ int MassDistribution::readAMDfile(char *amd_filename)
 		 m_pMassList[i].distribution = 0;
 
 		 m_pMassList[i].r0 = 0.; m_pMassList[i].t0 = 0.;
-		 m_pMassList[i].r1 = 0.; m_pMassList[i].t1 = 0.;
 
 		 m_pMassList[i].Ixx = 0.; m_pMassList[i].Ixy = 0.; m_pMassList[i].Ixz = 0.;
 		 m_pMassList[i].Iyy = 0.; m_pMassList[i].Iyz = 0.; m_pMassList[i].Izz = 0.;
@@ -161,8 +157,6 @@ int MassDistribution::readAMDfile(char *amd_filename)
 
 			 if(strcmp(keyword, "cylinder") == 0) m_pMassList[i].type = CYLINDER;
 
-			 if(strcmp(keyword, "cone") == 0) m_pMassList[i].type = TRUNC_CONE;
-
 			 if(strcmp(keyword, "stadium") == 0) m_pMassList[i].type = STADIUM;
 
 			 if(strcmp(keyword, "other") == 0) m_pMassList[i].type = OTHER;
@@ -171,10 +165,6 @@ int MassDistribution::readAMDfile(char *amd_filename)
 			 if(strcmp(keyword, "r0") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].r0);
 
 			 if(strcmp(keyword, "t0") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].t0);
-
-			 if(strcmp(keyword, "r1") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].r1);
-
-			 if(strcmp(keyword, "t1") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].t1);
 
 
 			 //inertia tensor values

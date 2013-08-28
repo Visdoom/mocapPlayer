@@ -74,15 +74,12 @@ void Computation::computeLocalCenterOfMass(){
 
 					type = m_pMassDistributionList[i]->m_pMassList[j].type;
 					mass = m_pMassDistributionList[i]->m_pMassList[j];
-					if (type == POINT)
-					{
-						computePointMass(m_pSkeletonList[i]->getBone(bone,j)); //computes center of mass assuming a point mass
+					if (type == POINT) computeCMOfPointMass(m_pSkeletonList[i]->getBone(bone,j)); //computes center of mass assuming a point mass
 
-					} else if (type == CYLINDER) {
-						computeCylinderMass(m_pSkeletonList[i]->getBone(bone, j)); // computes center of mass assuming a solid cylinder
-					} else if (type == OTHER) {
-						computeOtherMass(m_pSkeletonList[i]->getBone(bone, j), mass.distribution); // computes center of mass how it is described in mass distribution
-					}
+					if (type == CYLINDER || STADIUM) computeCMOfCylinderMass(m_pSkeletonList[i]->getBone(bone, j)); // computes center of mass assuming a solid cylinder
+
+					if (type == OTHER) computeCMOfOtherMass(m_pSkeletonList[i]->getBone(bone, j), mass.distribution); // computes center of mass how it is described in mass distribution
+
 				}
 
 
@@ -90,7 +87,7 @@ void Computation::computeLocalCenterOfMass(){
 
 				for(int j=0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++)
 				{
-					computePointMass(m_pSkeletonList[i]->getBone(bone, j));
+					computeCMOfPointMass(m_pSkeletonList[i]->getBone(bone, j));
 				}
 			}
 
@@ -141,14 +138,134 @@ void Computation::computeGeneralCenterOfMass() {
 			m_pSkeletonList[i]->cm[1] /= (totalMass);
 			m_pSkeletonList[i]->cm[2] /= (totalMass);
 
+			m_pSkeletonList[i]->totalMass = totalMass;
 
-			printf("skeleton[%d]->cm: %f, %f, %f\n", i, m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2]);
+			//printf("skeleton[%d]->cm: %f, %f, %f\n", i, m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2]);
 
 		} else {
 			printf("Entry of m_pMotionList[%d] is empty.\n", i);
 			//exit(0);
 		}
 
+	}
+
+
+
+}
+
+
+void Computation::computeAngularMomentum() {
+
+	double transform[4][4];
+	double translation[3], rotation[3];
+
+	double R[4][4],Rx[4][4],Ry[4][4],Rz[4][4];
+
+	double h[3] = {0,0,0};
+	int numOfBones = 0;
+
+	double mass;
+	Bone * bone = NULL;
+
+	if (m_pSkeletonList != NULL) {
+
+		for (int i = 0; i < numOfSkeletons && i < MAX_SKELS; i++)
+		{
+			if (m_pMassDistributionList[i] != NULL) {
+
+				numOfBones = m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
+
+				double relPosition_old[numOfBones][3], velocity[numOfBones][3];
+				double gcm[3];
+
+				identity(transform);
+
+				gcm[0] = m_pSkeletonList[i]->cm[0];
+				gcm[1] = m_pSkeletonList[i]->cm[1];
+				gcm[2] = m_pSkeletonList[i]->cm[2];
+
+				m_pSkeletonList[i]->H[0] = 0;
+				m_pSkeletonList[i]->H[1] = 0;
+				m_pSkeletonList[i]->H[2] = 0;
+
+				m_pSkeletonList[i]->GetTranslation(translation);
+				m_pSkeletonList[i]->GetRotationAngle(rotation);
+
+				//creating Rotation matrix for initial rotation of Skeleton
+				rotationX(Rx, rotation[0]);
+				rotationY(Ry, rotation[1]);
+				rotationZ(Rz, rotation[2]);
+
+				matrix_mult(Rz, Ry, R);
+				matrix_mult(R, Rx, R);
+
+				matrix_mult(transform, R, transform);
+
+				transform[0][3] += (MOCAP_SCALE*translation [0]);
+				transform[1][3] += (MOCAP_SCALE*translation [1]);
+				transform[2][3] += (MOCAP_SCALE*translation [2]);
+
+
+				//r_i^cm(new) = r_i - r_cm
+				//v_i^cm = r_i^cm(new) - r_i^cm(old)
+
+
+				//store r_i^cm(old)
+				for(int j = 0; j < numOfBones; j++)
+				{
+					bone = m_pSkeletonList[i]->getBone(m_pSkeletonList[i]->getRoot(), j);
+
+					relPosition_old[j][0] = bone->r_i_cm[0];
+					relPosition_old[j][1] = bone->r_i_cm[1];
+					relPosition_old[j][2] = bone->r_i_cm[2];
+				}
+
+				//compute current r_i
+				updatePosition(m_pSkeletonList[i]->getRoot(), transform);
+
+				//compute velocity as v_i^cm = r_i - r_cm - r_i^cm(old)
+				for (int j = 0; j < numOfBones; j++)
+				{
+
+					printf("2. loop #%d\n", j);
+
+					bone = m_pSkeletonList[i]->getBone(m_pSkeletonList[i]->getRoot(), j);
+
+					printf("Bone name: %s\n", bone->name);
+					//mass = m_pMassDistributionList[i]->getMass(bone->name)->mass;
+
+					velocity[j][0] = bone->r_i[0] - gcm[0] - relPosition_old[j][0];
+					velocity[j][1] = bone->r_i[1] - gcm[1] - relPosition_old[j][1];
+					velocity[j][2] = bone->r_i[2] - gcm[2] - relPosition_old[j][2];
+
+					printf("velocity[%d][0] = %f ", j, velocity[j][0]);
+					printf("velocity[%d][1] = %f ", j, velocity[j][1]);
+					printf("velocity[%d][2] = %f \n", j, velocity[j][2]);
+
+					//printf("mass: %f\n",mass);
+					//mj*vj
+					//velocity[j][0] *= mass;
+					//velocity[j][1] *= mass;
+					//velocity[j][2] *= mass;
+
+					printf("velocity[%d][0] = %f ", j, velocity[j][0]);
+					printf("velocity[%d][1] = %f ", j, velocity[j][1]);
+					printf("velocity[%d][2] = %f \n", j, velocity[j][2]);
+
+					//rj x (mj*vj)
+					v3_cross(relPosition_old[j], velocity[j], h);
+
+					//H = sum(rj x (mj*vj))
+					m_pSkeletonList[i]->H[0] += h[0];
+					m_pSkeletonList[i]->H[1] += h[1];
+					m_pSkeletonList[i]->H[2] += h[2];
+				}
+
+
+			}
+
+
+		}
 	}
 
 
@@ -247,21 +364,22 @@ void Computation::Reset(void) {
 
 //---------------------------------------------------------------------//
 
-void Computation::computePointMass(Bone * bone) {
+void Computation::computeCMOfPointMass(Bone * bone) {
 
 	bone->cm[0] = bone->dir[0]*bone->length*0.5;
 	bone->cm[1] = bone->dir[1]*bone->length*0.5;
 	bone->cm[2] = bone->dir[2]*bone->length*0.5;
 }
 
-void Computation::computeCylinderMass(Bone * bone){
+void Computation::computeCMOfCylinderMass(Bone * bone){
 
 	bone->cm[0] = bone->dir[0]*bone->length*0.5;
 	bone->cm[1] = bone->dir[1]*bone->length*0.5;
 	bone->cm[2] = bone->dir[2]*bone->length*0.5;
 }
 
-void Computation::computeOtherMass(Bone * bone, double distribution){
+
+void Computation::computeCMOfOtherMass(Bone * bone, double distribution){
 
 	bone->cm[0] = bone->dir[0]*bone->length*distribution;
 	bone->cm[1] = bone->dir[1]*bone->length*distribution;
@@ -335,7 +453,7 @@ void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4]){
 
 void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
-	//TODO computation of gcm of bone
+	//computation of gcm of bone
 	double lcm[4], temp[4];
 	int mass = 0;
 
@@ -359,3 +477,78 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
 }
 
+void Computation::updatePosition(Bone * ptr, double transform[4][4]) {
+
+	if (ptr != NULL) {
+
+			double Rx[4][4], Ry[4][4], Rz[4][4], M[4][4]; //store rotation matrices.
+			double transformBackUp[4][4];
+			double translation[4][4];
+
+			double C[4][4], Cinv[4][4];
+
+			matrix_copy(transform, transformBackUp);
+
+			//create homogeneous transformation to next frame.
+
+			identity(M);
+			identity(translation);
+			identity(Rx);
+			identity(Ry);
+			identity(Rz);
+
+			// compute C
+			rotationZ(Rz, ptr->axis_z);
+			rotationY(Ry, ptr->axis_y);
+			rotationX(Rx, ptr->axis_x);
+
+			matrix_mult(Rz, Ry, C);
+			matrix_mult(C, Rx, C);
+
+			// compute M
+			rotationX(Rx, (ptr->rx));
+			rotationY(Ry, (ptr->ry));
+			rotationZ(Rz, (ptr->rz));
+
+			matrix_mult(Rz, Ry, M);
+			matrix_mult(M, Rx, M);
+
+			M[0][3] += ptr->tx;
+			M[1][3] += ptr->ty;
+			M[2][3] += ptr->tz;
+
+			matrix_mult(transform, C, transform);
+			matrix_mult(transform, M, transform);
+
+			computePos(ptr, transform);
+
+			translation[0][3] = ptr->dir[0]*ptr->length;
+			translation[1][3] = ptr->dir[1]*ptr->length;
+			translation[2][3] = ptr->dir[2]*ptr->length;
+
+			matrix_mult(transform, translation, transform);
+			matrix_transpose(C, Cinv);
+			matrix_mult(transform, Cinv, transform);
+
+			updatePosition(ptr->child, transform);
+
+			updatePosition(ptr->sibling, transformBackUp);
+		}
+}
+
+void Computation::computePos(Bone * ptr, double transform[4][4]) {
+
+	printf("compute Position\n");
+	double lpos[4], temp[4];
+
+	temp[0] = ptr->cm[0];
+	temp[1] = ptr->cm[1];
+	temp[2] = ptr->cm[2];
+	temp[3] = 1;
+
+	matrix_v4_mult(transform, temp, lpos);
+
+	ptr->r_i[0] = lpos[0];
+	ptr->r_i[1] = lpos[1];
+	ptr->r_i[2] = lpos[2];
+}

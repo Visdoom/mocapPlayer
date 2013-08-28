@@ -30,6 +30,8 @@ struct Bone
   double length; // Bone length  
 
   double cm[3]; //vector describing the position of center of mass of this bone in its local coordinates
+  double r_i_cm[3]; //stores position of local cm at current time frame in respect to gcm.
+  double r_i[3]; //stores global position of cm at current time frame
 
   double axis_x, axis_y, axis_z;// orientation of each bone's local coordinate in respect to the global coordinate system
   //system as specified in ASF file (axis field)
@@ -100,6 +102,9 @@ public:
   Bone* getBone(Bone *ptr, int bIndex);
 
   double cm[3]; //Center of mass of the whole rigid body system giving the current configuration.
+  double H[3]; //Angular momentum of the center of mass about root.
+
+  double totalMass; //stores the skeletons total mass.
 
   int NUM_BONES_IN_ASF_FILE;
 protected:

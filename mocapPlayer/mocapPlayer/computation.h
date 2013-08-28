@@ -23,6 +23,9 @@ public:
 	// The way of computation is defined by MassDistributionType
 	void computeGeneralCenterOfMass();
 
+	//Computes the angular momentum about root
+	void computeAngularMomentum();
+
 	//Adds Motion m to m_pMotionList.
 	void LoadMotion(Motion * m);
 
@@ -47,16 +50,20 @@ public:
 
 private:
 	//Computes center of mass of point mass
-	void computePointMass(Bone * bone);
+	void computeCMOfPointMass(Bone * bone);
 	//Computes center of mass of solid cylinder
-	void computeCylinderMass(Bone * bone);
+	void computeCMOfCylinderMass(Bone * bone);
 	//Computes center of mass like defined in mass distribution.
-	void computeOtherMass(Bone * bone, double distribution);
+	void computeCMOfOtherMass(Bone * bone, double distribution);
 	//Traverses the Skeleton recursively (first depth than breadth)
 	void traverse(Bone * ptr, int skelNum, double transform[4][4]);
 	// computes global cm of Bone ptr
 	void computeCM(Bone * ptr, int skelNum, double transform[4][4]);
 
+	//calculates position of all bones in root cs and stores it in member velocity.
+	void updatePosition(Bone * ptr, double transform[4][4]);
+
+	void computePos(Bone * ptr, double transform[4][4]);
 
 
 	double totalMass;

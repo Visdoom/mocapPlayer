@@ -1,4 +1,5 @@
-:dist point
+:dist 
+point
 :massdata
   begin
 	id 1

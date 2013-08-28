@@ -114,6 +114,8 @@ int Skeleton::readASFfile(char* asf_filename, double scale)
     m_pBoneList[i].doftl = 0;
     m_pBoneList[i].sibling = NULL; 
     m_pBoneList[i].child = NULL;
+    m_pBoneList[i].r_i_cm[0] = 0; m_pBoneList[i].r_i_cm[1] = 0; m_pBoneList[i].r_i_cm[2] = 0;
+    m_pBoneList[i].r_i[0] = 0; m_pBoneList[i].r_i[1] = 0; m_pBoneList[i].r_i[2] = 0;
     NUM_BONES_IN_ASF_FILE++;
     MOV_BONES_IN_ASF_FILE++;
     while(1)
@@ -541,6 +543,9 @@ Skeleton::Skeleton(char *asf_filename, double scale)
   NUM_BONES_IN_ASF_FILE = 1;
   MOV_BONES_IN_ASF_FILE = 1;
   cm[0] = 0; cm[1] = 0; cm[2] = 0;
+  H[0] = 0; H[1] = 0; H[2] = 0;
+
+  totalMass = 0.0;
 
   m_pBoneList[0].dofo[0] = 4;
   m_pBoneList[0].dofo[1] = 5;
@@ -556,6 +561,8 @@ Skeleton::Skeleton(char *asf_filename, double scale)
   m_pBoneList[0].child = NULL; 
   m_pBoneList[0].dir[0] = 0; m_pBoneList[0].dir[1] = 0.; m_pBoneList[0].dir[2] = 0.;
   m_pBoneList[0].cm[0] = 0; m_pBoneList[0].cm[1] = 0; m_pBoneList[0].cm[2] = 0;
+  m_pBoneList[0].r_i_cm[0] = 0; m_pBoneList[0].r_i_cm[1] = 0; m_pBoneList[0].r_i_cm[2] = 0;
+  m_pBoneList[0].r_i[0] = 0; m_pBoneList[0].r_i[1] = 0; m_pBoneList[0].r_i[2] = 0;
   m_pBoneList[0].axis_x = 0; m_pBoneList[0].axis_y = 0.; m_pBoneList[0].axis_z = 0.;
   m_pBoneList[0].length = 0.05;
   m_pBoneList[0].dof = 6;
