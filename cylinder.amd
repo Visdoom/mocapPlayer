@@ -7,6 +7,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder 
+	r0 1.0
   end
   begin
 	id 2
@@ -14,6 +15,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 3
@@ -21,6 +23,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 4
@@ -28,6 +31,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 5
@@ -35,6 +39,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 6
@@ -42,6 +47,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 7
@@ -49,6 +55,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 8
@@ -56,6 +63,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 9
@@ -63,6 +71,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 10
@@ -70,6 +79,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 11
@@ -77,6 +87,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 12
@@ -84,6 +95,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 13
@@ -91,6 +103,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 14
@@ -98,6 +111,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 15
@@ -105,6 +119,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 16
@@ -112,6 +127,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 17
@@ -119,6 +135,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 18
@@ -126,6 +143,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 19
@@ -133,6 +151,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 20
@@ -140,6 +159,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 21
@@ -147,6 +167,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 22
@@ -154,6 +175,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 23
@@ -161,6 +183,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 24
@@ -168,6 +191,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 25
@@ -175,6 +199,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 26
@@ -182,6 +207,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 27
@@ -189,6 +215,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 28
@@ -196,6 +223,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 29
@@ -203,6 +231,7 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
   begin
 	id 30
@@ -210,5 +239,6 @@
 	mass 1.0
 	dist 1.0
 	type cylinder
+	r0 1.0
   end
 :end

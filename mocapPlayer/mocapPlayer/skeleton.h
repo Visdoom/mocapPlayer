@@ -30,7 +30,6 @@ struct Bone
   double length; // Bone length  
 
   double cm[3]; //vector describing the position of center of mass of this bone in its local coordinates
-  double r_i_cm[3]; //stores position of local cm at current time frame in respect to gcm.
   double r_i[3]; //stores global position of cm at current time frame
 
   double axis_x, axis_y, axis_z;// orientation of each bone's local coordinate in respect to the global coordinate system
@@ -55,6 +54,9 @@ struct Bone
   double tx,ty,tz;
   double tl;
   int dofo[8];
+
+  //stores the previous rotational configuration for angular velocity calculation
+  double rx_prev, ry_prev, rz_prev;
 };
 
 
@@ -102,6 +104,7 @@ public:
   Bone* getBone(Bone *ptr, int bIndex);
 
   double cm[3]; //Center of mass of the whole rigid body system giving the current configuration.
+  double cm_prev[3]; //stores previous position of gcm
   double H[3]; //Angular momentum of the center of mass about root.
 
   double totalMass; //stores the skeletons total mass.

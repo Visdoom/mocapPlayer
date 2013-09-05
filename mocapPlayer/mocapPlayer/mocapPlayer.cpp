@@ -418,8 +418,11 @@ void load_callback(Fl_Button *button, void *)
 
 				computer.LoadMassDistribution(pMassDistribution);
 				computer.computeLocalCenterOfMass();
+				computer.computeInertiaTensor();
+
 				computer.computeGeneralCenterOfMass();
 				computer.computeAngularMomentum();
+
 				glwindow->redraw();
 
 			}
@@ -692,8 +695,10 @@ void idle(void*)
     SetSkeletonsToSpecifiedFrame(currentFrameIndex);
 
     if(compute == ON) {
+
     	computer.computeGeneralCenterOfMass();
     	computer.computeAngularMomentum();
+
     }
 
     if(saveGCMToFile == ON ) {
@@ -723,6 +728,7 @@ void idle(void*)
 	{
 		computer.computeGeneralCenterOfMass();
 		computer.computeAngularMomentum();
+
 	}
 
     if (saveScreenToFile == SAVE_CONTINUOUS)
@@ -1193,6 +1199,9 @@ int main(int argc, char **argv)
     	  lastMassDistribution++;
 
     	  computer.LoadMassDistribution(pMassDistribution);
+    	  computer.computeLocalCenterOfMass();
+    	  computer.computeGeneralCenterOfMass();
+    	  computer.computeInertiaTensor();
       }
     }
     else

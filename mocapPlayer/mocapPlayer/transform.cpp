@@ -187,6 +187,28 @@ void matrix_v4_mult(double a[][4], double v[4], double r[4])
 		r[i] = tmp[i];
 	}
 }
+
+void matrix3_v3_mult(double a[3][3], double v[3], double r[3])
+{
+	double tmp[3];
+
+	for (int i = 0; i < 3; i++)
+	{
+		tmp[i] = 0;
+
+		for(int j = 0; j < 3; j++)
+		{
+			tmp[i] += a[i][j]*v[j];
+		}
+	}
+
+	for(int i = 0; i < 3; i++)
+	{
+		r[i] = tmp[i];
+	}
+}
+
+
 /*
  * Negates all entries in a
  * Input: Matrix a

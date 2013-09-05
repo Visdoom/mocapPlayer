@@ -19,6 +19,8 @@ public:
 	// Computes the center of mass of every segment in global coordinates and stores it in bone.cm
 	void computeLocalCenterOfMass();
 
+	void computeInertiaTensor();
+
 	// Computes the center of mass of the rigid body system in global coordinates.
 	// The way of computation is defined by MassDistributionType
 	void computeGeneralCenterOfMass();
@@ -55,13 +57,18 @@ private:
 	void computeCMOfCylinderMass(Bone * bone);
 	//Computes center of mass like defined in mass distribution.
 	void computeCMOfOtherMass(Bone * bone, double distribution);
-	//Traverses the Skeleton recursively (first depth than breadth)
-	void traverse(Bone * ptr, int skelNum, double transform[4][4]);
+	//Computes the moments of inertia for a point mass at the bones cm rotating about the joint's axes, storing them in Ixx, Ixy, ...
+	void computeInertiaOfPoint(Bone * bone, Mass * mass);
+	//Computes the moments of inertia for a solid rod rotating about the joint's axes, storing them in Ixx, Ixy, ...
+	void computeInertiaOfCylinder(Bone * bone, Mass * mass);
+	//Computes the moments of inertia for a solid stadium rotating about the joint's axes, storing them in Ixx, Ixy, ...
+	void computeInertiaOfStadium(Bone * bone, Mass * mass);
+
+	//Traverses the Skeleton recursively (first depth than breadth), the character defines whether members for the COM or the angular momentum are computed.
+	void traverse(Bone * ptr, int skelNum, double transform[4][4], char c);
 	// computes global cm of Bone ptr
 	void computeCM(Bone * ptr, int skelNum, double transform[4][4]);
 
-	//calculates position of all bones in root cs and stores it in member velocity.
-	void updatePosition(Bone * ptr, double transform[4][4]);
 
 	void computePos(Bone * ptr, double transform[4][4]);
 

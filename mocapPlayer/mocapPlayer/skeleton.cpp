@@ -114,8 +114,8 @@ int Skeleton::readASFfile(char* asf_filename, double scale)
     m_pBoneList[i].doftl = 0;
     m_pBoneList[i].sibling = NULL; 
     m_pBoneList[i].child = NULL;
-    m_pBoneList[i].r_i_cm[0] = 0; m_pBoneList[i].r_i_cm[1] = 0; m_pBoneList[i].r_i_cm[2] = 0;
     m_pBoneList[i].r_i[0] = 0; m_pBoneList[i].r_i[1] = 0; m_pBoneList[i].r_i[2] = 0;
+    m_pBoneList[i].rx_prev = 0.; m_pBoneList[i].ry_prev = 0.; m_pBoneList[i].rz_prev = 0.;
     NUM_BONES_IN_ASF_FILE++;
     MOV_BONES_IN_ASF_FILE++;
     while(1)
@@ -496,21 +496,30 @@ void Skeleton::setPosture(Posture posture)
   {
     // if the bone has rotational degree of freedom in x direction
     if(m_pBoneList[j].dofrx) 
-      m_pBoneList[j].rx = posture.bone_rotation[j].p[0];  
+    {
+    	m_pBoneList[j].rx_prev = m_pBoneList[j].rx;
+        m_pBoneList[j].rx = posture.bone_rotation[j].p[0];
+    }
 
     if(m_pBoneList[j].doftx)
       m_pBoneList[j].tx = posture.bone_translation[j].p[0];
 
     // if the bone has rotational degree of freedom in y direction
     if(m_pBoneList[j].dofry) 
-      m_pBoneList[j].ry = posture.bone_rotation[j].p[1];    
+    {
+    	m_pBoneList[j].ry_prev = m_pBoneList[j].ry;
+    	m_pBoneList[j].ry = posture.bone_rotation[j].p[1];
+    }
 
     if(m_pBoneList[j].dofty)
       m_pBoneList[j].ty = posture.bone_translation[j].p[1];
 
     // if the bone has rotational degree of freedom in z direction
     if(m_pBoneList[j].dofrz) 
-      m_pBoneList[j].rz = posture.bone_rotation[j].p[2];  
+    {
+    	m_pBoneList[j].rz_prev = m_pBoneList[j].rz;
+    	m_pBoneList[j].rz = posture.bone_rotation[j].p[2];
+    }
 
     if(m_pBoneList[j].doftz)
       m_pBoneList[j].tz= posture.bone_translation[j].p[2];
@@ -561,9 +570,9 @@ Skeleton::Skeleton(char *asf_filename, double scale)
   m_pBoneList[0].child = NULL; 
   m_pBoneList[0].dir[0] = 0; m_pBoneList[0].dir[1] = 0.; m_pBoneList[0].dir[2] = 0.;
   m_pBoneList[0].cm[0] = 0; m_pBoneList[0].cm[1] = 0; m_pBoneList[0].cm[2] = 0;
-  m_pBoneList[0].r_i_cm[0] = 0; m_pBoneList[0].r_i_cm[1] = 0; m_pBoneList[0].r_i_cm[2] = 0;
   m_pBoneList[0].r_i[0] = 0; m_pBoneList[0].r_i[1] = 0; m_pBoneList[0].r_i[2] = 0;
   m_pBoneList[0].axis_x = 0; m_pBoneList[0].axis_y = 0.; m_pBoneList[0].axis_z = 0.;
+  m_pBoneList[0].rx_prev = 0.; m_pBoneList[0].ry_prev = 0.; m_pBoneList[0].rz_prev = 0.;
   m_pBoneList[0].length = 0.05;
   m_pBoneList[0].dof = 6;
   m_pBoneList[0].dofrx = m_pBoneList[0].dofry = m_pBoneList[0].dofrz = 1;
