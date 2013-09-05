@@ -253,7 +253,6 @@ void Computation::computeAngularMomentum() {
 					traverse(root, i, transform, 'h');
 
 
-
 				for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
 					double rel_pos[3], v_i[3], v_cm[3], v_rel[3], I[3][3], w_i[3], local_inertia[3], cross[3];
