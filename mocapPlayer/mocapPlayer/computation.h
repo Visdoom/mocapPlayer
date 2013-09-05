@@ -64,8 +64,10 @@ private:
 	//Computes the moments of inertia for a solid stadium rotating about the joint's axes, storing them in Ixx, Ixy, ...
 	void computeInertiaOfStadium(Bone * bone, Mass * mass);
 
-	//Traverses the Skeleton recursively (first depth than breadth), the character defines whether members for the COM or the angular momentum are computed.
+	//Traverses the Skeleton recursively (first depth than breadth),
 	void traverse(Bone * ptr, int skelNum, double transform[4][4], char c);
+
+	void updatePosition(Bone * ptr, Bone * bone, int skelNum, double transform[4][4]);
 	// computes global cm of Bone ptr
 	void computeCM(Bone * ptr, int skelNum, double transform[4][4]);
 

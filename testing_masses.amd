@@ -94,7 +94,7 @@
   begin
 	id 16
 	name head
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -178,7 +178,7 @@
   begin
 	id 30
 	name rthumb
-	mass 1.0
+	mass 0.0
 	dist 1.0
   end
 :end

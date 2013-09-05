@@ -194,7 +194,6 @@ void Computation::computeGeneralCenterOfMass() {
 //Computes the angular momentum about the general center of mass
 void Computation::computeAngularMomentum() {
 
-	double r_i_cm[3]; //stores previous position of local center of mass in global cs
 	double translation[3], rotation[3];
 	double R[4][4],Rx[4][4],Ry[4][4],Rz[4][4];
 
@@ -209,6 +208,9 @@ void Computation::computeAngularMomentum() {
 			double transform[4][4];
 			identity(transform);
 
+			double r_i_cm[m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE][3]; //stores previous position of local center of mass in global cs
+
+
 			root = m_pSkeletonList[i]->getRoot();
 
 			if(m_pMassDistributionList[i] != NULL) {
@@ -218,7 +220,39 @@ void Computation::computeAngularMomentum() {
 				m_pSkeletonList[i]->H[1] = 0.;
 				m_pSkeletonList[i]->H[2] = 0.;
 
-				//printf("H reset: %f %f %f\n", m_pSkeletonList[i]->H[0], m_pSkeletonList[i]->H[1], m_pSkeletonList[i]->H[2]);
+
+				//store old local cm in global cs of each bone:
+
+				for( int k = 0; k < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; k++)
+				{
+					//store previous position of local cm in global cs in r_i_cm
+					r_i_cm[k][0] = m_pSkeletonList[i]->getBone(root, k)->r_i[0];
+					r_i_cm[k][1] = m_pSkeletonList[i]->getBone(root, k)->r_i[1];
+					r_i_cm[k][2] = m_pSkeletonList[i]->getBone(root, k)->r_i[2];
+				}
+
+				//compute current position of lcm in global cs
+
+					m_pSkeletonList[i]->GetTranslation(translation);
+					m_pSkeletonList[i]->GetRotationAngle(rotation);
+
+					//creating Rotation matrix for initial rotation of Skeleton
+					rotationX(Rx, rotation[0]);
+					rotationY(Ry, rotation[1]);
+					rotationZ(Rz, rotation[2]);
+
+					matrix_mult(Rz, Ry, R);
+					matrix_mult(R, Rx, R);
+
+					matrix_mult(transform, R, transform);
+
+					transform[0][3] += (MOCAP_SCALE*translation [0]);
+					transform[1][3] += (MOCAP_SCALE*translation [1]);
+					transform[2][3] += (MOCAP_SCALE*translation [2]);
+
+					traverse(root, i, transform, 'h');
+
+
 
 				for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
@@ -230,81 +264,62 @@ void Computation::computeAngularMomentum() {
 
 						mass = m_pMassDistributionList[i]->getMass(bone->name);
 
-						//store previous position of local cm in global cs in r_i_cm
-						r_i_cm[0] = bone->r_i[0];
-						r_i_cm[1] = bone->r_i[1];
-						r_i_cm[2] = bone->r_i[2];
+						if(mass->mass != 0)	printf("(r_i_cm): prev_local_cm: %f %f %f\n", r_i_cm[j][0], r_i_cm[j][1], r_i_cm[j][2]);
 
-						//printf("r_i_cm: %f %f %f\n", r_i_cm[0], r_i_cm[1], r_i_cm[2]);
-
-						//compute current position of lcm in global cs
-
-							m_pSkeletonList[i]->GetTranslation(translation);
-							m_pSkeletonList[i]->GetRotationAngle(rotation);
-
-							//creating Rotation matrix for initial rotation of Skeleton
-							rotationX(Rx, rotation[0]);
-							rotationY(Ry, rotation[1]);
-							rotationZ(Rz, rotation[2]);
-
-							matrix_mult(Rz, Ry, R);
-							matrix_mult(R, Rx, R);
-
-							matrix_mult(transform, R, transform);
-
-							transform[0][3] += (MOCAP_SCALE*translation [0]);
-							transform[1][3] += (MOCAP_SCALE*translation [1]);
-							transform[2][3] += (MOCAP_SCALE*translation [2]);
-
-							traverse(root, i, transform, 'h');
-
-							//printf("r_i: %f %f %f\n", bone->r_i[0], bone->r_i[1], bone->r_i[2]);
+						if(mass->mass != 0) printf("(r_i) local_cm: %f %f %f\n", bone->r_i[0], bone->r_i[1], bone->r_i[2]);
 
 						//rel_pos = r_i - r_cm
 						rel_pos[0] = bone->r_i[0] - m_pSkeletonList[i]->cm[0];
 						rel_pos[1] = bone->r_i[1] - m_pSkeletonList[i]->cm[1];
 						rel_pos[2] = bone->r_i[2] - m_pSkeletonList[i]->cm[2];
 
-						//printf("rel_pos: %f %f %f\n", rel_pos[0], rel_pos[1], rel_pos[2]);
+						if(mass->mass != 0) printf("rel_pos: %f %f %f\n", rel_pos[0], rel_pos[1], rel_pos[2]);
 
 						//v_i = r_i - r_i_cm
-						v_i[0] = bone->r_i[0] - r_i_cm[0];
-						v_i[1] = bone->r_i[1] - r_i_cm[1];
-						v_i[2] = bone->r_i[2] - r_i_cm[2];
+						v_i[0] = bone->r_i[0] - r_i_cm[j][0];
+						v_i[1] = bone->r_i[1] - r_i_cm[j][1];
+						v_i[2] = bone->r_i[2] - r_i_cm[j][2];
 
+						if(mass->mass != 0) printf("v_i: %f %f %f\n", v_i[0], v_i[1], v_i[2]);
 						//v_cm = r_cm - r_cm_prev
 						v_cm[0] = m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0];
 						v_cm[1] = m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1];
 						v_cm[2] = m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2];
 
-						//printf("cm: %f %f %f    cm_prev: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2], m_pSkeletonList[i]->cm_prev[0], m_pSkeletonList[i]->cm_prev[1], m_pSkeletonList[i]->cm_prev[2]);
+						if(mass->mass != 0) printf("cm: %f %f %f    cm_prev: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2], m_pSkeletonList[i]->cm_prev[0], m_pSkeletonList[i]->cm_prev[1], m_pSkeletonList[i]->cm_prev[2]);
 
+						if(mass->mass != 0) printf("v_cm: %f %f %f\n", v_cm[0], v_cm[1], v_cm[2] );
 						//v_rel = v_i - v_cm
 						v_rel[0] = v_i[0] - v_cm[0];
 						v_rel[1] = v_i[1] - v_cm[1];
 						v_rel[2] = v_i[2] - v_cm[2];
 
-						//Inertia tensor
-						printf("mass seg name: %s\n", mass->segName);
-						printf("mass.Ixx: %f\n", mass->Ixx);
-						I[0][0] = mass->Ixx;
-						I[0][1] = I[1][0] = mass->Ixy;
-						I[0][2] = I[2][0] = mass->Ixz;
-						I[1][1] = mass->Iyy;
-						I[1][2] = I[2][1] = mass->Iyz;
-						I[2][2] = mass->Izz;
+						/*
+						 *
+						 * first try just point masses, without any inertia
+						 *
+							//Inertia tensor
+							printf("mass seg name: %s\n", mass->segName);
+							printf("mass.Ixx: %f\n", mass->Ixx);
+							I[0][0] = mass->Ixx;
+							I[0][1] = I[1][0] = mass->Ixy;
+							I[0][2] = I[2][0] = mass->Ixz;
+							I[1][1] = mass->Iyy;
+							I[1][2] = I[2][1] = mass->Iyz;
+							I[2][2] = mass->Izz;
 
-						//printf("inertia:\n %f %f %f\n %f %f %f\n %f %f %f\n " ,
-						//	I[0][0], I[0][1], I[0][2], I[1][0], I[1][1], I[1][2], I[2][0], I[2][1], I[2][2]);
+							//printf("inertia:\n %f %f %f\n %f %f %f\n %f %f %f\n " ,
+							//	I[0][0], I[0][1], I[0][2], I[1][0], I[1][1], I[1][2], I[2][0], I[2][1], I[2][2]);
 
-						//w_i = {rx - rx_prev, ry - ry_prev, rz - rz_prev}
-						w_i[0] = bone->rx - bone->rx_prev;
-						w_i[1] = bone->ry - bone->ry_prev;
-						w_i[2] = bone->rz - bone->rz_prev;
+							//w_i = {rx - rx_prev, ry - ry_prev, rz - rz_prev}
+							w_i[0] = bone->rx - bone->rx_prev;
+							w_i[1] = bone->ry - bone->ry_prev;
+							w_i[2] = bone->rz - bone->rz_prev;
 
 
-						//local_inertia = I_i*w_i
-						matrix3_v3_mult(I,w_i, local_inertia);
+							//local_inertia = I_i*w_i
+							matrix3_v3_mult(I,w_i, local_inertia);
+						*/
 
 
 						//cross = (r_i - r_cm) x m_i(v_i - v_cm)
@@ -317,9 +332,15 @@ void Computation::computeAngularMomentum() {
 
 
 						//H is sum of angular momentum of every bone
-						m_pSkeletonList[i]->H[0] += cross[0] + local_inertia[0];
-						m_pSkeletonList[i]->H[1] += cross[1] + local_inertia[1];
-						m_pSkeletonList[i]->H[2] += cross[2] + local_inertia[2];
+						/*	m_pSkeletonList[i]->H[0] += cross[0] + local_inertia[0];
+							m_pSkeletonList[i]->H[1] += cross[1] + local_inertia[1];
+							m_pSkeletonList[i]->H[2] += cross[2] + local_inertia[2];
+						*/
+
+						m_pSkeletonList[i]->H[0] += cross[0];
+						m_pSkeletonList[i]->H[1] += cross[1];
+						m_pSkeletonList[i]->H[2] += cross[2];
+
 
 					} //if end
 				}//for bones end
@@ -632,4 +653,6 @@ void Computation::computePos(Bone * ptr, double transform[4][4]) {
 	ptr->r_i[0] = lpos[0];
 	ptr->r_i[1] = lpos[1];
 	ptr->r_i[2] = lpos[2];
+
+
 }
