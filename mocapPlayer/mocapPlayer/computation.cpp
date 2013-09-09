@@ -117,7 +117,7 @@ void Computation::computeInertiaTensor(){
 \
 						mass = m_pMassDistributionList[i]->getMass(bone->name);
 
-						if (mass->type == POINT) computeInertiaOfPoint(bone, mass);
+						if (mass->type == POINT) computeInertiaOfPoint(mass);
 
 						if (mass->type == CYLINDER) computeInertiaOfCylinder(bone, mass);
 
@@ -163,10 +163,10 @@ void Computation::computeGeneralCenterOfMass() {
 			rotationY(Ry, rotation[1]);
 			rotationZ(Rz, rotation[2]);
 
-			matrix_mult(Rz, Ry, R);
-			matrix_mult(R, Rx, R);
+			matrix4_mult(Rz, Ry, R);
+			matrix4_mult(R, Rx, R);
 
-			matrix_mult(transform, R, transform);
+			matrix4_mult(transform, R, transform);
 
 			transform[0][3] += (MOCAP_SCALE*translation [0]);
 			transform[1][3] += (MOCAP_SCALE*translation [1]);
@@ -241,10 +241,10 @@ void Computation::computeAngularMomentum() {
 					rotationY(Ry, rotation[1]);
 					rotationZ(Rz, rotation[2]);
 
-					matrix_mult(Rz, Ry, R);
-					matrix_mult(R, Rx, R);
+					matrix4_mult(Rz, Ry, R);
+					matrix4_mult(R, Rx, R);
 
-					matrix_mult(transform, R, transform);
+					matrix4_mult(transform, R, transform);
 
 					transform[0][3] += (MOCAP_SCALE*translation [0]);
 					transform[1][3] += (MOCAP_SCALE*translation [1]);
@@ -255,7 +255,7 @@ void Computation::computeAngularMomentum() {
 
 				for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
-					double rel_pos[3], v_i[3], v_cm[3], v_rel[3], I[3][3], w_i[3], local_inertia[3], cross[3];
+					double rel_pos[3], v_i[3], v_cm[3], v_rel[3], I[4][4], w_i[4], local_inertia[3], cross[3], S[3][3], S_transpose[3][3];
 					Bone * bone;
 					bone = m_pSkeletonList[i]->getBone(root, j);
 
@@ -263,41 +263,80 @@ void Computation::computeAngularMomentum() {
 
 						mass = m_pMassDistributionList[i]->getMass(bone->name);
 
-						if(mass->mass != 0)	printf("(r_i_cm): prev_local_cm: %f %f %f\n", r_i_cm[j][0], r_i_cm[j][1], r_i_cm[j][2]);
+						//if(mass->mass != 0)	printf("(r_i_cm): prev_local_cm: %f %f %f\n", r_i_cm[j][0], r_i_cm[j][1], r_i_cm[j][2]);
 
-						if(mass->mass != 0) printf("(r_i) local_cm: %f %f %f\n", bone->r_i[0], bone->r_i[1], bone->r_i[2]);
+						//if(mass->mass != 0) printf("(r_i) local_cm: %f %f %f\n", bone->r_i[0], bone->r_i[1], bone->r_i[2]);
 
 						//rel_pos = r_i - r_cm
 						rel_pos[0] = bone->r_i[0] - m_pSkeletonList[i]->cm[0];
 						rel_pos[1] = bone->r_i[1] - m_pSkeletonList[i]->cm[1];
 						rel_pos[2] = bone->r_i[2] - m_pSkeletonList[i]->cm[2];
 
-						if(mass->mass != 0) printf("rel_pos: %f %f %f\n", rel_pos[0], rel_pos[1], rel_pos[2]);
+						//if(mass->mass != 0) printf("rel_pos: %f %f %f\n", rel_pos[0], rel_pos[1], rel_pos[2]);
 
 						//v_i = r_i - r_i_cm
 						v_i[0] = bone->r_i[0] - r_i_cm[j][0];
 						v_i[1] = bone->r_i[1] - r_i_cm[j][1];
 						v_i[2] = bone->r_i[2] - r_i_cm[j][2];
 
-						if(mass->mass != 0) printf("v_i: %f %f %f\n", v_i[0], v_i[1], v_i[2]);
+						//if(mass->mass != 0) printf("v_i: %f %f %f\n", v_i[0], v_i[1], v_i[2]);
 						//v_cm = r_cm - r_cm_prev
 						v_cm[0] = m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0];
 						v_cm[1] = m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1];
 						v_cm[2] = m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2];
 
-						if(mass->mass != 0) printf("cm: %f %f %f    cm_prev: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2], m_pSkeletonList[i]->cm_prev[0], m_pSkeletonList[i]->cm_prev[1], m_pSkeletonList[i]->cm_prev[2]);
+						//if(mass->mass != 0) printf("cm: %f %f %f    cm_prev: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2], m_pSkeletonList[i]->cm_prev[0], m_pSkeletonList[i]->cm_prev[1], m_pSkeletonList[i]->cm_prev[2]);
 
-						if(mass->mass != 0) printf("v_cm: %f %f %f\n", v_cm[0], v_cm[1], v_cm[2] );
+						//if(mass->mass != 0) printf("v_cm: %f %f %f\n", v_cm[0], v_cm[1], v_cm[2] );
 						//v_rel = v_i - v_cm
 						v_rel[0] = v_i[0] - v_cm[0];
 						v_rel[1] = v_i[1] - v_cm[1];
 						v_rel[2] = v_i[2] - v_cm[2];
 
+
+						//Inertia tensor
+
+							double Ri[4][4], Ri_transpose[4][4], I_i[4][4];
+
+							//rotation from global to local
+							rotationX(Rx, bone->axis_x);
+							rotationY(Ry, bone->axis_y);
+							rotationZ(Rz, bone->axis_z);
+
+							matrix4_mult(Rz, Ry, Ri);
+							matrix4_mult(Ri, Rx, Ri);
+
+							matrix4_transpose(Ri, Ri_transpose);
+
+							I_i[0][0] = mass->Ixx;
+							I_i[0][1] = I_i[1][0] = mass->Ixy;
+							I_i[0][2] = I_i[2][0] = mass->Ixz;
+							I_i[1][1] = mass->Iyy;
+							I_i[1][2] = I_i[2][1] = mass->Iyz;
+							I_i[2][2] = mass->Izz;
+							I_i[0][3] = I_i[1][3] = I_i[2][3] = 0;
+							I_i[3][0] = I_i[3][1] = I_i[3][2] = 0;
+							I_i[3][3] = 1.0;
+
+							//~I_G = R_i^T * I_i * R_i
+							//~I_G is inertia tensor relative to bone's cm in rotation of global cs.
+
+							matrix4_mult(Ri_transpose, I_i, I_i);
+							matrix4_mult(I_i, Ri, I_i);
+
+							//parallel axes theorem
+							// I_G = I_i + m_i * S^T(rel_pos)* S(rel_pos) with S is skew matrix for cross product
+
+							cross_matrix(rel_pos, S);
+							matrix3_transpose(S, S_transpose);
+
+							matrix3_mult(S_transpose, S, S);
+
+							matrix3_scalar_mult(S, mass->mass);
+
+							//TODO
+
 						/*
-						 *
-						 * first try just point masses, without any inertia
-						 *
-							//Inertia tensor
 							printf("mass seg name: %s\n", mass->segName);
 							printf("mass.Ixx: %f\n", mass->Ixx);
 							I[0][0] = mass->Ixx;
@@ -479,7 +518,7 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 	temp[3] = 1;
 
 
-	matrix_v4_mult(transform, temp, lcm);
+	matrix4_v4_mult(transform, temp, lcm);
 	//printf("lcm: %f %f %f %f\n", lcm[0], lcm[1], lcm[2], lcm [3]);
 
 	if(m_pMassDistributionList[skelNum]->getMass(ptr->name) != NULL) {
@@ -495,72 +534,29 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
 //---------------------------private Inertia----------------------------------------------------------------------------------------------//
 
-//Computes the moments of inertia of a point mass at the bones local center of mass rotating about the joint's axes.
-// Moment is computed as such: m*r^2 with r distance to axis od rotation
-void Computation::computeInertiaOfPoint(Bone * bone, Mass * mass){
+//Sets the moments of inertia of a point mass at the bones local center of mass rotating about the segment's center of mass.
+//inertia tensor is equal to zero.
+void Computation::computeInertiaOfPoint(Mass * mass){
 
-	double z[3] = {0,0,1}; double y[3] = {0,1,0}; double x[3] = {1,0,0};
-
-	double r[3];
-	double dot;
-
-	//rotation about x-axis
-
-	dot = v3_dot(x, bone->cm);
-
-	r[0] = bone->cm[0] - (dot*x[0]);
-	r[1] = bone->cm[1] - (dot*x[1]);
-	r[2] = bone->cm[2] - (dot*x[2]);
-
-	mass->Ixx = mass->mass * v3_mag(r);
-
-
-	//rotation about y-axis
-
-	dot = v3_dot(y, bone->cm);
-
-	r[0] = bone->cm[0] - (dot*y[0]);
-	r[1] = bone->cm[1] - (dot*y[1]);
-	r[2] = bone->cm[2] - (dot*y[2]);
-
-	mass->Iyy = mass->mass * v3_mag(r);
-
-
-	//rotation about z-axis
-	dot = v3_dot(z, bone->cm);
-
-	r[0] = bone->cm[0] - (dot*z[0]);
-	r[1] = bone->cm[1] - (dot*z[1]);
-	r[2] = bone->cm[2] - (dot*z[2]);
-
-	mass->Izz = mass->mass * v3_mag(r);
-
-
-
-	mass->Ixy = 0.;
-	mass->Ixz = 0.;
-	mass->Iyz = 0.;
-
-	/*
-		printf("mass.name: %s\n", mass->segName);
-		printf("inertia: %f %f %f %f %f %f\n", mass->Ixx, mass->Ixy, mass->Ixz, mass->Iyy, mass->Iyz, mass->Izz);
-	*/
-
+	mass->Ixx = mass->Ixy = mass->Ixz = mass->Iyy = mass->Iyz = mass->Izz = 0;
 
 }
 
-//computes moments of inertia of a solid cylinder rotating about the joint's axes.
-//computation: (1/3)*M*L^2 + (1/4)*M*r^2
+//computes moments of inertia of a solid cylinder rotating about the the segment's center of mass.
+//computation: (1/12)*M*(L^2 + 3*r^2)
 //assumption: cylinder along z-axis
 void Computation::computeInertiaOfCylinder(Bone * bone, Mass * mass){
 
-	//Ixx = (1/4)*M*r^2 + (1/3)*M*h^2 = Iyy
-	mass->Ixx = (((1/4)*mass->mass*mass->r0*mass->r0) + ((1/3)*mass->mass*bone->length*bone->length));
+	//Ixx = (1/12)*M*(3*r^2 + h^2) = Iyy
 
-	mass->Iyy = (((1/4)*mass->mass*mass->r0*mass->r0) + ((1/3)*mass->mass*bone->length*bone->length));
+	double bone_square = bone->length*bone->length;
+	double radius_square = mass->r0* mass->r0;
 
-	mass->Izz = (1/2)*mass->mass*mass->r0*mass->r0;
+	mass->Ixx = (1/12.0)*mass->mass*((3.0*radius_square) + bone_square);
 
+	mass->Iyy = (1/12.0)*mass->mass*(3*radius_square + bone_square);
+
+	mass->Izz = (1/2.0)*mass->mass*radius_square;
 	mass->Ixy = 0.;
 	mass->Ixz = 0.;
 	mass->Iyz = 0.;
@@ -585,7 +581,7 @@ void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4], char
 
 		double C[4][4], Cinv[4][4];
 
-		matrix_copy(transform, transformBackUp);
+		matrix4_copy(transform, transformBackUp);
 
 		//create homogeneous transformation to next frame.
 
@@ -600,23 +596,23 @@ void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4], char
 		rotationY(Ry, ptr->axis_y);
 		rotationX(Rx, ptr->axis_x);
 
-		matrix_mult(Rz, Ry, C);
-		matrix_mult(C, Rx, C);
+		matrix4_mult(Rz, Ry, C);
+		matrix4_mult(C, Rx, C);
 
 		// compute M
 		rotationX(Rx, (ptr->rx));
 		rotationY(Ry, (ptr->ry));
 		rotationZ(Rz, (ptr->rz));
 
-		matrix_mult(Rz, Ry, M);
-		matrix_mult(M, Rx, M);
+		matrix4_mult(Rz, Ry, M);
+		matrix4_mult(M, Rx, M);
 
 		M[0][3] += ptr->tx;
 		M[1][3] += ptr->ty;
 		M[2][3] += ptr->tz;
 
-		matrix_mult(transform, C, transform);
-		matrix_mult(transform, M, transform);
+		matrix4_mult(transform, C, transform);
+		matrix4_mult(transform, M, transform);
 
 		if(c == 'g') computeCM(ptr, skelNum, transform);
 		if(c == 'h') computePos(ptr, transform);
@@ -625,9 +621,9 @@ void Computation::traverse(Bone * ptr, int skelNum, double transform[4][4], char
 		translation[1][3] = ptr->dir[1]*ptr->length;
 		translation[2][3] = ptr->dir[2]*ptr->length;
 
-		matrix_mult(transform, translation, transform);
-		matrix_transpose(C, Cinv);
-		matrix_mult(transform, Cinv, transform);
+		matrix4_mult(transform, translation, transform);
+		matrix4_transpose(C, Cinv);
+		matrix4_mult(transform, Cinv, transform);
 
 		traverse(ptr->child, skelNum, transform, c);
 
@@ -647,7 +643,7 @@ void Computation::computePos(Bone * ptr, double transform[4][4]) {
 	temp[2] = ptr->cm[2];
 	temp[3] = 1;
 
-	matrix_v4_mult(transform, temp, lpos);
+	matrix4_v4_mult(transform, temp, lpos);
 
 	ptr->r_i[0] = lpos[0];
 	ptr->r_i[1] = lpos[1];

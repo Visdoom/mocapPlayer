@@ -16,7 +16,7 @@
   begin
 	id 3
 	name ltibia
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -46,7 +46,7 @@
   begin
 	id 8
 	name rtibia
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -178,7 +178,7 @@
   begin
 	id 30
 	name rthumb
-	mass 1.0
+	mass 0.0
 	dist 1.0
   end
 :end

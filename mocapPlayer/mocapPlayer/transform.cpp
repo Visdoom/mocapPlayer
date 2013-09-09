@@ -16,7 +16,7 @@ Revision 3 - Jernej Barbic and Yili Zhao (USC), Feb, 2012
 Input: matrix  a
 Output: matrix b = Transpose(a)
 */
-void matrix_transpose(double a[4][4], double b[4][4]) 
+void matrix4_transpose(double a[4][4], double b[4][4]) 
 {
   int i, j;
 
@@ -24,12 +24,25 @@ void matrix_transpose(double a[4][4], double b[4][4])
     for (j=0; j<4; j++)
       b[i][j] = a[j][i];
 }
+
+/* Compute transpose of a matrix
+Input: matrix  a
+Output: matrix b = Transpose(a)
+*/
+void matrix3_transpose(double a[3][3], double b[3][3]) {
+
+	int i, j;
+
+	  for (i=0; i<3; i++)
+	    for (j=0; j<3; j++)
+	      b[i][j] = a[j][i];
+}
 /*
  * Copies matrix a to matrix b
  * Input: matrix a
  * Output: matrix b = a
  * */
-void matrix_copy(double a[][4], double b[][4])
+void matrix4_copy(double a[][4], double b[][4])
 {
 	for(int i = 0; i < 4; i++)
 	{
@@ -41,10 +54,26 @@ void matrix_copy(double a[][4], double b[][4])
 
 }
 
+/*
+ * Copies matrix a to matrix b
+ * Input: matrix a
+ * Output: matrix b = a
+ * */
+void matrix3_copy(double a[][4],  double b[][3]) {
+
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			b[i][j] = a[i][j];
+		}
+	}
+}
+
 /* Print the matrix
 Input:	
 */
-void matrix_print(char *str, double a[4][4]) 
+void matrix4_print(char *str, double a[4][4]) 
 {
   int i;
 
@@ -146,7 +175,7 @@ void identity(double i[][4])
 	i[3][0] = 0.0; i[3][1] = 0.0; i[3][2] = 0.0; i[3][3] = 1.0;
 }
 
-void matrix_mult(double a[][4], double b[][4], double c[][4])
+void matrix4_mult(double a[][4], double b[][4], double c[][4])
 {
   int i, j, k;
   double tmp[4][4];
@@ -170,7 +199,46 @@ void matrix_mult(double a[][4], double b[][4], double c[][4])
 
 }
 
-void matrix_v4_mult(double a[][4], double v[4], double r[4])
+void matrix3_mult(double a[][3], double b[][3], double c[][3])
+{
+  int i, j, k;
+  double tmp[3][3];
+
+  for(i=0;i<3;i++)
+    for(j=0;j<3;j++)
+    {
+    	tmp[i][j]=0;
+
+    	for(k=0;k<3;k++)
+    		tmp[i][j]+=a[i][k]*b[k][j];
+    }
+
+  for(i = 0; i < 3; i++)
+  {
+	  for(j = 0; j < 3; j++)
+	  {
+		  c[i][j] = tmp[i][j];
+	  }
+  }
+
+}
+
+void matrix4_scalar_mult(double a[4][4], double scalar)
+{
+	for (int i = 0; i < 4; i ++)
+		for (int j = 0; j < 4; j++)
+			a[i][j] *= scalar;
+}
+
+void matrix3_scalar_mult(double a[3][3], double scalar)
+{
+	for (int i = 0; i < 3; i ++)
+		for (int j = 0; j < 3; j++)
+			a[i][j] *= scalar;
+}
+
+
+void matrix4_v4_mult(double a[][4], double v[4], double r[4])
 {
 	double tmp[4];
 	for(int i = 0; i < 4; i++)
@@ -223,6 +291,20 @@ void negate(double a[][4], double b[][4])
 			b[i][j] = (-1)*a[i][j];
 		}
 	}
+
+}
+
+/*
+ * Represents the cross product as a matrix: r = (a x)*/
+void cross_matrix(double a[3], double r[3][3])
+{
+	r[0][0] = r[1][1] = r[2][2] = 0.;
+	r[0][1] = (-1.0)* a[2];
+	r[0][2] = a[1];
+	r[1][0] = a[2];
+	r[1][2] = (-1.0)*a[0];
+	r[2][0] = (-1.0)*a[1];
+	r[2][1] = a[0];
 
 }
 

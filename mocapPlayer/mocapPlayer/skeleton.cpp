@@ -358,17 +358,17 @@ void Skeleton::compute_rotation_parent_child(Bone *parent, Bone *child)
     rotationZ(Rz, -parent->axis_z);      
     rotationY(Ry, -parent->axis_y);  
     rotationX(Rx, -parent->axis_x);      
-    matrix_mult(Rx, Ry, tmp);
-    matrix_mult(tmp, Rz, tmp1);
+    matrix4_mult(Rx, Ry, tmp);
+    matrix4_mult(tmp, Rz, tmp1);
 
     rotationZ(Rz, child->axis_z);
     rotationY(Ry, child->axis_y);
     rotationX(Rx, child->axis_x);
-    matrix_mult(Rz, Ry, tmp);
-    matrix_mult(tmp, Rx, tmp2);
+    matrix4_mult(Rz, Ry, tmp);
+    matrix4_mult(tmp, Rx, tmp2);
 
-    matrix_mult(tmp1, tmp2, tmp);
-    matrix_transpose(tmp, child->rot_parent_current);    
+    matrix4_mult(tmp1, tmp2, tmp);
+    matrix4_transpose(tmp, child->rot_parent_current);    
   }
 }
 
@@ -387,10 +387,10 @@ void Skeleton::ComputeRotationToParentCoordSystem(Bone *bone)
   rotationZ(Rz, bone[root].axis_z);
   rotationY(Ry, bone[root].axis_y);
   rotationX(Rx, bone[root].axis_x);
-  matrix_mult(Rz, Ry, tmp);
-  matrix_mult(tmp, Rx, tmp2);
+  matrix4_mult(Rz, Ry, tmp);
+  matrix4_mult(tmp, Rx, tmp2);
   //set bone[root].rot_parent_current to transpose of tmp2
-  matrix_transpose(tmp2, bone[root].rot_parent_current);    
+  matrix4_transpose(tmp2, bone[root].rot_parent_current);    
 
 
 

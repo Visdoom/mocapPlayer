@@ -15,13 +15,19 @@ class Matrix
 
 };
 
-void matrix_transpose(double a[4][4], double b[4][4]);
-void matrix_print(char *str, double a[4][4]);
+void matrix4_transpose(double a[4][4], double b[4][4]);
+void matrix3_transpose(double a[3][3], double b[3][3]);
+void matrix4_print(char *str, double a[4][4]);
 void matrix_transform_affine(double m[4][4], double x, double y, double z, double pt[3]);
-void matrix_mult(double a[][4], double b[][4], double c[][4]);
-void matrix_v4_mult(double a[][4], double v[4], double r[4]);
+void matrix4_mult(double a[][4], double b[][4], double c[][4]);
+void matrix3_mult(double a[][3], double b[][3], double c[][3]);
+void matrix4_v4_mult(double a[][4], double v[4], double r[4]);
 void matrix3_v3_mult(double a[3][3], double v[3], double r[3]);
-void matrix_copy(double a[][4], double b[][4]);
+void matrix4_scalar_mult(double a[4][4], double scalar);
+void matrix3_scalar_mult(double a[3][3], double scalar);
+void matrix4_copy(double a[][4], double b[][4]);
+void matrix3_copy(double a[][4], double b[][3]);
+void cross_matrix(double a[3], double r[3][3]);
 void v3_cross(double a[3], double b[3], double c[3]);
 double v3_mag(double a[3]);
 double v3_dot(double a[3], double b[3]);

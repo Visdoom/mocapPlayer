@@ -96,7 +96,7 @@ int MassDistribution::readAMDfile(char *amd_filename)
 	if(is.fail())
 		return -1;
 
-	char str[2048], keyword[256];
+	char str[2048], keyword[256], token[256];
 
 	//read mass distribution data
 	 is.getline(str, 2048);
@@ -153,13 +153,18 @@ int MassDistribution::readAMDfile(char *amd_filename)
 
 
 			 //type of solid representing the segment
-			 if(strcmp(keyword, "point") == 0) m_pMassList[i].type = POINT;
+			 if(strcmp(keyword, "type") == 0) {
 
-			 if(strcmp(keyword, "cylinder") == 0) m_pMassList[i].type = CYLINDER;
+				 sscanf(str, "%s %s", keyword, token);
 
-			 if(strcmp(keyword, "stadium") == 0) m_pMassList[i].type = STADIUM;
+				 if(strcmp(token, "point") == 0) m_pMassList[i].type = POINT;
 
-			 if(strcmp(keyword, "other") == 0) m_pMassList[i].type = OTHER;
+				 if(strcmp(token, "cylinder") == 0) m_pMassList[i].type = CYLINDER;
+
+				 if(strcmp(token, "stadium") == 0) m_pMassList[i].type = STADIUM;
+
+
+			 }
 
 			 //parameters of solid
 			 if(strcmp(keyword, "r0") == 0) sscanf(str, "%s %lf", keyword, &m_pMassList[i].r0);

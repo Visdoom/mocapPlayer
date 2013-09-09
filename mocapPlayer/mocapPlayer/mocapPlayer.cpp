@@ -597,6 +597,10 @@ void saveGCMFile(char * filename, int skelNum) {
 				<< computer.GetSkeleton(skelNum)->cm[0] << " "
 				<< computer.GetSkeleton(skelNum)->cm[1] << " "
 	    		<< computer.GetSkeleton(skelNum)->cm[2] << std::endl;
+		GCMfile << "H: "
+				<< computer.GetSkeleton(skelNum)->H[0] << " "
+				<< computer.GetSkeleton(skelNum)->H[1] << " "
+				<< computer.GetSkeleton(skelNum)->H[2] << std::endl;
 	    } else
 	     	printf("Opening GCM file failed.");
 

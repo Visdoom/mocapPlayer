@@ -46,7 +46,7 @@
   begin
 	id 8
 	name rtibia
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -94,7 +94,7 @@
   begin
 	id 16
 	name head
-	mass 1.0
+	mass 0.0
 	dist 1.0
   end
   begin
