@@ -45,6 +45,7 @@ void rotationZ(double r[][4], double a);
 void rotation(double r[][4], double a, double x, double y, double z);
 //Creates Identity matrix
 void identity(double i[][4]);
+void identity3(double i[][3]);
 //negates every entry in a
 void negate(double a[][4], double b[][4]);
 

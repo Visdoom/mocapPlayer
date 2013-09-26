@@ -16,6 +16,7 @@ Revision 3 - Jernej Barbic and Yili Zhao (USC), Feb, 2012
 #include <fstream>
 #include <cassert>
 #include <cmath>
+#include <ctime>
 
 #include <FL/gl.h>
 #include <FL/glut.H>  // GLUT for use with FLTK
@@ -330,6 +331,8 @@ void resetPostureAccordingFrameSlider(void)
     // Set skeleton to the first posture
     Posture * currentPosture = displayer.GetSkeletonMotion(skeletonIndex)->GetPosture(postureID);
 
+    computer.GetSkeleton(skeletonIndex)->savePosture();
+
     displayer.GetSkeleton(skeletonIndex)->setPosture(*currentPosture);
     computer.GetSkeleton(skeletonIndex)->setPosture(*currentPosture);
   }
@@ -510,6 +513,9 @@ void SetSkeletonsToSpecifiedFrame(int frameIndex)
         postureID = displayer.GetSkeletonMotion(skeletonIndex)->GetNumFrames() - 1;
       else 
         postureID = frameIndex;
+
+      computer.GetSkeleton(skeletonIndex)->savePosture();
+
       displayer.GetSkeleton(skeletonIndex)->setPosture(* (displayer.GetSkeletonMotion(skeletonIndex)->GetPosture(postureID)));
       computer.GetSkeleton(skeletonIndex)->setPosture(* (computer.GetMotion(skeletonIndex)->GetPosture(postureID)));
     }
@@ -546,10 +552,18 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
  * */
 void createFileName(char * filename, int skelNum)
 {
-	strcpy(filename, "./gcm/gcm_skeleton");
+	strcpy(filename, "./gcm/gcm+h_skeleton");
 
 	char s[20];
-	sprintf(s,"%d.txt", skelNum);
+	sprintf(s,"%d", skelNum);
+
+
+	time_t ti = time(0);
+	struct tm * now = localtime(&ti);
+	char t[40];
+	sprintf(t,"_%d_%d_%d.txt",now->tm_mon, now->tm_mday, (now->tm_year %100));
+
+	strcat(s,t);
 	strcat(filename,s);
 }
 
@@ -636,6 +650,8 @@ void idle(void*)
       if (displayer.GetSkeletonMotion(i) != NULL)
       {
         Posture * initSkeleton = displayer.GetSkeletonMotion(i)->GetPosture(0);
+
+        displayer.GetSkeleton(i)->savePosture();
         displayer.GetSkeleton(i)->setPosture(*initSkeleton);
 
         if(compute == ON)

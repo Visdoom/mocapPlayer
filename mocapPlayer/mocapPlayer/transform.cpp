@@ -175,6 +175,14 @@ void identity(double i[][4])
 	i[3][0] = 0.0; i[3][1] = 0.0; i[3][2] = 0.0; i[3][3] = 1.0;
 }
 
+void identity3(double i[][3])
+{
+	i[0][0] = 1.0; i[0][1] = 0.0; i[0][2] = 0.0;
+	i[1][0] = 0.0; i[1][1] = 1.0; i[1][2] = 0.0;
+	i[2][0] = 0.0; i[2][1] = 0.0; i[2][2] = 1.0;
+
+}
+
 void matrix4_mult(double a[][4], double b[][4], double c[][4])
 {
   int i, j, k;

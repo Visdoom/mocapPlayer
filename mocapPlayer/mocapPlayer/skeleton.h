@@ -75,6 +75,8 @@ public:
   //Set the skeleton's pose based on the given posture    
   void setPosture(Posture posture);        
 
+  void savePosture();
+
   //Initial posture Root at (0,0,0)
   //All bone rotations are set to 0
   void setBasePosture();
