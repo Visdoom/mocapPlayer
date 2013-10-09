@@ -238,7 +238,7 @@ void DisplaySkeleton::DrawBone(Bone *pBone,int skelNum)
 	    gluQuadricNormals(center, (GLenum) GLU_SMOOTH);
 	    gluSphere(center, 0.03, 20, 20);
 
-	  glPopMatrix();
+	 glPopMatrix();
 
     //Compute the angle between the canonical pose and the correct orientation 
     //(specified in pBone->dir) using cross product.

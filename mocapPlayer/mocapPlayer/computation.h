@@ -25,8 +25,11 @@ public:
 	// The way of computation is defined by MassDistributionType
 	void computeGeneralCenterOfMass();
 
-	//Computes the angular momentum about root
+	//Computes the angular momentum about the Skeleton's cm
 	void computeAngularMomentum();
+
+	//Computes the linear momentum
+	void computeLinearMomentum();
 
 	//Adds Motion m to m_pMotionList.
 	void LoadMotion(Motion * m);
@@ -43,7 +46,10 @@ public:
 	Skeleton * GetSkeleton(int skeletonIndex);
 	Motion * GetMotion(int skeletonIndex);
 
-	Skeleton * m_pSkeletonList[MAX_SKELS]; //List of Skeletons whose features are to compute
+	//returns the current leg swing of Skeleton i
+	LegSwing GetLegSwing(int skelNum);
+
+	Skeleton * m_pSkeletonList[MAX_SKELS]; //List of Skeletons whose features are to be computed
 	MassDistribution * m_pMassDistributionList[MAX_SKELS];
 	Motion *m_pMotionList[MAX_SKELS]; //List of Motions assigned to the models. Motion[i] is assigned to Model[i].
 	int numOfSkeletons; //keeps track of the number of Skeletons in the list.
@@ -71,11 +77,22 @@ private:
 	// computes global cm of Bone ptr
 	void computeCM(Bone * ptr, int skelNum, double transform[4][4]);
 
+	//checks which leg is swinging.
+	void checkLegSwing(double velocity[3], Bone * bone, int skelNum);
+	//sets the legSwing of Skeleton skelNum accordingly. legSwing[skelNum][0] stores previous, legSwing[skelNum][1] current value.
+	void setLegSwing(int skelNum);
+
+
+
 
 	void computePos(Bone * ptr, double transform[4][4]);
 
 
 	double totalMass;
+	bool right;
+	bool left;
+	LegSwing swing[MAX_SKELS];
+
 	//double transform[4][4];
 
 };

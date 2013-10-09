@@ -33,5 +33,9 @@ enum MassDistributionType
 	POINT, CYLINDER, STADIUM, OTHER
 };
 
+enum LegSwing
+{
+	RIGHT, LEFT, NONE
+};
 
 #endif

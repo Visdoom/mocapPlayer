@@ -1,10 +1,10 @@
-#National Health Statistics Report of the U.S. from 2003-2006 + volume relations (1964)
+#National Health Statistics Report of the U.S. from 2003-2006
 # 20-29 year old male Americans, 811 people examined
 :massdata
   begin
 	id 1
 	name lhipjoint
-	mass 6.51
+	mass 1.666
 	dist 1.0
 	type cylinder 
 	r0 1.0
@@ -12,7 +12,7 @@
   begin
 	id 2
 	name lfemur
-	mass 6.971
+	mass 6.749
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -20,7 +20,7 @@
   begin
 	id 3
 	name ltibia
-	mass 3.72
+	mass 2.842
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -28,7 +28,7 @@
   begin
 	id 4
 	name lfoot
-	mass 1.176
+	mass 0.863
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -36,7 +36,7 @@
   begin
 	id 5
 	name ltoes
-	mass 0.231
+	mass 0.096
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -44,7 +44,7 @@
   begin
 	id 6
 	name rhipjoint
-	mass 6.51
+	mass 1.666
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -52,7 +52,7 @@
   begin
 	id 7
 	name rfemur
-	mass 6.971
+	mass 6.749
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -60,7 +60,7 @@
   begin
 	id 8
 	name rtibia
-	mass 3.72
+	mass 2.842
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -68,7 +68,7 @@
   begin
 	id 9
 	name rfoot
-	mass 1.176
+	mass 0.863
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -76,7 +76,7 @@
   begin
 	id 10
 	name rtoes
-	mass 0.231
+	mass 0.096
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -84,7 +84,7 @@
   begin
 	id 11
 	name lowerback
-	mass 2.604
+	mass 6.664
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -92,7 +92,7 @@
   begin
 	id 12
 	name upperback
-	mass 11.74
+	mass 6.664
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -100,7 +100,7 @@
   begin
 	id 13
 	name thorax
-	mass 14.309
+	mass 14.661
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -108,7 +108,7 @@
   begin
 	id 14
 	name lowerneck
-	mass 0.783
+	mass 0.5
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -116,7 +116,7 @@
   begin
 	id 15
 	name upperneck
-	mass 0.783
+	mass 0.5
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -124,7 +124,7 @@
   begin
 	id 16
 	name head
-	mass 6.259
+	mass 4.729
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -132,7 +132,7 @@
   begin
 	id 17
 	name lclavicle
-	mass 0.783
+	mass 0.5
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -140,7 +140,7 @@
   begin
 	id 18
 	name lhumerus
-	mass 2.395
+	mass 1.73
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -148,7 +148,7 @@
   begin
 	id 19
 	name lradius
-	mass 1.273
+	mass 1.055
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -156,7 +156,7 @@
   begin
 	id 20
 	name lwrist
-	mass 0.153
+	mass 0.043
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -164,7 +164,7 @@
   begin
 	id 21
 	name lhand
-	mass 0.459
+	mass 0.192
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -172,7 +172,7 @@
   begin
 	id 22
 	name lfingers
-	mass 0.167
+	mass 0.17
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -180,7 +180,7 @@
   begin
 	id 23
 	name lthumb
-	mass 0.042
+	mass 0.021
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -188,7 +188,7 @@
   begin
 	id 24
 	name rclavicle
-	mass 0.783
+	mass 0.5
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -196,7 +196,7 @@
   begin
 	id 25
 	name rhumerus
-	mass 2.395
+	mass 1.73
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -204,7 +204,7 @@
   begin
 	id 26
 	name rradius
-	mass 1.273
+	mass 1.055
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -212,7 +212,7 @@
   begin
 	id 27
 	name rwrist
-	mass 0.153
+	mass 0.043
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -220,7 +220,7 @@
   begin
 	id 28
 	name rhand
-	mass 0.459
+	mass 0.192
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -228,7 +228,7 @@
   begin
 	id 29
 	name rfingers
-	mass 0.167
+	mass 0.17
 	dist 1.0
 	type cylinder
 	r0 1.0
@@ -236,7 +236,7 @@
   begin
 	id 30
 	name rthumb
-	mass 0.042
+	mass 0.021
 	dist 1.0
 	type cylinder
 	r0 1.0

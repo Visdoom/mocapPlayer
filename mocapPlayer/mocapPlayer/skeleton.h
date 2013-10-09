@@ -108,6 +108,7 @@ public:
   double cm[3]; //Center of mass of the whole rigid body system giving the current configuration.
   double cm_prev[3]; //stores previous position of gcm
   double H[3]; //Angular momentum of the center of mass about root.
+  double L[3]; //Linear momentum of the center of mass
 
   double totalMass; //stores the skeletons total mass.
 

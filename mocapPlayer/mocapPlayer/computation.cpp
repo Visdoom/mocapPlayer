@@ -8,6 +8,7 @@
 #include <cstdio>
 #include <string.h>
 
+
 #include "types.h"
 #include "transform.h"
 #include "MassDistribution.h"
@@ -24,15 +25,17 @@ Computation::Computation() {
 		m_pSkeletonList[i] = NULL;
 		m_pMassDistributionList[i] = NULL;
 		m_pMotionList[i] = NULL;
+		swing[i] = NONE;
 
 	}
-
 
 	numOfSkeletons = 0;
 	numOfMassDist = 0;
 	numOfMotions = 0;
 
 	totalMass = 0.0;
+	right = false;
+	left = false;
 
 }
 
@@ -202,6 +205,8 @@ void Computation::computeAngularMomentum() {
 	Bone * root;
 	Mass * mass;
 
+
+
 	if(m_pSkeletonList != NULL)
 	{
 
@@ -211,7 +216,6 @@ void Computation::computeAngularMomentum() {
 			identity(transform);
 
 			double r_i_cm[m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE][3]; //stores previous position of local center of mass in global cs
-
 
 			root = m_pSkeletonList[i]->getRoot();
 
@@ -255,19 +259,6 @@ void Computation::computeAngularMomentum() {
 					traverse(root, i, transform, 'h');
 
 
-					double I_G2[3][3];
-
-					identity3(I_G2);
-
-					/*
-					for (int j = 0; j < 3; j++) {
-						for (int k = 0; k < 3; k++){
-							I_G2[j][k] = 0;
-						}
-					}
-					*/
-
-
 					for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
 						double rel_pos[3], v_i[3], v_cm[3], v_rel[3], I_G[3][3], w_i[3], local_inertia[3], cross[3], S[3][3], S_transpose[3][3];
@@ -278,40 +269,32 @@ void Computation::computeAngularMomentum() {
 
 							mass = m_pMassDistributionList[i]->getMass(bone->name);
 
-							//if (mass->mass != 0) printf("segment %d:\n", j);
-							//printf("mass: %f\n", mass->mass);
-
-
-							//if(mass->mass != 0)	printf("(r_i_cm): prev_local_cm: %f %f %f\n", r_i_cm[j][0], r_i_cm[j][1], r_i_cm[j][2]);
-
-							//if(mass->mass != 0) printf("(r_i) local_cm: %f %f %f\n", bone->r_i[0], bone->r_i[1], bone->r_i[2]);
-
 							//rel_pos = r_i - r_cm
 							rel_pos[0] = bone->r_i[0] - m_pSkeletonList[i]->cm[0];
 							rel_pos[1] = bone->r_i[1] - m_pSkeletonList[i]->cm[1];
 							rel_pos[2] = bone->r_i[2] - m_pSkeletonList[i]->cm[2];
-
-							//if(mass->mass != 0) printf("rel_pos: %f %f %f\n", rel_pos[0], rel_pos[1], rel_pos[2]);
-
 
 							//v_i = r_i - r_i_cm
 							v_i[0] = bone->r_i[0] - r_i_cm[j][0];
 							v_i[1] = bone->r_i[1] - r_i_cm[j][1];
 							v_i[2] = bone->r_i[2] - r_i_cm[j][2];
 
-							//if(mass->mass != 0) printf("v_i: %f %f %f\n", v_i[0], v_i[1], v_i[2]);
+							//if v_i is zero switch flag
+							checkLegSwing(v_i, bone, i);
+
+						//	if(mass->mass != 0 && ((strcmp(mass->segName, "rfoot") == 0) || (strcmp(mass->segName, "lfoot") == 0))) printf("v_i_%s: %f %f %f\n",mass->segName, v_i[0], v_i[1], v_i[2]);
+
 							//v_cm = r_cm - r_cm_prev
 							v_cm[0] = m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0];
 							v_cm[1] = m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1];
 							v_cm[2] = m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2];
 
-							//if(mass->mass != 0) printf("cm: %f %f %f    cm_prev: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2], m_pSkeletonList[i]->cm_prev[0], m_pSkeletonList[i]->cm_prev[1], m_pSkeletonList[i]->cm_prev[2]);
 
-							//if(mass->mass != 0) printf("v_cm: %f %f %f\n", v_cm[0], v_cm[1], v_cm[2] );
 							//v_rel = v_i - v_cm
 							v_rel[0] = v_i[0] - v_cm[0];
 							v_rel[1] = v_i[1] - v_cm[1];
 							v_rel[2] = v_i[2] - v_cm[2];
+
 
 
 							//Inertia tensor
@@ -344,9 +327,6 @@ void Computation::computeAngularMomentum() {
 								matrix4_mult(Ri_transpose, I_i, I_i);
 								matrix4_mult(I_i, Ri, I_i);
 
-								//if (mass->mass != 0) printf("I_i: \n %f %f %f \n %f %f %f \n %f %f %f\n", I_i[0][0], I_i[0][1], I_i[0][2], I_i[1][0], I_i[1][1], I_i[1][2], I_i[2][0], I_i[2][1], I_i[2][2]);
-
-
 								//parallel axes theorem
 								// I_G = I_i + m_i * S^T(rel_pos)* S(rel_pos) with S is skew matrix for cross product
 
@@ -355,13 +335,8 @@ void Computation::computeAngularMomentum() {
 								matrix3_transpose(S, S_transpose);//works
 								matrix3_mult(S_transpose, S, S); //works
 
-								//if (mass->mass != 0) printf("S_t*S: \n %f %f %f \n %f %f %f \n %f %f %f\n", S[0][0], S[0][1], S[0][2], S[1][0], S[1][1], S[1][2], S[2][0], S[2][1], S[2][2]);
-
 
 								matrix3_scalar_mult(S, mass->mass); //works
-
-								//if (mass->mass != 0) printf("S_t*S*m: \n %f %f %f \n %f %f %f \n %f %f %f\n", S[0][0], S[0][1], S[0][2], S[1][0], S[1][1], S[1][2], S[2][0], S[2][1], S[2][2]);
-
 
 								//copy entries into I_G
 								identity3(I_G);
@@ -370,10 +345,6 @@ void Computation::computeAngularMomentum() {
 									for (int y = 0; y < 3; y++)
 										I_G[x][y] = I_i[x][y] + S[x][y];
 
-								//if (mass->mass != 0) printf("I_G: \n %f %f %f \n %f %f %f \n %f %f %f\n", I_G[0][0], I_G[0][1], I_G[0][2], I_G[1][0], I_G[1][1], I_G[1][2], I_G[2][0], I_G[2][1], I_G[2][2]);
-
-
-								//I_G2 obtained by
 
 								//w_i = R_i^T * ({rx,ry,rz} - {rx_prev, ry_prev, rz_prev});
 
@@ -383,27 +354,10 @@ void Computation::computeAngularMomentum() {
 
 								//clamping TODO
 
-								if(w_i[0] > 1.5) w_i[0] = 1.5;
-								if(w_i[1] > 1.5) w_i[1] = 1.5;
-								if(w_i[2] > 1.5) w_i[2] = 1.5;
-								if(w_i[0] < -1.5) w_i[0] = -1.5;
-								if(w_i[1] < -1.5) w_i[1] = -1.5;
-								if(w_i[2] < -1.5) w_i[2] = -1.5;
-
-
-
-								//if (mass->mass != 0) printf("w_i before rotation: %f %f %f\n", w_i[0], w_i[1], w_i[2]);
-
 								vector_rotationXYZ(w_i, bone->axis_x, bone->axis_y, bone->axis_z);
-
-								//if (mass->mass != 0) printf("w_i after rotation about x: %f y: %f z: %f\n%f %f %f\n",bone->axis_x, bone->axis_y, bone->axis_z, w_i[0], w_i[1], w_i[2]);
-
 
 								//local_inertia = I_i*w_i
 								matrix3_v3_mult(I_G,w_i, local_inertia);
-
-								//if (mass->mass != 0) printf("local inertia: %f %f %f\n", local_inertia[0], local_inertia[1], local_inertia[2]);
-
 
 
 							//cross = (r_i - r_cm) x m_i(v_i - v_cm)
@@ -421,89 +375,31 @@ void Computation::computeAngularMomentum() {
 							m_pSkeletonList[i]->H[2] += (cross[2] + local_inertia[2]);
 
 
-
-							//m_pSkeletonList[i]->H[0] += cross[0];
-							//m_pSkeletonList[i]->H[1] += cross[1];
-							//m_pSkeletonList[i]->H[2] += cross[2];
-
-
-
-							/*
-							//trying it with formula for g: H_G= r_G x m_G*v_G + I_G*w_G
-							//obtaining I_G
-
-							//Ixx = sum (mi* (yi'^2+zi'^2))
-							I_G2[0][0] += mass->mass*(rel_pos[1]*rel_pos[1] + rel_pos[2]*rel_pos[2]);
-
-							//Ixy = Iyx = sum(mi*xi'*yi')
-							I_G2[0][1] += mass->mass*rel_pos[0]*rel_pos[1];
-							I_G2[1][0] += mass->mass*rel_pos[0]*rel_pos[1];
-
-							//Ixz = Izx = sum(mi*xi'*zi')
-							I_G2[0][2] += mass->mass*rel_pos[0]*rel_pos[2];
-							I_G2[2][0] += mass->mass*rel_pos[0]*rel_pos[2];
-
-							//Iyy = sum (mi *(xi'^2+ zi'^2))
-							I_G2[1][1] += mass->mass*(rel_pos[0]*rel_pos[0] + rel_pos[2]*rel_pos[2]);
-
-							//Iyz = Izy = sum (mi*yi'*zi')
-							I_G2[1][2] += mass->mass*rel_pos[1]*rel_pos[2];
-							I_G2[2][1] += mass->mass*rel_pos[1]*rel_pos[2];
-
-							//Izz = sum (mi *(xi'^2+ yi'^2))
-							I_G2[2][2] += mass->mass*(rel_pos[0]*rel_pos[0] + rel_pos[1]*rel_pos[1]);
-
-							*/
-
 						} //if end
 					}//for bones end
 
-					/*
-
-					I_G2[0][1] = I_G2[1][0] = (-1)*I_G2[0][1];
-
-					I_G2[0][2] = I_G2[2][0] = (-1)*I_G2[0][2];
-
-					I_G2[1][2] = I_G2[2][1] = (-1)*I_G2[1][2];
-
-					//w = (r x v)/(|r|^2)
-
-					double cross[3], v_G[3], mag, w_G[3];
-
-					v_G[0] = m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0];
-					v_G[1] = m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1];
-					v_G[2] = m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2];
-
-					v3_cross(m_pSkeletonList[i]->cm, v_G, cross);
-
-					mag = v3_mag(m_pSkeletonList[i]->cm);
-
-					w_G[0] = cross[0]/(mag*mag);
-					w_G[1] = cross[1]/(mag*mag);
-					w_G[2] = cross[2]/(mag*mag);
-
-					//H_G= r_G x m_G*v_G + I_G*w_G
-
-					v_G[0] = m_pSkeletonList[i]->totalMass*v_G[0];
-					v_G[1] = m_pSkeletonList[i]->totalMass*v_G[1];
-					v_G[2] = m_pSkeletonList[i]->totalMass*v_G[2];
-
-					v3_cross(m_pSkeletonList[i]->cm, v_G, cross);
-
-					matrix3_v3_mult(I_G2, w_G, w_G);
-
-					m_pSkeletonList[i]->H[0] = cross[0] + w_G[0];
-					m_pSkeletonList[i]->H[1] = cross[1] + w_G[1];
-					m_pSkeletonList[i]->H[2] = cross[2] + w_G[2];
-
-					*/
-
+					setLegSwing(i);
 
 
 			}//if end
 
-			printf("H skeleton %d: %f %f %f\n", i, m_pSkeletonList[i]->H[0], m_pSkeletonList[i]->H[1], m_pSkeletonList[i]->H[2]);
+			//printf("H skeleton %d: %f %f %f\n", i, m_pSkeletonList[i]->H[0], m_pSkeletonList[i]->H[1], m_pSkeletonList[i]->H[2]);
 		}// for Skeletons end
+	}
+}
+
+void Computation::computeLinearMomentum(){
+
+	if (m_pSkeletonList != NULL){
+
+		for(int i = 0; i < numOfSkeletons; i++)
+		{
+			//linear momentum L = m_cm*v_cm
+			m_pSkeletonList[i]->L[0] = m_pSkeletonList[i]->totalMass*(m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0]);
+			m_pSkeletonList[i]->L[1] = m_pSkeletonList[i]->totalMass*(m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1]);
+			m_pSkeletonList[i]->L[2] = m_pSkeletonList[i]->totalMass*(m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2]);
+
+		}
 	}
 }
 
@@ -525,6 +421,7 @@ void Computation::LoadMassDistribution(MassDistribution * m) {
 	{
 		m_pMassDistributionList[numOfMassDist] = m;
 		numOfMassDist++;
+
 	}
 
 }
@@ -570,23 +467,27 @@ Motion * Computation::GetMotion(int skeletonIndex) {
 	return m_pMotionList[skeletonIndex];
 }
 
+LegSwing Computation::GetLegSwing(int skelNum) {
+	return swing[skelNum];
+}
+
 void Computation::Reset(void) {
 
 	for(int skeletonIndex = 0; skeletonIndex < MAX_SKELS; skeletonIndex++)
 	{
 
 		if (m_pSkeletonList[skeletonIndex] != NULL)
-		{
 			m_pSkeletonList[skeletonIndex] = NULL;
-		}
+
 		if (m_pMotionList[skeletonIndex] != NULL)
-		{
 			m_pMotionList[skeletonIndex] = NULL;
-		}
+
 		if(m_pMassDistributionList[skeletonIndex] != NULL)
-		{
 			m_pMassDistributionList[skeletonIndex] = NULL;
-		}
+
+		if(swing[skeletonIndex] != NULL)
+			swing[skeletonIndex] = NONE;
+
 	}
 
 	numOfSkeletons = 0;
@@ -665,23 +566,7 @@ void Computation::computeInertiaOfPoint(Mass * mass){
 //assumption: cylinder along z-axis
 void Computation::computeInertiaOfCylinder(Bone * bone, Mass * mass){
 
-	//Ixx = (1/12)*M*(3*r^2 + h^2) = Iyy
-
 	//TODO find inertia tensor about cm with arbitrary axes (find products of inertia)
-
-	/*
-	double bone_square = bone->length*bone->length;
-	double radius_square = mass->r0* mass->r0;
-
-	mass->Ixx = (1/12.0)*mass->mass*((3.0*radius_square) + bone_square);
-
-	mass->Iyy = (1/12.0)*mass->mass*(3*radius_square + bone_square);
-
-	mass->Izz = (1/2.0)*mass->mass*radius_square;
-	mass->Ixy = 0.;
-	mass->Ixz = 0.;
-	mass->Iyz = 0.;
-	*/
 
 	//compute it as sum of p1 = (1/2)*length*dir and p2 = -(1/2)*length*dir
 
@@ -689,29 +574,61 @@ void Computation::computeInertiaOfCylinder(Bone * bone, Mass * mass){
 
 	mass->Ixx = mass->Ixy = mass->Ixz = mass->Iyy = mass->Iyz = mass->Izz = 0.0;
 
-	p1[0] = (1/2.0)*bone->length*bone->dir[0];
-	p1[1] = (1/2.0)*bone->length*bone->dir[1];
-	p1[2] = (1/2.0)*bone->length*bone->dir[2];
+	if (mass->type == CYLINDER)
+	{
+		p1[0] = (1/2.0)*bone->length*bone->dir[0];
+		p1[1] = (1/2.0)*bone->length*bone->dir[1];
+		p1[2] = (1/2.0)*bone->length*bone->dir[2];
 
-	p2[0] = -p1[0];
-	p2[1] = -p1[1];
-	p2[2] = -p1[2];
+		p2[0] = -p1[0];
+		p2[1] = -p1[1];
+		p2[2] = -p1[2];
+
+		mass->Ixx = (1/2.0)*mass->mass*(p1[1]*p1[1] + p1[2]*p1[2])
+						+ (1/2.0)* mass->mass*(p2[1]*p2[1] + p2[2]*p2[2]);
+
+		mass->Ixy = (1/2.0)*mass->mass*(p1[0]*p1[1] + p2[0]*p2[1]);
+
+		mass->Ixz = (1/2.0)*mass->mass*(p1[0]*p1[2] + p2[0]*p2[2]);
+
+		mass->Iyy = (1/2.0)*mass->mass*(p1[0]*p1[0] + p1[2]*p1[2])
+							+ (1/2.0)* mass->mass*(p2[0]*p2[0] + p2[2]*p2[2]);
+
+		mass->Iyz = (1/2.0)*mass->mass*(p1[1]*p1[2] + p2[1]*p2[2]);
+
+		mass->Izz = (1/2.0)*mass->mass*(p1[0]*p1[0] + p1[1]*p1[1])
+							+ (1/2.0)* mass->mass*(p2[0]*p2[0] + p2[1]*p2[1]);
+	} else {
+
+		float dist = mass->distribution;
+
+		p1[0] = (1-dist)*bone->length*bone->dir[0];
+		p1[1] = (1-dist)*bone->length*bone->dir[1];
+		p1[2] = (1-dist)*bone->length*bone->dir[2];
+
+		p2[0] = (-1)*dist*bone->length*bone->dir[0];
+		p2[1] = (-1)*dist*bone->length*bone->dir[1];
+		p2[2] = (-1)*dist*bone->length*bone->dir[2];
+
+		mass->Ixx = (1-dist)*mass->mass*(p1[1]*p1[1] + p1[2]*p1[2])
+							+ dist* mass->mass*(p2[1]*p2[1] + p2[2]*p2[2]);
+
+		mass->Ixy = (1-dist)*mass->mass*p1[0]*p1[1] + dist*mass->mass*p2[0]*p2[1];
+
+		mass->Ixz = (1-dist)*mass->mass*p1[0]*p1[2] + dist*mass->mass*p2[0]*p2[2];
+
+		mass->Iyy = (1-dist)*mass->mass*(p1[0]*p1[0] + p1[2]*p1[2])
+								+ dist*mass->mass*(p2[0]*p2[0] + p2[2]*p2[2]);
+
+		mass->Iyz = (1-dist)*mass->mass*p1[1]*p1[2] + dist*mass->mass*p2[1]*p2[2];
+
+		mass->Izz = (1-dist)*mass->mass*(p1[0]*p1[0] + p1[1]*p1[1])
+								+ dist* mass->mass*(p2[0]*p2[0] + p2[1]*p2[1]);
+	}
 
 
-	mass->Ixx = (1/2.0)*mass->mass*(p1[1]*p1[1] + p1[2]*p1[2])
-					+ (1/2.0)* mass->mass*(p2[1]*p2[1] + p2[2]*p2[2]);
 
-	mass->Ixy = (1/2.0)*mass->mass*(p1[0]*p1[1] + p2[0]*p2[1]);
 
-	mass->Ixz = (1/2.0)*mass->mass*(p1[0]*p1[2] + p2[0]*p2[2]);
-
-	mass->Iyy = (1/2.0)*mass->mass*(p1[0]*p1[0] + p1[2]*p1[2])
-						+ (1/2.0)* mass->mass*(p2[0]*p2[0] + p2[2]*p2[2]);
-
-	mass->Iyz = (1/2.0)*mass->mass*(p1[1]*p1[2] + p2[1]*p2[2]);
-
-	mass->Izz = (1/2.0)*mass->mass*(p1[0]*p1[0] + p1[1]*p1[1])
-						+ (1/2.0)* mass->mass*(p2[0]*p2[0] + p2[1]*p2[1]);
 
 
 }
@@ -803,4 +720,39 @@ void Computation::computePos(Bone * ptr, double transform[4][4]) {
 	ptr->r_i[2] = lpos[2];
 
 
+}
+
+void Computation::checkLegSwing(double velocity[3], Bone * bone, int skelNum) {
+
+	if(strcmp(bone->name, "lfoot") == 0) {
+
+		if (absolute_value(velocity[0]) < 0.0037 && absolute_value(velocity[1]) < 0.0037 && absolute_value(velocity[2] < 0.0037) ) left = false;
+			else left = true;
+
+
+	} else if(strcmp(bone->name, "rfoot") == 0) {
+
+		if(absolute_value(velocity[0]) < 0.0037 && absolute_value(velocity[1]) < 0.0037 && absolute_value(velocity[2]) < 0.0037) right = false;
+			else right = true;
+	}
+}
+
+
+void Computation::setLegSwing(int skelNum) {
+
+	if(right)
+	{
+		if(left){
+			printf("Error! both legs can't swing at the same time!\n");
+		} else {
+			swing[skelNum] = RIGHT;
+		}
+	} else {
+
+		if(left){
+			swing[skelNum] = LEFT;
+		} else {
+			swing[skelNum] = NONE;
+		}
+	}
 }

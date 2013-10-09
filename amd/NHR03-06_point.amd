@@ -6,7 +6,7 @@
 	name lhipjoint
 	mass 6.51
 	dist 1.0
-	type cylinder 
+	type point
 	r0 1.0
   end
   begin
@@ -14,7 +14,7 @@
 	name lfemur
 	mass 6.971
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -22,7 +22,7 @@
 	name ltibia
 	mass 3.72
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -30,7 +30,7 @@
 	name lfoot
 	mass 1.176
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -38,7 +38,7 @@
 	name ltoes
 	mass 0.231
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -46,7 +46,7 @@
 	name rhipjoint
 	mass 6.51
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -54,7 +54,7 @@
 	name rfemur
 	mass 6.971
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -62,7 +62,7 @@
 	name rtibia
 	mass 3.72
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -70,7 +70,7 @@
 	name rfoot
 	mass 1.176
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -78,7 +78,7 @@
 	name rtoes
 	mass 0.231
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -86,7 +86,7 @@
 	name lowerback
 	mass 2.604
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -94,7 +94,7 @@
 	name upperback
 	mass 11.74
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -102,7 +102,7 @@
 	name thorax
 	mass 14.309
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -110,7 +110,7 @@
 	name lowerneck
 	mass 0.783
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -118,7 +118,7 @@
 	name upperneck
 	mass 0.783
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -126,7 +126,7 @@
 	name head
 	mass 6.259
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -134,7 +134,7 @@
 	name lclavicle
 	mass 0.783
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -142,7 +142,7 @@
 	name lhumerus
 	mass 2.395
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -150,7 +150,7 @@
 	name lradius
 	mass 1.273
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -158,7 +158,7 @@
 	name lwrist
 	mass 0.153
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -166,7 +166,7 @@
 	name lhand
 	mass 0.459
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -174,7 +174,7 @@
 	name lfingers
 	mass 0.167
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -182,7 +182,7 @@
 	name lthumb
 	mass 0.042
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -190,7 +190,7 @@
 	name rclavicle
 	mass 0.783
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -198,7 +198,7 @@
 	name rhumerus
 	mass 2.395
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -206,7 +206,7 @@
 	name rradius
 	mass 1.273
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -214,7 +214,7 @@
 	name rwrist
 	mass 0.153
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -222,7 +222,7 @@
 	name rhand
 	mass 0.459
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -230,7 +230,7 @@
 	name rfingers
 	mass 0.167
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
   begin
@@ -238,7 +238,7 @@
 	name rthumb
 	mass 0.042
 	dist 1.0
-	type cylinder
+	type point
 	r0 1.0
   end
 :end

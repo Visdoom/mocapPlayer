@@ -425,6 +425,7 @@ void load_callback(Fl_Button *button, void *)
 
 				computer.computeGeneralCenterOfMass();
 				computer.computeAngularMomentum();
+				computer.computeLinearMomentum();
 
 				glwindow->redraw();
 
@@ -552,18 +553,29 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
  * */
 void createFileName(char * filename, int skelNum)
 {
-	strcpy(filename, "./gcm/gcm+h_skeleton");
+	std::string fullpath = lastMotionFilename[skelNum];
+	int ix = fullpath.rfind("/");
 
-	char s[20];
-	sprintf(s,"%d", skelNum);
+	std:: string f = fullpath.substr(ix + 1);
 
+	ix = f.rfind(".");
+	f.erase(ix);
 
+	char motion[30];
+	strcpy(motion, f.c_str());
+
+	//date stamp
 	time_t ti = time(0);
 	struct tm * now = localtime(&ti);
 	char t[40];
-	sprintf(t,"_%d_%d_%d.txt",now->tm_mon, now->tm_mday, (now->tm_year %100));
+	sprintf(t,"%d_%d_%d",now->tm_mon, now->tm_mday, (now->tm_year %100));
 
-	strcat(s,t);
+	sprintf(filename, "./gcm/%s_%s_gcm+h_skeleton", t,motion);
+	//strcpy(filename, "./gcm/gcm+h_skeleton");
+
+	char s[20];
+	sprintf(s,"%d.txt", skelNum);
+
 	strcat(filename,s);
 }
 
@@ -615,8 +627,21 @@ void saveGCMFile(char * filename, int skelNum) {
 				<< computer.GetSkeleton(skelNum)->H[0] << " "
 				<< computer.GetSkeleton(skelNum)->H[1] << " "
 				<< computer.GetSkeleton(skelNum)->H[2] << std::endl;
-	    } else
-	     	printf("Opening GCM file failed.");
+		GCMfile << "L: "
+				<< computer.GetSkeleton(skelNum)->L[0] << " "
+				<< computer.GetSkeleton(skelNum)->L[1] << " "
+				<< computer.GetSkeleton(skelNum)->L[2] << std::endl;
+		if(computer.GetLegSwing(skelNum) == NONE)
+			GCMfile << "none ";
+		if(computer.GetLegSwing(skelNum) == RIGHT)
+			GCMfile << "right";
+		if(computer.GetLegSwing(skelNum) == LEFT)
+			GCMfile << "left";
+
+		GCMfile << std::endl;
+
+	 } else
+		 printf("Opening GCM file failed.");
 
 	GCMfile.close();
 }
@@ -658,6 +683,7 @@ void idle(void*)
         {
         	computer.computeGeneralCenterOfMass();
         	computer.computeAngularMomentum();
+        	computer.computeLinearMomentum();
         }
       }
     }
@@ -718,6 +744,7 @@ void idle(void*)
 
     	computer.computeGeneralCenterOfMass();
     	computer.computeAngularMomentum();
+    	computer.computeLinearMomentum();
 
     }
 
@@ -748,6 +775,7 @@ void idle(void*)
 	{
 		computer.computeGeneralCenterOfMass();
 		computer.computeAngularMomentum();
+		computer.computeLinearMomentum();
 
 	}
 
@@ -775,6 +803,7 @@ void idle(void*)
 	if (compute == ON) {
 		computer.computeGeneralCenterOfMass();
 		computer.computeAngularMomentum();
+		computer.computeLinearMomentum();
 	}
 
       if (saveScreenToFile == SAVE_CONTINUOUS)

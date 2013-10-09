@@ -116,7 +116,10 @@ double v3_mag(double a[3])
   return(sqrt(a[0]*a[0]+a[1]*a[1]+a[2]*a[2])); 
 }
 
-
+double absolute_value(double a) {
+	if (a < 0) return (-a);
+	else return a;
+}
 void rotationZ(double r[][4], double a)
 {
   a=a*M_PI/180.;

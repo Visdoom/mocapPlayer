@@ -31,6 +31,7 @@ void cross_matrix(double a[3], double r[3][3]);
 void v3_cross(double a[3], double b[3], double c[3]);
 double v3_mag(double a[3]);
 double v3_dot(double a[3], double b[3]);
+double absolute_value(double a);
 
 //Rotate vector v around axis X by angle a, around axis Y by angle b and around axis Z by angle c
 void vector_rotationXYZ(double *v, double a, double b, double c);
