@@ -4,13 +4,13 @@
   begin
 	id 1
 	name lhipjoint
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 2
 	name lfemur
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -22,7 +22,7 @@
   begin
 	id 4
 	name lfoot
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -34,13 +34,13 @@
   begin
 	id 6
 	name rhipjoint
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 7
 	name rfemur
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -52,7 +52,7 @@
   begin
 	id 9
 	name rfoot
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
@@ -64,37 +64,37 @@
   begin
 	id 11
 	name lowerback
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 12
 	name upperback
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 13
 	name thorax
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 14
 	name lowerneck
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 15
 	name upperneck
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin
 	id 16
 	name head
-	mass 0.0
+	mass 1.0
 	dist 1.0
   end
   begin

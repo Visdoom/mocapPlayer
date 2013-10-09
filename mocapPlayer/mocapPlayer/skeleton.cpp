@@ -492,34 +492,26 @@ void Skeleton::setPosture(Posture posture)
   m_RootPos[1] = posture.root_pos.p[1];
   m_RootPos[2] = posture.root_pos.p[2];
 
+
   for(int j=0;j<NUM_BONES_IN_ASF_FILE;j++)
   {
     // if the bone has rotational degree of freedom in x direction
     if(m_pBoneList[j].dofrx) 
-    {
-    	m_pBoneList[j].rx_prev = m_pBoneList[j].rx;
-        m_pBoneList[j].rx = posture.bone_rotation[j].p[0];
-    }
+      m_pBoneList[j].rx = posture.bone_rotation[j].p[0];
 
     if(m_pBoneList[j].doftx)
       m_pBoneList[j].tx = posture.bone_translation[j].p[0];
 
     // if the bone has rotational degree of freedom in y direction
     if(m_pBoneList[j].dofry) 
-    {
-    	m_pBoneList[j].ry_prev = m_pBoneList[j].ry;
-    	m_pBoneList[j].ry = posture.bone_rotation[j].p[1];
-    }
+       	m_pBoneList[j].ry = posture.bone_rotation[j].p[1];
 
     if(m_pBoneList[j].dofty)
       m_pBoneList[j].ty = posture.bone_translation[j].p[1];
 
     // if the bone has rotational degree of freedom in z direction
     if(m_pBoneList[j].dofrz) 
-    {
-    	m_pBoneList[j].rz_prev = m_pBoneList[j].rz;
-    	m_pBoneList[j].rz = posture.bone_rotation[j].p[2];
-    }
+       	m_pBoneList[j].rz = posture.bone_rotation[j].p[2];
 
     if(m_pBoneList[j].doftz)
       m_pBoneList[j].tz= posture.bone_translation[j].p[2];
@@ -527,6 +519,18 @@ void Skeleton::setPosture(Posture posture)
     if(m_pBoneList[j].doftl)
       m_pBoneList[j].tl = posture.bone_length[j].p[0];
   }
+}
+
+void Skeleton::savePosture()
+{
+	for (int i = 0; i < NUM_BONES_IN_ASF_FILE; i++)
+	{
+		m_pBoneList[i].rx_prev = m_pBoneList[i].rx;
+
+		m_pBoneList[i].ry_prev = m_pBoneList[i].ry;
+
+		m_pBoneList[i].rz_prev = m_pBoneList[i].rz;
+	}
 }
 
 //Set the aspect ratio of each bone 

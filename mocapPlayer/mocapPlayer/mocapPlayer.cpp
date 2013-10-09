@@ -16,6 +16,7 @@ Revision 3 - Jernej Barbic and Yili Zhao (USC), Feb, 2012
 #include <fstream>
 #include <cassert>
 #include <cmath>
+#include <ctime>
 
 #include <FL/gl.h>
 #include <FL/glut.H>  // GLUT for use with FLTK
@@ -330,6 +331,8 @@ void resetPostureAccordingFrameSlider(void)
     // Set skeleton to the first posture
     Posture * currentPosture = displayer.GetSkeletonMotion(skeletonIndex)->GetPosture(postureID);
 
+    computer.GetSkeleton(skeletonIndex)->savePosture();
+
     displayer.GetSkeleton(skeletonIndex)->setPosture(*currentPosture);
     computer.GetSkeleton(skeletonIndex)->setPosture(*currentPosture);
   }
@@ -422,6 +425,7 @@ void load_callback(Fl_Button *button, void *)
 
 				computer.computeGeneralCenterOfMass();
 				computer.computeAngularMomentum();
+				computer.computeLinearMomentum();
 
 				glwindow->redraw();
 
@@ -510,6 +514,9 @@ void SetSkeletonsToSpecifiedFrame(int frameIndex)
         postureID = displayer.GetSkeletonMotion(skeletonIndex)->GetNumFrames() - 1;
       else 
         postureID = frameIndex;
+
+      computer.GetSkeleton(skeletonIndex)->savePosture();
+
       displayer.GetSkeleton(skeletonIndex)->setPosture(* (displayer.GetSkeletonMotion(skeletonIndex)->GetPosture(postureID)));
       computer.GetSkeleton(skeletonIndex)->setPosture(* (computer.GetMotion(skeletonIndex)->GetPosture(postureID)));
     }
@@ -546,10 +553,29 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
  * */
 void createFileName(char * filename, int skelNum)
 {
-	strcpy(filename, "./gcm/gcm_skeleton");
+	std::string fullpath = lastMotionFilename[skelNum];
+	int ix = fullpath.rfind("/");
+
+	std:: string f = fullpath.substr(ix + 1);
+
+	ix = f.rfind(".");
+	f.erase(ix);
+
+	char motion[30];
+	strcpy(motion, f.c_str());
+
+	//date stamp
+	time_t ti = time(0);
+	struct tm * now = localtime(&ti);
+	char t[40];
+	sprintf(t,"%d_%d_%d",now->tm_mon, now->tm_mday, (now->tm_year %100));
+
+	sprintf(filename, "./gcm/%s_%s_gcm+h_skeleton", t,motion);
+	//strcpy(filename, "./gcm/gcm+h_skeleton");
 
 	char s[20];
 	sprintf(s,"%d.txt", skelNum);
+
 	strcat(filename,s);
 }
 
@@ -601,8 +627,21 @@ void saveGCMFile(char * filename, int skelNum) {
 				<< computer.GetSkeleton(skelNum)->H[0] << " "
 				<< computer.GetSkeleton(skelNum)->H[1] << " "
 				<< computer.GetSkeleton(skelNum)->H[2] << std::endl;
-	    } else
-	     	printf("Opening GCM file failed.");
+		GCMfile << "L: "
+				<< computer.GetSkeleton(skelNum)->L[0] << " "
+				<< computer.GetSkeleton(skelNum)->L[1] << " "
+				<< computer.GetSkeleton(skelNum)->L[2] << std::endl;
+		if(computer.GetLegSwing(skelNum) == NONE)
+			GCMfile << "none ";
+		if(computer.GetLegSwing(skelNum) == RIGHT)
+			GCMfile << "right";
+		if(computer.GetLegSwing(skelNum) == LEFT)
+			GCMfile << "left";
+
+		GCMfile << std::endl;
+
+	 } else
+		 printf("Opening GCM file failed.");
 
 	GCMfile.close();
 }
@@ -636,12 +675,15 @@ void idle(void*)
       if (displayer.GetSkeletonMotion(i) != NULL)
       {
         Posture * initSkeleton = displayer.GetSkeletonMotion(i)->GetPosture(0);
+
+        displayer.GetSkeleton(i)->savePosture();
         displayer.GetSkeleton(i)->setPosture(*initSkeleton);
 
         if(compute == ON)
         {
         	computer.computeGeneralCenterOfMass();
         	computer.computeAngularMomentum();
+        	computer.computeLinearMomentum();
         }
       }
     }
@@ -702,6 +744,7 @@ void idle(void*)
 
     	computer.computeGeneralCenterOfMass();
     	computer.computeAngularMomentum();
+    	computer.computeLinearMomentum();
 
     }
 
@@ -732,6 +775,7 @@ void idle(void*)
 	{
 		computer.computeGeneralCenterOfMass();
 		computer.computeAngularMomentum();
+		computer.computeLinearMomentum();
 
 	}
 
@@ -759,6 +803,7 @@ void idle(void*)
 	if (compute == ON) {
 		computer.computeGeneralCenterOfMass();
 		computer.computeAngularMomentum();
+		computer.computeLinearMomentum();
 	}
 
       if (saveScreenToFile == SAVE_CONTINUOUS)

@@ -116,7 +116,10 @@ double v3_mag(double a[3])
   return(sqrt(a[0]*a[0]+a[1]*a[1]+a[2]*a[2])); 
 }
 
-
+double absolute_value(double a) {
+	if (a < 0) return (-a);
+	else return a;
+}
 void rotationZ(double r[][4], double a)
 {
   a=a*M_PI/180.;
@@ -173,6 +176,14 @@ void identity(double i[][4])
 	i[1][0] = 0.0; i[1][1] = 1.0; i[1][2] = 0.0; i[1][3] = 0.0;
 	i[2][0] = 0.0; i[2][1] = 0.0; i[2][2] = 1.0; i[2][3] = 0.0;
 	i[3][0] = 0.0; i[3][1] = 0.0; i[3][2] = 0.0; i[3][3] = 1.0;
+}
+
+void identity3(double i[][3])
+{
+	i[0][0] = 1.0; i[0][1] = 0.0; i[0][2] = 0.0;
+	i[1][0] = 0.0; i[1][1] = 1.0; i[1][2] = 0.0;
+	i[2][0] = 0.0; i[2][1] = 0.0; i[2][2] = 1.0;
+
 }
 
 void matrix4_mult(double a[][4], double b[][4], double c[][4])

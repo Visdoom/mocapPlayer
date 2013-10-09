@@ -1,0 +1,14 @@
+:metadata
+ 
+Skeleton: /Network/Servers/duerer/Volumes/duerer/laturnus/workspace/new_acm/mocapPlayer/mocapPlayer/07-walk.asf
+Motion: /Network/Servers/duerer/Volumes/duerer/laturnus/workspace/new_acm/mocapPlayer/mocapPlayer/07_05-walk.amc
+Mass Distribution: /Network/Servers/duerer/Volumes/duerer/laturnus/workspace/new_acm/amd/clauser1969.amd
+ 
+Inital skeleton translation: 0 0 0
+Initial skeleton rotation: 0 0 0
+ 
+:data
+1
+gcm: 0.461251 1.01573 -2.17058
+H: -3.60132 -1.20203 -1.04926
+L: 0.0308809 -0.00771252 0.365685

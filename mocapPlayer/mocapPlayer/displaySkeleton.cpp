@@ -238,7 +238,7 @@ void DisplaySkeleton::DrawBone(Bone *pBone,int skelNum)
 	    gluQuadricNormals(center, (GLenum) GLU_SMOOTH);
 	    gluSphere(center, 0.03, 20, 20);
 
-	  glPopMatrix();
+	 glPopMatrix();
 
     //Compute the angle between the canonical pose and the correct orientation 
     //(specified in pBone->dir) using cross product.
@@ -335,23 +335,8 @@ void DisplaySkeleton::Render(RenderMode renderMode_)
 		gluSphere(center, 0.065, 20, 20);
 
 
+		glPopMatrix();
 
-		//draw arrow for angular momentum
-		/*
-			glPushMatrix();
-			//TODO rotate in right direction
-			double length = v3_mag(m_pSkeleton[i]->H);
-			double dir[3];
-				dir[0] = (1/length)*m_pSkeleton[i]->H[0];
-				dir[1] = (1/length)*m_pSkeleton[i]->H[1];
-				dir[2] = (1/length)*m_pSkeleton[i]->H[2];
-			gluCylinder(center, 0.03, 0.0, length, 20, 20);
-
-			glPopMatrix();
-		*/
-
-
-		 glPopMatrix();
 	}
 
     glPushMatrix();
