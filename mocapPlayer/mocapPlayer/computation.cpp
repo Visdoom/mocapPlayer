@@ -201,6 +201,7 @@ void Computation::computeAngularMomentum() {
 
 	double translation[3], rotation[3];
 	double R[4][4],Rx[4][4],Ry[4][4],Rz[4][4];
+	double mean_w[3];
 
 	Bone * root;
 	Mass * mass;
@@ -258,6 +259,12 @@ void Computation::computeAngularMomentum() {
 
 					traverse(root, i, transform, 'h');
 
+					//TODO delete
+
+					mean_w[0] = 0;
+					mean_w[1] = 0;
+					mean_w[2] = 0;
+
 
 					for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
@@ -294,7 +301,6 @@ void Computation::computeAngularMomentum() {
 							v_rel[0] = v_i[0] - v_cm[0];
 							v_rel[1] = v_i[1] - v_cm[1];
 							v_rel[2] = v_i[2] - v_cm[2];
-
 
 
 							//Inertia tensor
@@ -354,6 +360,18 @@ void Computation::computeAngularMomentum() {
 
 								//clamping TODO
 
+								if(absolute_value(w_i[0]) > 1.5) w_i[0] = 0;
+								if(absolute_value(w_i[1]) > 1.5) w_i[1] = 0;
+								if(absolute_value(w_i[2]) > 1.5) w_i[2] = 0;
+
+								mean_w[0] += absolute_value(w_i[0]);
+								mean_w[1] += absolute_value(w_i[1]);
+								mean_w[2] += absolute_value(w_i[2]);
+
+
+
+
+
 								vector_rotationXYZ(w_i, bone->axis_x, bone->axis_y, bone->axis_z);
 
 								//local_inertia = I_i*w_i
@@ -379,6 +397,13 @@ void Computation::computeAngularMomentum() {
 					}//for bones end
 
 					setLegSwing(i);
+
+					mean_w[0] /= m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
+					mean_w[1] /= m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
+					mean_w[2] /= m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
+
+					//printf("mean w values: %f %f %f\n", mean_w[0], mean_w[1], mean_w[2]);
+
 
 
 			}//if end
