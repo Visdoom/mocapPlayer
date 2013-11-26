@@ -1,5 +1,5 @@
-:dist 
-other
+:units
+ mass kg
 :massdata
   begin
 	id 1

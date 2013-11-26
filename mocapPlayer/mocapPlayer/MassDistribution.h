@@ -53,11 +53,10 @@ public:
 	int getNumOfMasses();
 
 	//stores the mass distribution
-	//TODO make it const?
 	Mass m_pMassList[MAX_BONES_IN_ASF_FILE];
+
 private:
 	int NUM_BONES_IN_AMD_FILE;
-
 protected:
 	//parses the file that specifies the mass distribution.
 	int readAMDfile(char *amd_filename);

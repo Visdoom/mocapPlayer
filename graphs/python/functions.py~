@@ -158,13 +158,13 @@ def plot_H_L(filename, numOfFiles, H_x,H_y,H_z,mag,L_x,L_y,L_z,frames):
 		labelname7 = '|H| ' + filename[j]
 		
 		axarr[0].plot(frames[j],H_x[j], label = labelname1)
-		axarr[0].plot(frames[j], L_x[j], label = labelname2)
+		#axarr[0].plot(frames[j], L_x[j], label = labelname2)
 		
 		axarr[1].plot(frames[j],H_y[j], label = labelname3)
-		axarr[1].plot(frames[j], L_y[j], label = labelname4)	
+		#axarr[1].plot(frames[j], L_y[j], label = labelname4)	
 		
 		axarr[2].plot(frames[j],H_z[j], label = labelname5)
-		axarr[2].plot(frames[j], L_z[j], label = labelname6)	
+		#axarr[2].plot(frames[j], L_z[j], label = labelname6)	
 
 		axarr[3].plot(frames[j], mag[j], label = labelname7)
 
@@ -188,6 +188,48 @@ def plot_H_L(filename, numOfFiles, H_x,H_y,H_z,mag,L_x,L_y,L_z,frames):
 	picturename = 'H_combo_overlay.eps'
 	#plt.savefig(picturename, dpi=900)
 
+
+# ---------- H and L gait cycles ------------------
+
+def plot_gait_H_L(filename, numOfFiles,H_x,H_y,H_z,mag,L_x,L_y,L_z,breaks):
+	fig1, axarr = plt.subplots(4,sharex=True, sharey=True)
+
+	for j in numOfFiles:
+		t = breaks[1]
+		labelname1 = 'H_x ' + filename[j]
+		labelname2 = 'L_x ' + filename[j]
+		labelname3 = 'H_y ' + filename[j]
+		labelname4 = 'L_y ' + filename[j]
+		labelname5 = 'H_z ' + filename[j]
+		labelname6 = 'L_z ' + filename[j]
+		labelname7 = '|H| ' + filename[j]
+		for k in breaks[1::4]:
+			
+			a, = axarr[0].plot(range(0,(k-t)),H_x[j][t:k], label = labelname1)
+			b, = axarr[0].plot(range(0,(k-t)), L_x[j][t:k], label = labelname2)
+
+			c, = axarr[1].plot(range(0,(k-t)),H_y[j][t:k], label = labelname3)
+			d, = axarr[1].plot(range(0,(k-t)), L_y[j][t:k], label = labelname4)	
+		
+			e, = axarr[2].plot(range(0,(k-t)),H_z[j][t:k], label = labelname5)
+			f, = axarr[2].plot(range(0,(k-t)), L_z[j][t:k], label = labelname6)	
+
+			g, = axarr[3].plot(range(0,(k-t)), mag[j][t:k], label = labelname7)
+
+			t = k
+
+		axarr[0].legend([a,b], [labelname1, labelname2], loc = 'best', prop = {'size' : 'xx-small'})
+		axarr[1].legend([c,d], [labelname3, labelname4], loc = 'best', prop = {'size' : 'xx-small'})
+		axarr[2].legend([e,f], [labelname5, labelname6], loc = 'best', prop = {'size' : 'xx-small'})
+		axarr[3].legend([g], [labelname7], loc = 'best', prop = {'size' : 'xx-small'})	
+
+
+	axarr[3].set_xlabel('frames')
+
+	#plt.xticks(range(0,len(mag[0]),20))
+
+	picturename = 'H_combo_gait_overlay.eps'
+	#plt.savefig(picturename, dpi=900)
 # ------------ phases --------------------
 
 

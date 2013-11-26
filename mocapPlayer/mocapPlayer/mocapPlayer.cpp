@@ -18,6 +18,9 @@ Revision 3 - Jernej Barbic and Yili Zhao (USC), Feb, 2012
 #include <cmath>
 #include <ctime>
 
+#include <sys/stat.h>
+#include <sys/types.h>
+
 #include <FL/gl.h>
 #include <FL/glut.H>  // GLUT for use with FLTK
 #include <FL/Fl_File_Chooser.H> // file chooser for load/save
@@ -318,7 +321,6 @@ void resetPostureAccordingFrameSlider(void)
 {
   currentFrameIndex = (int)frame_slider->value() - 1;
   currentFrameIndexDoublePrecision = currentFrameIndex;
-  printf("entering resetPostureAccordingtoFrameSlider.\n");
 
   // display
   for (int skeletonIndex = 0; skeletonIndex < displayer.GetNumSkeletons(); skeletonIndex++)
@@ -349,6 +351,7 @@ void UpdateMaxFrameNumber(void)
   }
 }
 
+//TODO make it executable
 void load_callback(Fl_Button *button, void *) 
 {
   if(button == loadSkeleton_button)
@@ -553,30 +556,61 @@ void saveScreenshot(int windowWidth, int windowHeight, char * filename)
  * */
 void createFileName(char * filename, int skelNum)
 {
-	std::string fullpath = lastMotionFilename[skelNum];
-	int ix = fullpath.rfind("/");
+	// motion (.amc)
+	std::string motion_fullpath = lastMotionFilename[skelNum];
 
-	std:: string f = fullpath.substr(ix + 1);
+	int motion_ix = motion_fullpath.rfind("/");
 
-	ix = f.rfind(".");
-	f.erase(ix);
+	std:: string motion_f = motion_fullpath.substr(motion_ix + 1);
+
+	motion_ix = motion_f.rfind(".");
+	motion_f.erase(motion_ix);
 
 	char motion[30];
-	strcpy(motion, f.c_str());
+	strcpy(motion, motion_f.c_str());
+
+	//skeleton (.asf)
+
+	std::string skeleton_fullpath = lastSkeletonFilename[skelNum];
+
+	int skeleton_ix = skeleton_fullpath.rfind("/");
+
+	std:: string skeleton_f = skeleton_fullpath.substr(skeleton_ix + 1);
+
+	skeleton_ix = skeleton_f.rfind(".");
+	skeleton_f.erase(skeleton_ix);
+
+	char skeleton[30];
+	strcpy(skeleton, skeleton_f.c_str());
+
+	//mass distribution (.amd)
+
+	std::string amd_fullpath = lastMassDistributionFilename[skelNum];
+
+	int amd_ix = amd_fullpath.rfind("/");
+
+	std:: string amd_f = amd_fullpath.substr(amd_ix + 1);
+
+	amd_ix = amd_f.rfind(".");
+	amd_f.erase(amd_ix);
+
+	char amd[30];
+	strcpy(amd, amd_f.c_str());
 
 	//date stamp
 	time_t ti = time(0);
 	struct tm * now = localtime(&ti);
 	char t[40];
-	sprintf(t,"%d_%d_%d",now->tm_mon, now->tm_mday, (now->tm_year %100));
+	sprintf(t,"%d_%d_%d",(now->tm_mon +1), now->tm_mday, (now->tm_year %100));
 
-	sprintf(filename, "./gcm/%s_%s_gcm+h_skeleton", t,motion);
-	//strcpy(filename, "./gcm/gcm+h_skeleton");
+	//TODO insert date dir
+	sprintf(filename, "./gcm/%s/%s_%s_%s_gcm+H+L_skeleton", t,skeleton,motion,amd);
 
 	char s[20];
 	sprintf(s,"%d.txt", skelNum);
 
 	strcat(filename,s);
+
 }
 
 /*
@@ -585,11 +619,22 @@ void createFileName(char * filename, int skelNum)
 void saveGCMFile(char * filename, int skelNum) {
 
 	std::ofstream GCMfile;
+	std::string file = filename;
 
-	if (currentFrameIndex == 1) {
+	if (currentFrameIndex == 1)
+	{
+
+		//get directory path
+		int dir_idx = file.rfind("/");
+		std::string dir_path = file.substr(0,dir_idx + 1);
+
+		//make directory
+		mkdir(dir_path.c_str(),S_IRWXU);
+
 	  	GCMfile.open(filename, std::ios::trunc);
 
-	  	if (GCMfile.is_open()) { //create header for the file
+	  	if (GCMfile.is_open())
+	  	{ //create header for the file
 
 	  		double translation[3], rotation[3];
 	  		computer.GetSkeleton(skelNum)->GetTranslation(translation);
@@ -617,7 +662,8 @@ void saveGCMFile(char * filename, int skelNum) {
 
 	GCMfile.open(filename, std::ios::app);
 
-	if(GCMfile.is_open()) {
+	if(GCMfile.is_open())
+	{
 		GCMfile	<< currentFrameIndex << std::endl;
 		GCMfile	<< "gcm: "
 				<< computer.GetSkeleton(skelNum)->cm[0] << " "
@@ -641,7 +687,7 @@ void saveGCMFile(char * filename, int skelNum) {
 		GCMfile << std::endl;
 
 	 } else
-		 printf("Opening GCM file failed.");
+		 printf("Opening GCM file failed.\n");
 
 	GCMfile.close();
 }
@@ -751,7 +797,6 @@ void idle(void*)
     if(saveGCMToFile == ON ) {
 
     	for (int i = 0; i < computer.numOfSkeletons; i++) {
-
     		char filename[FILENAME_MAX];
     		createFileName(filename, i);
     		saveGCMFile(filename, i);
@@ -1171,6 +1216,7 @@ int main(int argc, char **argv)
   groundPlane_button->value(groundPlane);
   fog_button->value(useFog);
   compute_button->value(compute);
+  record_GCM_button->value(saveGCMToFile);
   worldAxes_button->value(renderWorldAxes);
   frame_slider->value(1);
   if (saveScreenToFile == SAVE_CONTINUOUS)
@@ -1190,7 +1236,6 @@ int main(int argc, char **argv)
   glwindow->show(); // glwindow is initialized when the form is built
   performanceCounter.StopCounter();
 
-
   if (argc > 2)
   {
     char *filename;
@@ -1206,7 +1251,13 @@ int main(int argc, char **argv)
       pSkeleton->setBasePosture();
       displayer.LoadSkeleton(pSkeleton);
       computer.LoadSkeleton(pSkeleton);
+      computer.computeLocalCenterOfMass();
+
       lastSkeleton++;
+      strcpy(lastSkeletonFilename[lastSkeleton], filename);
+
+      glwindow->redraw();
+
     }
 
     if (displayer.GetNumSkeletons())
@@ -1223,6 +1274,7 @@ int main(int argc, char **argv)
         computer.LoadMotion(pMotion);
 
         lastMotion++;
+        strcpy(lastMotionFilename[lastMotion], filename);
 
         //Tell skeleton to perform the first pose ( first posture )
         pSkeleton->setPosture(*(displayer.GetSkeletonMotion(0)->GetPosture(0)));          
@@ -1238,6 +1290,8 @@ int main(int argc, char **argv)
         frame_slider->maximum((double)maxFrames);
 
         currentFrameIndex=0;
+        glwindow->redraw();
+
       } // if(filename != NULL)
 
       filename = argv[3];
@@ -1246,16 +1300,24 @@ int main(int argc, char **argv)
     	  pMassDistribution = new MassDistribution(filename);
     	  pMassDistribution->print();
     	  lastMassDistribution++;
+    	  strcpy(lastMassDistributionFilename[lastMassDistribution], filename);
 
-    	  computer.LoadMassDistribution(pMassDistribution);
-    	  computer.computeLocalCenterOfMass();
-    	  computer.computeGeneralCenterOfMass();
-    	  computer.computeInertiaTensor();
+    		computer.LoadMassDistribution(pMassDistribution);
+    		computer.computeLocalCenterOfMass();
+    		computer.computeInertiaTensor();
+
+    		computer.computeGeneralCenterOfMass();
+    		computer.computeAngularMomentum();
+    		computer.computeLinearMomentum();
+
+    		glwindow->redraw();
       }
     }
     else
       printf("Load a skeleton first.\n");
     framesIncrementDoublePrecision = 1.0;            // Current frame and frame increment
+
+    //saveGCMToFile = ON;
     playButton = ON;
     repeatButton = OFF;
     groundPlane = ON; 

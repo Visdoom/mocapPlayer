@@ -558,7 +558,11 @@ Skeleton::Skeleton(char *asf_filename, double scale)
   cm[0] = 0; cm[1] = 0; cm[2] = 0;
   H[0] = 0; H[1] = 0; H[2] = 0;
 
+  height = 0.0;
   totalMass = 0.0;
+  meanVelocity[0] = 0.0;
+  meanVelocity[1] = 0.0;
+  meanVelocity[2] = 0.0;
 
   m_pBoneList[0].dofo[0] = 4;
   m_pBoneList[0].dofo[1] = 5;
@@ -590,6 +594,8 @@ Skeleton::Skeleton(char *asf_filename, double scale)
   if (code != 0)
     throw 1;
 
+  computeHeight();
+
   //transform the direction vector for each bone from the world coordinate system 
   //to it's local coordinate system
   RotateBoneDirToLocalCoordSystem();
@@ -600,6 +606,8 @@ Skeleton::Skeleton(char *asf_filename, double scale)
 
   //Set the aspect ratio of each bone 
   set_bone_shape(m_pRootBone);
+
+
 }
 
 Skeleton::~Skeleton()
@@ -627,4 +635,25 @@ void Skeleton::GetRotationAngle(double rotationAngle[3])
   rotationAngle[2] = rz;
 }
 
+//computes Skeleton's height
+void Skeleton::computeHeight()
+{
+	double dir = 0;
 
+	for(int i =0; i < NUM_BONES_IN_ASF_FILE; i++)
+	{
+		Bone * bone = this->getBone(this->getRoot(), i);
+		//Doesn't need transformation into global cs because wasn't transformed yet
+
+
+		if(bone->idx == 1 || bone->idx == 2 || bone->idx == 3 || bone->idx == 11 || bone->idx == 12 || bone->idx == 13
+				|| bone->idx == 14 || bone->idx == 15 || bone->idx == 16)
+		{
+			dir = bone->dir[1]*bone->length;
+			height += std::abs(dir);
+
+		}
+	}
+
+	printf("Height of the skeleton: %f\n", height);
+}

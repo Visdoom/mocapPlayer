@@ -110,7 +110,9 @@ public:
   double H[3]; //Angular momentum of the center of mass about root.
   double L[3]; //Linear momentum of the center of mass
 
+  double height; //stores the heigth in m
   double totalMass; //stores the skeletons total mass.
+  double meanVelocity[3]; //stores the mean velocity of the trial
 
   int NUM_BONES_IN_ASF_FILE;
 protected:
@@ -136,6 +138,8 @@ protected:
   void set_bone_shape(Bone *bone);
   void compute_rotation_parent_child(Bone *parent, Bone *child);
   void ComputeRotationToParentCoordSystem(Bone *bone);
+
+  void computeHeight(); // Computes the skeleton's height from the .asf file
 
   // root position in world coordinate system
   double m_RootPos[3];

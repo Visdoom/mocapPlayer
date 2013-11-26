@@ -18,7 +18,7 @@ filename = []
 
 cutoff = 200
 
-numOfFiles = range(1)
+numOfFiles = range(2)
 #file = open(filename) #opens file defined by user
 
 gcm_x = [[] for i in numOfFiles]
@@ -108,4 +108,6 @@ f.plot_norm_dens(filename, numOfFiles, mag)
 #-----subplotting of H_x, H_y, H_z and |H| and L -----------------------------------------------
 
 f.plot_H_L(filename, numOfFiles, filt_H_x,filt_H_y,filt_H_z,mag,L_x,L_y,L_z,frames)
+
+plt.savefig('combined_H.pdf', dpi=900)
 plt.show()

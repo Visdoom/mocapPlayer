@@ -7,241 +7,211 @@
   begin
 	id 1
 	name lhipjoint
-	mass 1.666
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.5
+	type other
   end
   begin
 	id 2
 	name lfemur
-	mass 6.749
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.7
+	type other
   end
   begin
 	id 3
 	name ltibia
-	mass 2.842
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.6
+	type other
   end
   begin
 	id 4
 	name lfoot
-	mass 0.863
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.3
+	type other
   end
   begin
 	id 5
 	name ltoes
-	mass 0.096
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 6
 	name rhipjoint
-	mass 1.666
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 7
 	name rfemur
-	mass 6.749
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 8
 	name rtibia
-	mass 2.842
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 9
 	name rfoot
-	mass 0.863
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 10
 	name rtoes
-	mass 0.096
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 11
 	name lowerback
-	mass 6.664
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 12
 	name upperback
-	mass 6.664
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 13
 	name thorax
-	mass 14.661
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 14
 	name lowerneck
-	mass 0.5
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 15
 	name upperneck
-	mass 0.5
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 16
 	name head
-	mass 4.729
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 17
 	name lclavicle
-	mass 0.5
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.8
+	type other
   end
   begin
 	id 18
 	name lhumerus
-	mass 1.73
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 19
 	name lradius
-	mass 1.055
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.1
+	type other
   end
   begin
 	id 20
 	name lwrist
-	mass 0.043
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 21
 	name lhand
-	mass 0.192
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 22
 	name lfingers
-	mass 0.17
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 23
 	name lthumb
-	mass 0.021
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.7
+	type other
   end
   begin
 	id 24
 	name rclavicle
-	mass 0.5
+	mass 1.0
 	dist 1.0
-	type point
-	r0 1.0
+	type other
   end
   begin
 	id 25
 	name rhumerus
-	mass 1.73
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.1
+	type other
   end
   begin
 	id 26
 	name rradius
-	mass 1.055
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.3
+	type other
   end
   begin
 	id 27
 	name rwrist
-	mass 0.043
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.5
+	type other
   end
   begin
 	id 28
 	name rhand
-	mass 0.192
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.5
+	type other
   end
   begin
 	id 29
 	name rfingers
-	mass 0.17
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.4
+	type other
   end
   begin
 	id 30
 	name rthumb
-	mass 0.021
-	dist 1.0
-	type point
-	r0 1.0
+	mass 1.0
+	dist 0.2
+	type other
   end
 :end

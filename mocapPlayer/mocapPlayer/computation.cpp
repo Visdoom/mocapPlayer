@@ -41,19 +41,7 @@ Computation::Computation() {
 
 Computation::~Computation() {
 
-	if(m_pSkeletonList != NULL)
-	{
-		delete [] m_pSkeletonList;
-	}
-	if(m_pMassDistributionList != NULL)
-	{
-		delete [] m_pMassDistributionList;
-	}
-	if (m_pMotionList != NULL)
-	{
-		delete [] m_pMotionList;
-	}
-
+//Skeletons, Mass Dist and Motion are deleted elsewhere
 }
 
 //Computes local center of mass of each bone and stores it in bone.cm
@@ -266,9 +254,11 @@ void Computation::computeAngularMomentum() {
 					mean_w[2] = 0;
 
 
+
 					for(int j = 0; j < m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE; j++) { //for every bone compute: (r_i - r_cm) x m_i(v_i - v_cm) + I_i*w_i
 
 						double rel_pos[3], v_i[3], v_cm[3], v_rel[3], I_G[3][3], w_i[3], local_inertia[3], cross[3], S[3][3], S_transpose[3][3];
+
 						Bone * bone;
 						bone = m_pSkeletonList[i]->getBone(root, j);
 
@@ -282,9 +272,9 @@ void Computation::computeAngularMomentum() {
 							rel_pos[2] = bone->r_i[2] - m_pSkeletonList[i]->cm[2];
 
 							//v_i = r_i - r_i_cm
-							v_i[0] = bone->r_i[0] - r_i_cm[j][0];
-							v_i[1] = bone->r_i[1] - r_i_cm[j][1];
-							v_i[2] = bone->r_i[2] - r_i_cm[j][2];
+							v_i[0] = (bone->r_i[0] - r_i_cm[j][0]);
+							v_i[1] = (bone->r_i[1] - r_i_cm[j][1]);
+							v_i[2] = (bone->r_i[2] - r_i_cm[j][2]);
 
 							//if v_i is zero switch flag
 							checkLegSwing(v_i, bone, i);
@@ -292,9 +282,9 @@ void Computation::computeAngularMomentum() {
 						//	if(mass->mass != 0 && ((strcmp(mass->segName, "rfoot") == 0) || (strcmp(mass->segName, "lfoot") == 0))) printf("v_i_%s: %f %f %f\n",mass->segName, v_i[0], v_i[1], v_i[2]);
 
 							//v_cm = r_cm - r_cm_prev
-							v_cm[0] = m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0];
-							v_cm[1] = m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1];
-							v_cm[2] = m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2];
+							v_cm[0] = (m_pSkeletonList[i]->cm[0] - m_pSkeletonList[i]->cm_prev[0]);
+							v_cm[1] = (m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1]);
+							v_cm[2] = (m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2]);
 
 
 							//v_rel = v_i - v_cm
@@ -354,11 +344,11 @@ void Computation::computeAngularMomentum() {
 
 								//w_i = R_i^T * ({rx,ry,rz} - {rx_prev, ry_prev, rz_prev});
 
-								w_i[0] = bone->rx - bone->rx_prev;
-								w_i[1] = bone->ry - bone->ry_prev;
-								w_i[2] = bone->rz - bone->rz_prev;
+								w_i[0] = (bone->rx - bone->rx_prev);
+								w_i[1] = (bone->ry - bone->ry_prev);
+								w_i[2] = (bone->rz - bone->rz_prev);
 
-								//clamping TODO
+								//clamping
 
 								if(absolute_value(w_i[0]) > 1.5) w_i[0] = 0;
 								if(absolute_value(w_i[1]) > 1.5) w_i[1] = 0;
@@ -393,6 +383,9 @@ void Computation::computeAngularMomentum() {
 							m_pSkeletonList[i]->H[2] += (cross[2] + local_inertia[2]);
 
 
+
+
+
 						} //if end
 					}//for bones end
 
@@ -402,13 +395,20 @@ void Computation::computeAngularMomentum() {
 					mean_w[1] /= m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
 					mean_w[2] /= m_pSkeletonList[i]->NUM_BONES_IN_ASF_FILE;
 
+					//normalization N=M*H*V
+					// to make H dimensionless, divide by subject's height (in m), subject's mass (in kg) and subject's average velocity(0.012 m/frame or 1.44 m/s)
+					double n = m_pSkeletonList[i]->totalMass*m_pSkeletonList[i]->height*(1.44);
+
+					m_pSkeletonList[i]->H[0] /= n;
+					m_pSkeletonList[i]->H[1] /= n;
+					m_pSkeletonList[i]->H[2] /= n;
+
 					//printf("mean w values: %f %f %f\n", mean_w[0], mean_w[1], mean_w[2]);
-
-
+					//printf("angular momentum: %f %f %f\n", m_pSkeletonList[i]->H[0],m_pSkeletonList[i]->H[1],m_pSkeletonList[i]->H[2]);
+					//printf("position cm: %f %f %f\n", m_pSkeletonList[i]->cm[0], m_pSkeletonList[i]->cm[1], m_pSkeletonList[i]->cm[2]);
 
 			}//if end
 
-			//printf("H skeleton %d: %f %f %f\n", i, m_pSkeletonList[i]->H[0], m_pSkeletonList[i]->H[1], m_pSkeletonList[i]->H[2]);
 		}// for Skeletons end
 	}
 }
@@ -424,6 +424,12 @@ void Computation::computeLinearMomentum(){
 			m_pSkeletonList[i]->L[1] = m_pSkeletonList[i]->totalMass*(m_pSkeletonList[i]->cm[1] - m_pSkeletonList[i]->cm_prev[1]);
 			m_pSkeletonList[i]->L[2] = m_pSkeletonList[i]->totalMass*(m_pSkeletonList[i]->cm[2] - m_pSkeletonList[i]->cm_prev[2]);
 
+			//normalize with N = M*V //TODO pick velocity value (0.012 or 1.44)
+			double n = m_pSkeletonList[i]->totalMass*1.44;
+
+			m_pSkeletonList[i]->L[0] /= n;
+			m_pSkeletonList[i]->L[1] /= n;
+			m_pSkeletonList[i]->L[2] /= n;
 		}
 	}
 }
@@ -501,16 +507,16 @@ void Computation::Reset(void) {
 	for(int skeletonIndex = 0; skeletonIndex < MAX_SKELS; skeletonIndex++)
 	{
 
-		if (m_pSkeletonList[skeletonIndex] != NULL)
+		if (&m_pSkeletonList[skeletonIndex] != NULL)
 			m_pSkeletonList[skeletonIndex] = NULL;
 
-		if (m_pMotionList[skeletonIndex] != NULL)
+		if (&m_pMotionList[skeletonIndex] != NULL)
 			m_pMotionList[skeletonIndex] = NULL;
 
-		if(m_pMassDistributionList[skeletonIndex] != NULL)
+		if(&m_pMassDistributionList[skeletonIndex] != NULL)
 			m_pMassDistributionList[skeletonIndex] = NULL;
 
-		if(swing[skeletonIndex] != NULL)
+		if(&swing[skeletonIndex] != NULL)
 			swing[skeletonIndex] = NONE;
 
 	}
@@ -749,16 +755,25 @@ void Computation::computePos(Bone * ptr, double transform[4][4]) {
 
 void Computation::checkLegSwing(double velocity[3], Bone * bone, int skelNum) {
 
+	//TODO find presentation that shows whether the leg swings were detected correctly
 	if(strcmp(bone->name, "lfoot") == 0) {
-
-		if (absolute_value(velocity[0]) < 0.0037 && absolute_value(velocity[1]) < 0.0037 && absolute_value(velocity[2] < 0.0037) ) left = false;
-			else left = true;
+		//TODO printf("%f, %f, % f\n",velocity[0], velocity[1], velocity[2] );
+		if (absolute_value(velocity[2] < 0.0037) ) left = false;
+			else
+			{
+				left = true;
+				printf("%f, %f, %f,left\n",velocity[0], velocity[1], velocity[2]);
+			}
 
 
 	} else if(strcmp(bone->name, "rfoot") == 0) {
-
-		if(absolute_value(velocity[0]) < 0.0037 && absolute_value(velocity[1]) < 0.0037 && absolute_value(velocity[2]) < 0.0037) right = false;
-			else right = true;
+		//TODO printf("%f, %f, % f\n",velocity[0], velocity[1], velocity[2] );
+		if(absolute_value(velocity[2]) < 0.0037) right = false;
+			else
+			{
+				right = true;
+				printf("%f, %f, %f, right\n", velocity[0], velocity[1], velocity[2]);
+			}
 	}
 }
 
@@ -768,7 +783,7 @@ void Computation::setLegSwing(int skelNum) {
 	if(right)
 	{
 		if(left){
-			printf("Error! both legs can't swing at the same time!\n");
+			//TODO printf("Error! both legs can't swing at the same time!\n");
 		} else {
 			swing[skelNum] = RIGHT;
 		}

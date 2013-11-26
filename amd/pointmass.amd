@@ -1,5 +1,8 @@
-:dist 
-point
+:units
+ height m
+ mass kg
+:global
+  height 1.72
 :massdata
   begin
 	id 1

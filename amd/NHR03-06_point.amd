@@ -1,5 +1,7 @@
 #National Health Statistics Report of the U.S. from 2003-2006 + volume relations (1964)
 # 20-29 year old male Americans, 811 people examined
+:units
+ mass kg
 :massdata
   begin
 	id 1

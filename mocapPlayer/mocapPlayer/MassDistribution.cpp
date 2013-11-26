@@ -102,6 +102,16 @@ int MassDistribution::readAMDfile(char *amd_filename)
 	 is.getline(str, 2048);
 	 removeCR(str);
 
+	 while(1) //read height and skip the rest
+	 {
+		 is.getline(str, 2048);
+		 removeCR(str);
+		 sscanf(str, "%s", keyword);
+
+		 if (strcmp(keyword, ":massdata") == 0)
+			 break;
+	 }
+
 	 bool done = false;
 	 for (int i = 0; (!done) && (i < MAX_BONES_IN_ASF_FILE); i++)
 	 {
