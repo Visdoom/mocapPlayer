@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/overlay.dir/overlay.cxx.o  -o ../bin/examples/overlay -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

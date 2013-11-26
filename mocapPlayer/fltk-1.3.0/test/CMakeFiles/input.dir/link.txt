@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/input.dir/input.cxx.o  -o ../bin/examples/input -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

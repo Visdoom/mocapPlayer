@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/inactive.dir/inactive.cxx.o  -o ../bin/examples/inactive -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

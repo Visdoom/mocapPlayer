@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/curve.dir/curve.cxx.o  -o ../bin/examples/curve -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

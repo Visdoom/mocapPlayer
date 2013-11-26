@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/symbols.dir/symbols.cxx.o  -o ../bin/examples/symbols -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

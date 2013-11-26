@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/clock.dir/clock.cxx.o  -o ../bin/examples/clock -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

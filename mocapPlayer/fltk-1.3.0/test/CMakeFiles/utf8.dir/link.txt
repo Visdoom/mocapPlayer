@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/utf8.dir/utf8.cxx.o  -o ../bin/examples/utf8 -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

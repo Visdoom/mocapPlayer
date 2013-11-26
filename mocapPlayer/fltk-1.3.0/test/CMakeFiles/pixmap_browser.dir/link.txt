@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/pixmap_browser.dir/pixmap_browser.cxx.o  -o ../bin/examples/pixmap_browser -rdynamic ../lib/libfltk.a ../lib/libfltk_images.a ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext -lpng -lz ../lib/libfltk_jpeg.a 

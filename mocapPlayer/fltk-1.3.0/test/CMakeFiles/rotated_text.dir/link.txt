@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/rotated_text.dir/rotated_text.cxx.o  -o ../bin/examples/rotated_text -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

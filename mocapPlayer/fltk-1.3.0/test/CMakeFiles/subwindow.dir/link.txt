@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/subwindow.dir/subwindow.cxx.o  -o ../bin/examples/subwindow -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

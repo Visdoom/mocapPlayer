@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/browser.dir/browser.cxx.o  -o ../bin/examples/browser -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

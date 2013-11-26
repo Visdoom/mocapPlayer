@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/fonts.dir/fonts.cxx.o  -o ../bin/examples/fonts -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

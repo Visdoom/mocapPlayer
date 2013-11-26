@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/image.dir/image.cxx.o  -o ../bin/examples/image -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

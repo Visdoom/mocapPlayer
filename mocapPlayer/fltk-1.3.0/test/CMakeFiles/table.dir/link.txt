@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/table.dir/table.cxx.o  -o ../bin/examples/table -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/line_style.dir/line_style.cxx.o  -o ../bin/examples/line_style -rdynamic ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 

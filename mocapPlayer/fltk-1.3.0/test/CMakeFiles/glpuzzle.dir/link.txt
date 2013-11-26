@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/glpuzzle.dir/glpuzzle.cxx.o  -o ../bin/examples/glpuzzle -rdynamic ../lib/libfltk.a ../lib/libfltk_gl.a -lGLU -lGL -lSM -lICE -lX11 -lXext ../lib/libfltk.a -lpthread -lSM -lICE -lX11 -lXext 
