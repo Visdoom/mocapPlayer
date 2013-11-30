@@ -569,7 +569,6 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 
 
 	matrix4_v4_mult(transform, temp, lcm);
-	//printf("lcm: %f %f %f %f\n", lcm[0], lcm[1], lcm[2], lcm [3]);
 
 	if(m_pMassDistributionList[skelNum]->getMass(ptr->name) != NULL) {
 		mass = m_pMassDistributionList[skelNum]->getMass(ptr->name)->mass;
@@ -589,6 +588,7 @@ void Computation::computeCM(Bone * ptr, int skelNum, double transform[4][4]){
 void Computation::computeInertiaOfPoint(Mass * mass){
 
 	mass->Ixx = mass->Ixy = mass->Ixz = mass->Iyy = mass->Iyz = mass->Izz = 0;
+	//printf("lcm: %f %f %f %f\n", lcm[0], lcm[1], lcm[2], lcm [3]);
 
 }
 
@@ -759,22 +759,21 @@ void Computation::checkLegSwing(double velocity[3], Bone * bone, int skelNum) {
 	if(strcmp(bone->name, "lfoot") == 0) {
 		//TODO printf("%f, %f, % f\n",velocity[0], velocity[1], velocity[2] );
 		if (absolute_value(velocity[2] < 0.0037) ) left = false;
-			else
-			{
-				left = true;
-				printf("%f, %f, %f,left\n",velocity[0], velocity[1], velocity[2]);
-			}
+			else left = true;
+
+		printf("\nleft, %f, %f, %f, ",velocity[0], velocity[1], velocity[2]);
 
 
 	} else if(strcmp(bone->name, "rfoot") == 0) {
 		//TODO printf("%f, %f, % f\n",velocity[0], velocity[1], velocity[2] );
 		if(absolute_value(velocity[2]) < 0.0037) right = false;
-			else
-			{
-				right = true;
-				printf("%f, %f, %f, right\n", velocity[0], velocity[1], velocity[2]);
-			}
+			else right = true;
+
+		printf("right, %f, %f, %f, ", velocity[0], velocity[1], velocity[2]);
+
 	}
+	if (left) printf("left");
+	if(right) printf("right");
 }
 
 
