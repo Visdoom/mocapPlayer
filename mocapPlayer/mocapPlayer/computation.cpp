@@ -761,7 +761,7 @@ void Computation::checkLegSwing(double velocity[3], Bone * bone, int skelNum) {
 		if (absolute_value(velocity[2] < 0.0037) ) left = false;
 			else left = true;
 
-		printf("\nleft, %f, %f, %f, ",velocity[0], velocity[1], velocity[2]);
+		//printf("\nleft, %f, %f, %f, ",velocity[0], velocity[1], velocity[2]);
 
 
 	} else if(strcmp(bone->name, "rfoot") == 0) {
@@ -769,11 +769,11 @@ void Computation::checkLegSwing(double velocity[3], Bone * bone, int skelNum) {
 		if(absolute_value(velocity[2]) < 0.0037) right = false;
 			else right = true;
 
-		printf("right, %f, %f, %f, ", velocity[0], velocity[1], velocity[2]);
+		//printf("right, %f, %f, %f, ", velocity[0], velocity[1], velocity[2]);
 
 	}
-	if (left) printf("left");
-	if(right) printf("right");
+	//if (left) printf("left");
+	//if(right) printf("right");
 }
 
 
